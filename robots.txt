@@ -1,0 +1,3 @@
+User-agent: *  
+Allow: /  
+Sitemap: https://devtechsoft.in/sitemap.xml  

@@ -1,0 +1,12 @@
+# Ignore system files
+Thumbs.db
+*.log
+
+# Ignore vendor/node_modules if PHP/JS is used
+vendor/
+node_modules/
+
+# Ignore local config
+*.env
+*.ini
+*.bak
