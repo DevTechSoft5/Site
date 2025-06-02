@@ -55,17 +55,34 @@
  
     <!-- home section design -->
 <!-- home section design -->
+<!-- home section design -->
 <section class="home" id="home" style="padding: 50px 20px; background-color: #f9f9f9;">
   <div class="home-content" style="
-      display: flex; 
-      align-items: center; 
-      justify-content: space-between; 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
       max-width: 1200px;
       margin: auto;
-  ">
+      flex-direction: row;
+  " class="home-flex">
+    <!-- Right Image Content (moved to top on mobile) -->
+    <div class="home-image" style="
+        flex: 1 1 300px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    ">
+      <img src="https://devtechsoft.in/mainlogo.png" alt="DevTechSoft Logo" style="
+          max-width: 4.5cm;
+          height: 3cm;
+          border-radius: 8px;
+      ">
+    </div>
+
     <!-- Left Text Content -->
-    <div style="flex: 1 1 500px; padding: 20px;">
+    <div class="home-text" style="flex: 1 1 500px; padding: 20px;">
       <h3 style="font-size: 30px; margin-bottom: 10px;">Hello,</h3>
       <h1 style="font-size: 42px; margin-bottom: 20px;">DevTechSoft</h1>
       <p style="font-size: 16px; margin-bottom: 10px;">
@@ -77,23 +94,21 @@
         technologies like HTML, CSS, JavaScript, React, Python, and Flutter.
       </p>
     </div>
-
-    <!-- Right Image Content -->
-    <div style="
-        flex: 1 1 300px; 
-        padding: 20px;
-        display: flex; 
-        justify-content: center; 
-        align-items: center;
-    ">
-      <img src="https://devtechsoft.in/mainlogo.png" alt="DevTechSoft Logo" style="
-          max-width: 4.5cm; 
-          height: 3cm; 
-          border-radius: 8px;
-      ">
-    </div>
   </div>
 </section>
+
+<!-- Add this CSS to style.css or inside <style> tag -->
+<style>
+  @media (max-width: 768px) {
+    .home-content {
+      flex-direction: column !important;
+    }
+    .home-image {
+      order: -1;
+    }
+  }
+</style>
+
 
 
 
