@@ -438,68 +438,125 @@
   </div><button class="btn-glow" id="orderNowBtn">Order Now</button>
 </div>
 <!-- Order Now Popup Modal -->
+<!-- Order Now Popup Modal -->
 <div id="orderModal" class="modal-overlay">
   <div class="modal-box">
     <h3>Order College Project</h3>
     <form id="orderForm">
       <input type="text" id="orderName" placeholder="Your Name" required />
       <input type="tel" id="orderPhone" placeholder="Phone Number" required />
-      <select id="collegeSelect" required>
+      <select id="collegeSelect" required style="width: 100%">
         <option value="">Select College</option>
-        <option>IIT Bombay</option>
-        <option>IIT Delhi</option>
-        <option>IIT Madras</option>
-        <option>IIT Kanpur</option>
-        <option>IIT Kharagpur</option>
-        <option>NIT Trichy</option>
-        <option>NIT Surathkal</option>
-        <option>IIIT Hyderabad</option>
-        <option>VIT Vellore</option>
-        <option>SRM Institute</option>
-        <option>MIT Manipal</option>
-        <option>Jadavpur University</option>
-        <option>College of Engineering Pune</option>
-        <option>Anna University</option>
-        <option>Delhi Technological University</option>
-        <option>NSUT Delhi</option>
-        <option>Amrita University</option>
-        <option>BIT Mesra</option>
-        <option>Lovely Professional University</option>
-        <option>Chandigarh University</option>
-        <option>Graphic Era University</option>
-        <option>KIIT University</option>
-        <option>BITS Pilani</option>
-        <option>Shiv Nadar University</option>
-        <option>UPES Dehradun</option>
-        <option>Christ University</option>
-        <option>Symbiosis Pune</option>
-        <option>SRM Chennai</option>
-        <option>PES University</option>
-        <option>Reva University</option>
-        <option>Galgotias University</option>
-        <option>GNDU Amritsar</option>
-        <option>Osmania University</option>
-        <option>Andhra University</option>
-        <option>University of Mumbai</option>
-        <option>University of Pune</option>
-        <option>Manipal University Jaipur</option>
-        <option>SASTRA University</option>
-        <option>Tezpur University</option>
-        <option>Aligarh Muslim University</option>
-        <option>Banaras Hindu University</option>
-        <option>Jamia Millia Islamia</option>
-        <option>IGNOU</option>
-        <option>Patna University</option>
-        <option>Rajiv Gandhi Proudyogiki Vishwavidyalaya</option>
-        <option>Punjab Engineering College</option>
-        <option>Thapar University</option>
-        <option>CoEP Tech Pune</option>
-        <option>Nirma University</option>
+        <option value="other">Other</option>
+
+        <!-- Coimbatore Engineering & Arts Colleges -->
+        <option>PSG College of Technology</option>
+        <option>Amrita Vishwa Vidyapeetham (Amrita University)</option>
+        <option>Coimbatore Institute of Technology (CIT)</option>
+        <option>Government College of Technology (GCT)</option>
+        <option>PSG Institute of Technology and Applied Research (PSG iTech)</option>
+        <option>Kumaraguru College of Technology (KCT)</option>
+        <option>Sri Krishna College of Engineering and Technology (SKCET)</option>
+        <option>Sri Ramakrishna Engineering College (SREC)</option>
+        <option>Dr. Mahalingam College of Engineering and Technology (MCET)</option>
+        <option>Hindusthan College of Engineering and Technology</option>
+        <option>Nehru Institute of Engineering and Technology</option>
+        <option>VSB College of Engineering Technical Campus</option>
+        <option>Park College of Engineering and Technology</option>
+        <option>Info Institute of Engineering</option>
+        <option>Akshaya College of Engineering and Technology</option>
+        <option>PSG College of Arts and Science</option>
+        <option>Sri Krishna Arts and Science College</option>
+        <option>Dr. N.G.P. Arts and Science College</option>
+        <option>Sri Ramakrishna College of Arts and Science</option>
+        <option>Sri Ramakrishna Mission Vidyalaya College of Arts and Science</option>
+        <option>CMS College of Science and Commerce</option>
+        <option>Kongunadu Arts and Science College</option>
+        <option>Rathinam College of Arts and Science</option>
+        <option>Hindusthan College of Arts and Science</option>
+        <option>Nehru Arts and Science College</option>
+        <option>Dr. S.N.S. Rajalakshmi College of Arts and Science</option>
+        <option>PSGR Krishnammal College for Women</option>
+        <option>Avinashilingam Institute for Home Science and Higher Education for Women</option>
+        <option>Government Arts College, Coimbatore</option>
+        <option>VLB Janakiammal College of Arts and Science</option>
+        <option>Bharathiar University</option>
+        <option>Sankara College of Science and Commerce</option>
+        <option>SNS College of Arts and Science</option>
+        <option>KG College of Arts and Science</option>
+        <option>Jansons School of Business</option>
+        <option>Sri Eshwar College of Engineering</option>
+        <option>Sankara Institute of Management Science</option>
+        <option>Karpagam Academy of Higher Education</option>
+        <option>Karpagam College of Arts and Science</option>
+        <option>KGISL Institute of Technology</option>
+        <option>Vivekananda Institute of Information and Management Studies (VIIMS)</option>
+        <option>Sri Ranganathar Institute of Engineering and Technology</option>
+        <option>Sri Jayendra Saraswathy Maha Vidyalaya College of Arts and Science</option>
+        <option>Vivekananda College of Arts and Science for Women</option>
+        <option>SNMV College of Arts and Science</option>
+        <option>Cherran College for Women</option>
+        <option>Dr. G.R. Damodaran College of Science</option>
+        <option>J.K.K. Nataraja College of Arts and Science</option>
+        <option>Sri Narayani College of Nursing</option>
+        <option>CSI Bishop Appasamy College of Arts and Science</option>
+        <option>RVS College of Engineering and Technology</option>
+        <option>Vinayaka Missions Kirupananda Variyar Engineering College</option>
+        <option>PSG Polytechnic College</option>
+        <option>Coimbatore Medical College</option>
+        <option>Coimbatore Dental College and Hospital</option>
+        <option>Kalveeram Palayam College of Engineering and Technology</option>
+        <option>Hindusthan College of Arts and Science</option>
+        <option>Vinayaka Missions College of Arts and Science</option>
+        <option>Sri Ramakrishna Institute of Technology</option>
+        <option>Jaycee Higher Secondary School & College</option>
+        <option>JCT College of Engineering and Technology</option>
+        <option>Oxford Engineering College</option>
+        <option>Kit College of Arts and Science</option>
+        <option>Adithya Institute of Technology</option>
+        <option>CMS College of Engineering and Technology</option>
+        <option>Dr. N.G.P. Institute of Technology</option>
+        <option>Aditya Academy of Architecture</option>
+        <option>KGISL School of Arts and Science</option>
+        <option>Dr. Mahalingam College of Arts and Science</option>
+        <option>Kongu Arts and Science College</option>
+        <option>PSGR Krishnammal College for Women</option>
+        <option>Park College of Engineering and Technology</option>
+        <option>PSG College of Pharmacy</option>
+        <option>Institute of Road and Transport Technology</option>
+        <option>Coimbatore Institute of Management and Technology</option>
+        <option>KCT Business School</option>
+        <option>GRG Polytechnic College</option>
+        <option>Shree Venkateshwara Hi-Tech Engineering College</option>
+        <option>Sri Ramakrishna Mission Vidyalaya College of Engineering</option>
+        <option>Avinashilingam University for Women</option>
+        <option>PSG Institute of Management</option>
+        <option>Coimbatore College of Engineering and Technology</option>
+        <option>Shree Venkateshwara Hi-Tech College of Engineering</option>
+        <option>Rathinam Technical Campus</option>
       </select>
       <button type="submit" class="btn-primary">Submit & Order</button>
       <button type="button" class="btn-secondary" id="closeModal">Cancel</button>
     </form>
   </div>
+</div>
+
+<!-- jQuery (needed for Select2) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Select2 CSS & JS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#collegeSelect').select2({
+      placeholder: "Select College",
+      allowClear: true,
+      width: 'resolve'
+    });
+  });
+</script>
 </div>
 <style>.modal-overlay {
   position: fixed;
