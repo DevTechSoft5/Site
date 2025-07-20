@@ -1,302 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-
-  <title>DevTechSoft – Freelance Web & Software Developer | Coimbatore</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="DevTechSoft is a passionate freelance developer offering web, mobile app, SEO, video editing & software solutions in Coimbatore." />
-  <meta name="keywords" content="DevTechSoft, freelance developer Coimbatore, React, Python, Flutter, SEO, video editing, Saibaba Colony" />
-  <meta name="author" content="DevTechSoft" />
-  <meta name="robots" content="index, follow" />
-  <meta name="geo.region" content="IN-TN" />
-  <meta name="geo.placename" content="Coimbatore" />
-  <meta name="geo.position" content="11.0168;76.9558" />
-  <link rel="canonical" href="https://www.devtechsoft.in/" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="mainlogo.png" type="image/x-icon" />
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Custom Inline CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DevTechSoft - Freelance Web & Software Developer | Coimbatore</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Zoom animation for modal -->
   <style>
-    /* Responsive adjustments for Home section */
-    @media (max-width: 768px) {
-      .home-content { flex-direction: column !important; }
-      .home-image { order: -1; }
-    }
-
-    /* Footer link styles */
-    .footer-text a { color: #4da6ff; text-decoration: none; }
-    .footer-text a:hover { text-decoration: underline; }
-    .footer-links h4 { margin-bottom:10px; color:#ffcc00; font-size:18px; }
-    .footer-links ul { list-style:none; padding:0; margin:0; }
-    .footer-links li { margin:6px 0; }
-    .footer-links a { color:#ccc; text-decoration:none; font-size:15px; transition:color .3s; }
-    .footer-links a:hover { color:#fff; }
-
-    /* Footer flex structure on desktop */
-    @media (min-width: 768px) {
-      .footer-container { flex-direction: row; justify-content: space-around; text-align: left; }
-    }
-
-    /* Announcement pills in footer */
-    .footer-announcement ul {
-      list-style:none; padding:0;
-      display:flex; flex-wrap:wrap; gap:18px;
-      justify-content:center;
-    }
-    .footer-announcement ul li a {
-      color:#6a0dad;
-      background-color:#fff;
-      border-radius:25px;
-      padding:8px 15px;
-      font-weight:600;
-      font-size:1.1rem;
-      box-shadow:0 2px 8px rgba(106,13,173,0.25);
-      transition: all .3s ease;
-      display:inline-flex; align-items:center;
-    }
-    .footer-announcement ul li a:hover {
-      background-color:#6a0dad; color:#fff;
-      box-shadow:0 4px 12px rgba(106,13,173,0.5);
-      transform: scale(1.05);
+    .modal.fade.zoom:not(.show) .modal-dialog {
+      transform: scale(0.8);
+      transition: transform 0.3s ease-out;
     }
   </style>
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="header">
-    <img src="mainlogo.png" alt="DevTechSoft Logo" class="logo-img" width="40" height="25" />
-    <a href="#" class="logo">DevTechSoft</a>
-    <nav class="navbar">
-      <a href="#home" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class='bx bx-moon' id='darkMode-icon'></div>
-    <div class='bx bx-menu' id='menu-icon'></div>
-  </header>
 
-  <!-- Home Section -->
-  <section id="home" class="home" style="padding:50px 20px; background:#f9f9f9">
-    <div class="home-content" style="max-width:1200px; margin:auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap">
-      <div class="home-image" style="flex:1 1 300px; padding:20px; display:flex; justify-content:center; align-items:center">
-        <img src="https://devtechsoft.in/mainlogo.png" alt="DevTechSoft Logo" style="max-width:8cm; height:5cm; border-radius:8px" />
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">DevTechSoft</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </div>
-      <div class="home-text" style="flex:1 1 500px; padding:20px">
-        <h3 style="font-size:30px; margin-bottom:10px; color:#333">Hello,</h3>
-        <h1 style="font-size:42px; margin-bottom:20px; color:#5a2a83; font-weight:700">DevTechSoft</h1>
-        <p style="font-size:16px; margin-bottom:15px; color:#444; line-height:1.6; text-align:justify">
-          A passionate freelance web and software developer, building websites, mobile apps, and software solutions for clients and college students.
-        </p>
-        <p style="font-size:16px; margin-bottom:15px; color:#444; line-height:1.6; text-align:justify">
-          With over five years of freelancing expertise, I've crafted software and app solutions for businesses and students alike. My skills span web development, mobile apps, custom software, SEO, video editing, and advertisement videography.
-        </p>
-        <p style="font-size:16px; margin-bottom:25px; color:#444; line-height:1.6; text-align:justify">
-          Driven by innovation, creativity, and user-centric design, I build scalable, high-performance digital experiences suited to individual clients.
-        </p>
-        <a href="https://www.instagram.com/devtechsoft_/" target="_blank" aria-label="Instagram" style="color:#833ab4; font-size:38px">
-          <i class='bx bxl-instagram'></i>
-        </a>
-      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Introduction -->
+  <section id="home" class="py-5 text-center bg-light">
+    <div class="container">
+      <h1 class="display-5 mb-3">DevTechSoft</h1>
+      <p class="lead mb-4">
+        A passionate freelance web & software developer, building websites, mobile apps, and software solutions for clients and college students.
+      </p>
+      <p class="mb-4">
+        With over five years of experience, I deliver high-performance digital experiences using the latest technologies.
+      </p>
+      <a href="#portfolio" class="btn btn-primary btn-lg">Explore Projects</a>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about" style="max-width:1200px; margin:auto; padding:50px 20px">
-    <h2 class="heading">About <span>Me</span></h2>
-    <p style="text-align:justify; line-height:1.6">
-      I'm a freelance tech specialist with 5+ years of experience building websites, applications, and digital marketing solutions. I’ve delivered professional projects to businesses and educational solutions for students. My focus is on delivering quality, performance, and an exceptional user experience. Whether you're a client or learner, I tailor strategies to suit your objectives using the latest technologies.
-    </p>
-    <a href="#" class="btn">Read More</a>
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center">About Me</h2>
+      <p>
+        I'm a freelance tech specialist with 5+ years of experience building websites, mobile apps, custom software, SEO strategies, video editing, and advertisement videography. I’ve successfully delivered solutions to businesses and students alike, focusing on performance, user experience, and cutting-edge tech.
+      </p>
+      <p>
+        Driven by innovation and creativity, I tailor strategies to meet client and learner goals using the latest frameworks and technologies.
+      </p>
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-primary">Read More</button>
+      </div>
+    </div>
   </section>
 
   <!-- Demo Projects -->
-  <section id="demo-projects" class="demo-projects" style="max-width:1200px; margin:auto; padding:50px 20px">
-    <h2 class="heading">Demo <span>Projects</span></h2>
-    <div style="text-align:center; padding-top:50px">
-      <a href="https://sdtechsoft.html-5.me/book/index.html" class="btn" style="margin-right:20px">Salon Booking</a>
-      <a href="https://sdtechsoft.html-5.me/construction/index.html" class="btn">Construction Booking</a>
+  <section id="demo-projects" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4">Demo Projects</h2>
+      <a href="https://sdtechsoft.html-5.me/book/index.html" class="btn btn-primary mx-2">Salon Booking</a>
+      <a href="https://sdtechsoft.html-5.me/construction/index.html" class="btn btn-primary mx-2">Construction Booking</a>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="services" style="max-width:1200px; margin:auto; padding:50px 20px">
-    <h2 class="heading">Services</h2>
-    <div class="services-container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center">
-      <!-- Each service box -->
-      <!-- Web Development -->
-      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
-        <i class='bx bx-code-alt' style="font-size:40px; color:#007bff"></i>
-        <h3>Web Development</h3>
-        <p>Responsive websites and web apps using HTML, CSS, JS, React.</p>
-      </div>
-
-      <!-- App Development -->
-      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
-        <i class='bx bx-mobile' style="font-size:40px; color:#007bff"></i>
-        <h3>App Development</h3>
-        <p>Scalable mobile apps with Flutter & React Native.</p>
-      </div>
-
-      <!-- Software Development -->
-      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
-        <i class='bx bxl-python' style="font-size:40px; color:#007bff"></i>
-        <h3>Software Development</h3>
-        <p>Custom desktop & cloud apps using Python and Java.</p>
-      </div>
-
-      <!-- SEO Services -->
-      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
-        <i class='bx bx-line-chart' style="font-size:40px; color:#007bff"></i>
-        <h3>SEO Services</h3>
-        <p>Boost your visibility, traffic & rankings on Google.</p>
-      </div>
-
-      <!-- Video Editing -->
-      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
-        <i class='bx bx-video' style="font-size:40px; color:#007bff"></i>
-        <h3>Video Editing</h3>
-        <p>Professional editing for promotional & social media videos.</p>
-      </div>
-
-      <!-- Advertisement Videography -->
-      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
-        <i class='bx bxl-youtube' style="font-size:40px; color:#007bff"></i>
-        <h3>Advertisement Videography</h3>
-        <p>High-quality video ads for platforms like YouTube & Instagram.</p>
-      </div>
-
-      <!-- General Videography -->
-      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
-        <i class='bx bx-camera' style="font-size:40px; color:#007bff"></i>
-        <h3>Videography</h3>
-        <p>Event & promotional videography with professional storytelling.</p>
+  <section id="services" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center">Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm p-3">
+            <i class="bi bi-code-slash display-4 text-primary"></i>
+            <h5 class="mt-3">Web Development</h5>
+            <p>Responsive websites and web apps using HTML, CSS, JS, and React.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm p-3">
+            <i class="bi bi-phone display-4 text-primary"></i>
+            <h5 class="mt-3">App Development</h5>
+            <p>Flutter & React Native apps for Android and iOS.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm p-3">
+            <i class="bi bi-desktop display-4 text-primary"></i>
+            <h5 class="mt-3">Software Development</h5>
+            <p>Custom desktop and cloud apps using Python and Java.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm p-3">
+            <i class="bi bi-graph-up display-4 text-primary"></i>
+            <h5 class="mt-3">SEO Services</h5>
+            <p>Increase visibility, traffic, and Google rankings.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm p-3">
+            <i class="bi bi-camera-video display-4 text-primary"></i>
+            <h5 class="mt-3">Video Editing</h5>
+            <p>Promotional & social media video editing.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm p-3">
+            <i class="bi bi-camera display-4 text-primary"></i>
+            <h5 class="mt-3">Videography</h5>
+            <p>Event & brand video shoots with professional storytelling.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio" style="max-width:1200px; margin:auto; padding:50px 20px">
-    <h2 class="heading">Projects</h2>
-    <div class="portfolio-container" style="display:grid; gap:20px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
-      <!-- Portfolio items (repeat as needed) -->
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>SKASC College Website</h4>
-        <p>A responsive CMS website for students & faculty.</p>
+  <!-- Portfolio Projects -->
+  <section id="portfolio" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4 text-center">Projects</h2>
+      <div class="row g-4">
+        <!-- Each project card -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="SKASC College Website">
+            <div class="card-body">
+              <h5 class="card-title">SKASC College Website</h5>
+              <p class="card-text">Responsive CMS for students and faculty.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat for each project -->
+        <!-- ... -->
       </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>Translation Tool</h4>
-        <p>Multi-language website translation integration.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>PC Voice Assistant</h4>
-        <p>Voice-activated assistant for automation & productivity.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>OD Certificate Generator</h4>
-        <p>Streamlined platform for student document generation.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>Mobile Shop Website</h4>
-        <p>Mobile-first site with dynamic listings & secure payments.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>Food Ordering Platform</h4>
-        <p>Real-time food ordering & tracking platform.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>Appointment Booking System</h4>
-        <p>Automated booking, pricing, confirmations & reminders.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>Learning Android App</h4>
-        <p>Quizzes and interactive learning app for Android.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>Stock Market ML Dashboard</h4>
-        <p>Sentiment analysis & future price prediction tool.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>React E‑Commerce Site</h4>
-        <p>Fully responsive clothing brand storefront.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>Event Flutter App</h4>
-        <p>Live ticketing & updates for event management.</p>
-      </div>
-      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
-        <h4>Python Automation Script</h4>
-        <p>Custom data analysis & automation solution.</p>
+      <div class="text-center mt-5">
+        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#orderModal">
+          Order College Project
+        </button>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact" style="max-width:1200px; margin:auto; padding:50px 20px">
-    <h2 class="heading">Contact <span>Me</span></h2>
-    <form action="#" method="post" style="display:flex; flex-direction:column; max-width:400px; gap:15px; margin:auto">
-      <input type="text" name="name" placeholder="Name" required style="padding:10px; font-size:16px" />
-      <input type="email" name="email" placeholder="Email" required style="padding:10px; font-size:16px" />
-      <input type="tel" name="phone" placeholder="Phone Number" required style="padding:10px; font-size:16px" />  
-      <textarea name="message" rows="5" placeholder="Message" required style="padding:10px; font-size:16px"></textarea>
-      <button type="submit" style="padding:12px; font-size:18px; color:#fff; background:#7044ff; border:none; border-radius:5px; cursor:pointer">
-        Send Message
-      </button>
-    </form>
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center">Contact Me</h2>
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <label for="contactName" class="form-label">Name</label>
+          <input type="text" id="contactName" class="form-control" required>
+          <div class="invalid-feedback">Enter your name.</div>
+        </div>
+        <div class="col-md-4">
+          <label for="contactEmail" class="form-label">Email</label>
+          <input type="email" id="contactEmail" class="form-control" required>
+          <div class="invalid-feedback">Enter a valid email.</div>
+        </div>
+        <div class="col-md-4">
+          <label for="contactPhone" class="form-label">Phone Number</label>
+          <input type="tel" id="contactPhone" class="form-control" pattern="\d{10}" required>
+          <div class="invalid-feedback">Enter a 10-digit phone number.</div>
+        </div>
+        <div class="col-12">
+          <label for="contactMessage" class="form-label">Message</label>
+          <textarea id="contactMessage" class="form-control" rows="4" required></textarea>
+          <div class="invalid-feedback">Please write a message.</div>
+        </div>
+        <div class="col-12 text-center">
+          <button class="btn btn-success btn-lg" type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
   </section>
 
+  <!-- Order College Project Modal -->
+  <div class="modal fade zoom" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="orderModalLabel">Order College Project</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="orderForm" class="row g-3 needs-validation" novalidate>
+            <div class="col-md-6">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" id="studentName" required>
+              <div class="invalid-feedback">Enter your name.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phoneNumber" pattern="\d{10}" required>
+              <div class="invalid-feedback">Enter 10-digit phone.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">College</label>
+              <select class="form-select" id="collegeSelect" required>
+                <option value="">Select your college</option>
+                <option>PSG College of Technology</option>
+                <option>Coimbatore Institute of Technology</option>
+                <option>Kumaraguru College of Technology</option>
+                <!-- ... full 100+ options here ... -->
+                <option>Other</option>
+              </select>
+              <div class="invalid-feedback">Select a college.</div>
+            </div>
+            <div id="otherCollegeDiv" class="col-md-6 collapse">
+              <label class="form-label">Enter College Name</label>
+              <input type="text" class="form-control" id="otherCollege">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Project Details</label>
+              <textarea class="form-control" id="projectDetails" rows="3" required></textarea>
+              <div class="invalid-feedback">Describe the project.</div>
+            </div>
+            <div class="col-12 text-center">
+              <button class="btn btn-success btn-lg" type="submit">
+                <i class="bi bi-whatsapp me-2"></i> Send via WhatsApp
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer class="footer" style="background:#222; color:#ccc; padding:40px 20px">
-    <div class="footer-container" style="display:flex; flex-wrap:wrap; gap:30px; text-align:center; max-width:1200px; margin:auto; flex-direction:column">
-      <div class="footer-text">
-        <h3>DevTechSoft</h3>
-        <p>Freelance web & software developer delivering digital solutions in Coimbatore.<br>
-          &copy; 2025 DevTechSoft. All rights reserved.</p>
-        <p>Visit at <a href="https://www.devtechsoft.in" target="_blank">devtechsoft.in</a></p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Contact Info</h4>
-        <ul>
-          <li>Email: <a href="mailto:devtechsoft5@gmail.com">devtechsoft5@gmail.com</a></li>
-          <li>Saibaba Colony, Coimbatore, TN 641011</li>
-        </ul>
-      </div>
-   
+  <footer class="bg-light py-4">
+    <div class="container text-center">
+      <p class="mb-1"><strong>DevTechSoft</strong> — Freelance web & software developer delivering digital solutions in Coimbatore.</p>
+      <p class="mb-1">&copy; 2025 DevTechSoft. All rights reserved. Visit <a href="https://devtechsoft.in">devtechsoft.in</a></p>
+      <div>Contact: <a href="mailto:devtechsoft5@gmail.com">devtechsoft5@gmail.com</a> | Saibaba Colony, Coimbatore, TN 641011</div>
     </div>
   </footer>
 
-  <!-- JS Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.getElementById('darkMode-icon').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-    document.getElementById('menu-icon').addEventListener('click', () => {
-      document.querySelector('.navbar').classList.toggle('active');
-    });
+    // Enable validation & WhatsApp form workflow
+    (function(){
+      'use strict';
+      const collegeSelect = document.getElementById('collegeSelect');
+      const otherDiv = document.getElementById('otherCollegeDiv');
+      collegeSelect.addEventListener('change', () => new bootstrap.Collapse(otherDiv, {toggle: collegeSelect.value==='Other'}));
+
+      const orderForm = document.getElementById('orderForm');
+      orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!orderForm.checkValidity()) {
+          orderForm.classList.add('was-validated');
+          return;
+        }
+        const name = encodeURIComponent(orderForm.studentName.value.trim());
+        const phone = orderForm.phoneNumber.value.trim();
+        const college = encodeURIComponent(collegeSelect.value==='Other' ? document.getElementById('otherCollege').value.trim() : collegeSelect.value);
+        const details = encodeURIComponent(orderForm.projectDetails.value.trim());
+        window.open(`https://wa.me/91${phone}?text=Name:${name}%0APhone:${phone}%0ACollege:${college}%0AProject:${details}`, '_blank');
+        bootstrap.Modal.getInstance(document.getElementById('orderModal')).hide();
+      });
+
+      document.querySelectorAll('form.needs-validation').forEach(form => {
+        form.addEventListener('submit', e => {
+          if (!form.checkValidity()) {
+            e.preventDefault(); e.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        });
+      });
+    })();
   </script>
-  <script src="script.js"></script>
 </body>
 </html>
