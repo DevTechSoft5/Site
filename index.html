@@ -1,102 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <title>DevTechSoft – Freelance Web & Software Developer | Coimbatore</title>
 
   <!-- SEO Meta Tags -->
-  <title>DevTechSoft - Expert Web Development and Software Developer in Saibaba Colony, Coimbatore</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="mainlogo.png" type="image/x-icon" />
-
-  <meta name="description"
-    content="DevTechSoft offers expert web development, SEO services, video editing, advertisement videography, and custom software solutions in Saibaba Colony, Coimbatore. Explore our portfolio showcasing proficiency in React, Python, and Flutter development." />
-  <meta name="keywords"
-    content="DevTechSoft, web development Coimbatore, SEO services Saibaba Colony, video editing Coimbatore, advertisement videography Tamil Nadu, software solutions Coimbatore, React development Coimbatore, Python development Saibaba Colony, Flutter app development Tamil Nadu, responsive web design Coimbatore, custom app development Saibaba Colony, scalable software solutions Tamil Nadu, mobile app development Coimbatore" />
+  <meta name="description" content="DevTechSoft is a passionate freelance developer offering web, mobile app, SEO, video editing & software solutions in Coimbatore." />
+  <meta name="keywords" content="DevTechSoft, freelance developer Coimbatore, React, Python, Flutter, SEO, video editing, Saibaba Colony" />
   <meta name="author" content="DevTechSoft" />
   <meta name="robots" content="index, follow" />
   <meta name="geo.region" content="IN-TN" />
   <meta name="geo.placename" content="Coimbatore" />
   <meta name="geo.position" content="11.0168;76.9558" />
-
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://www.devtechsoft.in/" />
 
-  <!-- Swiper CSS -->
+  <!-- Favicon -->
+  <link rel="icon" href="mainlogo.png" type="image/x-icon" />
+
+  <!-- External CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-  <!-- Box Icons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Custom Inline CSS -->
   <style>
+    /* Responsive adjustments for Home section */
     @media (max-width: 768px) {
-      .home-content {
-        flex-direction: column !important;
-      }
-
-      .home-image {
-        order: -1;
-      }
+      .home-content { flex-direction: column !important; }
+      .home-image { order: -1; }
     }
 
-    /* Footer styles */
-    .footer-text a {
-      color: #4da6ff;
-      text-decoration: none;
-    }
+    /* Footer link styles */
+    .footer-text a { color: #4da6ff; text-decoration: none; }
+    .footer-text a:hover { text-decoration: underline; }
+    .footer-links h4 { margin-bottom:10px; color:#ffcc00; font-size:18px; }
+    .footer-links ul { list-style:none; padding:0; margin:0; }
+    .footer-links li { margin:6px 0; }
+    .footer-links a { color:#ccc; text-decoration:none; font-size:15px; transition:color .3s; }
+    .footer-links a:hover { color:#fff; }
 
-    .footer-text a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-links h4 {
-      margin-bottom: 10px;
-      color: #ffcc00;
-      font-size: 18px;
-    }
-
-    .footer-links ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-links li {
-      margin: 6px 0;
-    }
-
-    .footer-links a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 15px;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
+    /* Footer flex structure on desktop */
     @media (min-width: 768px) {
-      .footer-container {
-        flex-direction: row;
-        justify-content: space-around;
-        text-align: left;
-      }
+      .footer-container { flex-direction: row; justify-content: space-around; text-align: left; }
+    }
+
+    /* Announcement pills in footer */
+    .footer-announcement ul {
+      list-style:none; padding:0;
+      display:flex; flex-wrap:wrap; gap:18px;
+      justify-content:center;
+    }
+    .footer-announcement ul li a {
+      color:#6a0dad;
+      background-color:#fff;
+      border-radius:25px;
+      padding:8px 15px;
+      font-weight:600;
+      font-size:1.1rem;
+      box-shadow:0 2px 8px rgba(106,13,173,0.25);
+      transition: all .3s ease;
+      display:inline-flex; align-items:center;
+    }
+    .footer-announcement ul li a:hover {
+      background-color:#6a0dad; color:#fff;
+      box-shadow:0 4px 12px rgba(106,13,173,0.5);
+      transform: scale(1.05);
     }
   </style>
 </head>
 
 <body>
+  <!-- Header -->
   <header class="header">
-    <img src="mainlogo.png" alt="Dev Techsoft Logo" class="logo-img" height="25" width="40" />
-    <a href="#" class="logo">&nbsp;DevTechSoft</a>
-
+    <img src="mainlogo.png" alt="DevTechSoft Logo" class="logo-img" width="40" height="25" />
+    <a href="#" class="logo">DevTechSoft</a>
     <nav class="navbar">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
@@ -104,336 +84,219 @@
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
-
-    <div class="bx bx-moon" id="darkMode-icon"></div>
-    <div class="bx bx-menu" id="menu-icon"></div>
+    <div class='bx bx-moon' id='darkMode-icon'></div>
+    <div class='bx bx-menu' id='menu-icon'></div>
   </header>
 
   <!-- Home Section -->
-  <section class="home" id="home" style="padding: 50px 20px; background-color: #f9f9f9;">
-    <div class="home-content"
-      style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: auto; flex-direction: row;">
-      <!-- Image -->
-      <div class="home-image"
-        style="flex: 1 1 300px; padding: 20px; display: flex; justify-content: center; align-items: center;">
-        <img src="https://devtechsoft.in/mainlogo.png" alt="DevTechSoft Logo"
-          style="max-width: 8cm; height: 5cm; border-radius: 8px;" />
+  <section id="home" class="home" style="padding:50px 20px; background:#f9f9f9">
+    <div class="home-content" style="max-width:1200px; margin:auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap">
+      <div class="home-image" style="flex:1 1 300px; padding:20px; display:flex; justify-content:center; align-items:center">
+        <img src="https://devtechsoft.in/mainlogo.png" alt="DevTechSoft Logo" style="max-width:8cm; height:5cm; border-radius:8px" />
       </div>
-
-      <!-- Text -->
-<!-- Text -->
-<div class="home-text" style="flex: 1 1 500px; padding: 20px;">
-  <h3 style="font-size: 30px; margin-bottom: 10px; color: #333;">Hello,</h3>
-  <h1 style="font-size: 42px; margin-bottom: 20px; color: #5a2a83; font-weight: 700;">DevTechSoft</h1>
-  <p style="font-size: 16px; margin-bottom: 15px; text-align: justify; color: #444; line-height: 1.6;">
-    A passionate freelance web and software developer, building websites, mobile apps, and software
-    solutions for clients to meet their business needs.
-  </p>
-  <p style="font-size: 16px; text-align: justify; color: #444; line-height: 1.6;">
-    We are passionate tech freelancers specializing in building websites, applications, and delivering digital marketing solutions that prioritize exceptional user experiences. With over five years of freelancing expertise, we have successfully crafted software and app solutions for businesses across diverse industries, empowering their growth and success. Our skills cover web development, mobile app creation, and bespoke software tailored to meet the specific needs of each business.
-  </p>
-  <p style="font-size: 16px; text-align: justify; color: #444; line-height: 1.6; margin-bottom: 25px;">
-    Driven by innovation, creativity, and technology-focused strategies, we design seamless digital experiences that are both scalable and user-friendly.
-  </p>
-  <p>
-    <a href="https://www.instagram.com/devtechsoft_/" target="_blank" class="text-purple fs-3 mx-2" aria-label="Instagram" style="color: #833ab4; font-size: 38px; transition: color 0.3s;">
-      <i class='bx bxl-instagram'></i>
-    </a>
-  </p>
-</div>
-
-
-
-
-
-
+      <div class="home-text" style="flex:1 1 500px; padding:20px">
+        <h3 style="font-size:30px; margin-bottom:10px; color:#333">Hello,</h3>
+        <h1 style="font-size:42px; margin-bottom:20px; color:#5a2a83; font-weight:700">DevTechSoft</h1>
+        <p style="font-size:16px; margin-bottom:15px; color:#444; line-height:1.6; text-align:justify">
+          A passionate freelance web and software developer, building websites, mobile apps, and software solutions for clients and college students.
+        </p>
+        <p style="font-size:16px; margin-bottom:15px; color:#444; line-height:1.6; text-align:justify">
+          With over five years of freelancing expertise, I've crafted software and app solutions for businesses and students alike. My skills span web development, mobile apps, custom software, SEO, video editing, and advertisement videography.
+        </p>
+        <p style="font-size:16px; margin-bottom:25px; color:#444; line-height:1.6; text-align:justify">
+          Driven by innovation, creativity, and user-centric design, I build scalable, high-performance digital experiences suited to individual clients.
+        </p>
+        <a href="https://www.instagram.com/devtechsoft_/" target="_blank" aria-label="Instagram" style="color:#833ab4; font-size:38px">
+          <i class='bx bxl-instagram'></i>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="about" id="about" style="max-width: 1200px; margin: auto; padding: 50px 20px;">
-    <div class="about-content">
-      <h2 class="heading">About <span>Us</span></h2>
-      <p style="text-align: justify;">
-        We are tech freelancers with a passion for building websites, applications, and providing digital marketing
-        solutions that offer a great user experience. With over 5 years of experience as a freelancer, we have
-        successfully delivered software and app solutions to businesses across various industries, helping them grow
-        and succeed. Our expertise spans across web development, mobile app creation, and custom software solutions
-        tailored to meet unique business needs. We believe in innovation, creativity, and technology-driven strategies
-        to craft seamless digital experiences. We are committed to delivering high-quality, scalable, and user-friendly
-        products that enhance business operations and customer engagement. Whether you're a freelancer or an established
-        enterprise, we ensure your digital presence stands out in today’s competitive market. Our team continuously
-        adapts to the latest trends and technologies, ensuring our clients receive cutting-edge solutions that drive
-        results. Partner with us to transform your ideas into reality and achieve long-term success in the digital
-        landscape.
-      </p>
-
-      <a href="#" class="btn">Read More</a>
-    </div>
+  <section id="about" class="about" style="max-width:1200px; margin:auto; padding:50px 20px">
+    <h2 class="heading">About <span>Me</span></h2>
+    <p style="text-align:justify; line-height:1.6">
+      I'm a freelance tech specialist with 5+ years of experience building websites, applications, and digital marketing solutions. I’ve delivered professional projects to businesses and educational solutions for students. My focus is on delivering quality, performance, and an exceptional user experience. Whether you're a client or learner, I tailor strategies to suit your objectives using the latest technologies.
+    </p>
+    <a href="#" class="btn">Read More</a>
   </section>
 
   <!-- Demo Projects -->
-  <section class="demo-projects" id="demo-projects" style="max-width: 1200px; margin: auto; padding: 50px 20px;">
+  <section id="demo-projects" class="demo-projects" style="max-width:1200px; margin:auto; padding:50px 20px">
     <h2 class="heading">Demo <span>Projects</span></h2>
-    <div style="padding-top: 50px; text-align: center;">
-      <a href="https://sdtechsoft.html-5.me/book/index.html" class="btn" style="margin-right: 20px;">Salon Booking</a>
+    <div style="text-align:center; padding-top:50px">
+      <a href="https://sdtechsoft.html-5.me/book/index.html" class="btn" style="margin-right:20px">Salon Booking</a>
       <a href="https://sdtechsoft.html-5.me/construction/index.html" class="btn">Construction Booking</a>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section class="services" id="services" style="max-width: 1200px; margin: auto; padding: 50px 20px;">
-    <h2 class="heading">Our <span>Services</span></h2>
-
-    <div class="services-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-      <div class="services-box" style="flex: 1 1 300px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; text-align:center;">
-        <i class='bx bx-code-alt' style="font-size: 40px; color: #007bff;"></i>
+  <section id="services" class="services" style="max-width:1200px; margin:auto; padding:50px 20px">
+    <h2 class="heading">Services</h2>
+    <div class="services-container" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center">
+      <!-- Each service box -->
+      <!-- Web Development -->
+      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
+        <i class='bx bx-code-alt' style="font-size:40px; color:#007bff"></i>
         <h3>Web Development</h3>
-        <p>Building responsive and modern websites using HTML, CSS, JavaScript, and React. From landing pages to
-          complex web applications.</p>
+        <p>Responsive websites and web apps using HTML, CSS, JS, React.</p>
       </div>
-      <div class="services-box" style="flex: 1 1 300px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; text-align:center;">
-        <i class='bx bx-mobile' style="font-size: 40px; color: #007bff;"></i>
+
+      <!-- App Development -->
+      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
+        <i class='bx bx-mobile' style="font-size:40px; color:#007bff"></i>
         <h3>App Development</h3>
-        <p>Creating scalable mobile apps using Flutter and React Native for both Android and iOS platforms,
-          ensuring smooth performance.</p>
+        <p>Scalable mobile apps with Flutter & React Native.</p>
       </div>
-      <div class="services-box" style="flex: 1 1 300px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; text-align:center;">
-        <i class='bx bxl-python' style="font-size: 40px; color: #007bff;"></i>
+
+      <!-- Software Development -->
+      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
+        <i class='bx bxl-python' style="font-size:40px; color:#007bff"></i>
         <h3>Software Development</h3>
-        <p>Custom software solutions to meet business needs, including desktop and cloud-based applications,
-          using Python and Java.</p>
+        <p>Custom desktop & cloud apps using Python and Java.</p>
       </div>
-      <div class="services-box" style="flex: 1 1 300px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; text-align:center;">
-        <i class='bx bx-line-chart' style="font-size: 40px; color: #007bff;"></i>
+
+      <!-- SEO Services -->
+      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
+        <i class='bx bx-line-chart' style="font-size:40px; color:#007bff"></i>
         <h3>SEO Services</h3>
-        <p>Providing search engine optimization (SEO) strategies to improve your website’s visibility, increase
-          organic traffic, and enhance your search rankings on Google.</p>
+        <p>Boost your visibility, traffic & rankings on Google.</p>
       </div>
-      <div class="services-box" style="flex: 1 1 300px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; text-align:center;">
-        <i class='bx bx-video' style="font-size: 40px; color: #007bff;"></i>
+
+      <!-- Video Editing -->
+      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
+        <i class='bx bx-video' style="font-size:40px; color:#007bff"></i>
         <h3>Video Editing</h3>
-        <p>Professional video editing services for promotional content, social media posts, and ads, using advanced
-          tools for smooth, engaging visuals.</p>
+        <p>Professional editing for promotional & social media videos.</p>
       </div>
-      <div class="services-box" style="flex: 1 1 300px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; text-align:center;">
-        <i class='bx bxl-youtube' style="font-size: 40px; color: #007bff;"></i>
+
+      <!-- Advertisement Videography -->
+      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
+        <i class='bx bxl-youtube' style="font-size:40px; color:#007bff"></i>
         <h3>Advertisement Videography</h3>
-        <p>Creating high-quality video ads for brands, products, and services that resonate with target audiences across
-          various platforms like YouTube, Instagram, and Facebook.</p>
+        <p>High-quality video ads for platforms like YouTube & Instagram.</p>
       </div>
-      <div class="services-box" style="flex: 1 1 300px; padding: 20px; border: 1px solid #ddd; border-radius: 8px; text-align:center;">
-        <i class='bx bx-camera' style="font-size: 40px; color: #007bff;"></i>
+
+      <!-- General Videography -->
+      <div class="services-box" style="flex:1 1 300px; padding:20px; border:1px solid #ddd; border-radius:8px; text-align:center">
+        <i class='bx bx-camera' style="font-size:40px; color:#007bff"></i>
         <h3>Videography</h3>
-        <p>Offering full videography services for events, business promotions, and social media content, ensuring
-          professional quality and impactful storytelling.</p>
+        <p>Event & promotional videography with professional storytelling.</p>
       </div>
     </div>
   </section>
 
   <!-- Portfolio Section -->
-  <section class="portfolio" id="portfolio" style="max-width: 1200px; margin: auto; padding: 50px 20px;">
-    <h2 class="heading">Our <span>Projects</span></h2>
-
-    <div class="portfolio-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+  <section id="portfolio" class="portfolio" style="max-width:1200px; margin:auto; padding:50px 20px">
+    <h2 class="heading">Projects</h2>
+    <div class="portfolio-container" style="display:grid; gap:20px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">
+      <!-- Portfolio items (repeat as needed) -->
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
         <h4>SKASC College Website</h4>
-        <p>Developed a responsive and user-friendly website for SKASC College, featuring a content management system and
-          interactive features for students and faculty.</p>
+        <p>A responsive CMS website for students & faculty.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
-        <h4>Translation Tool for Website</h4>
-        <p>Built a translation tool integrated into websites, allowing users to switch between multiple languages,
-          enhancing the user experience for diverse audiences.</p>
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
+        <h4>Translation Tool</h4>
+        <p>Multi-language website translation integration.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
         <h4>PC Voice Assistant</h4>
-        <p>Created a voice-activated assistant for PCs that automates tasks such as opening applications, sending emails,
-          and performing searches using voice commands.</p>
+        <p>Voice-activated assistant for automation & productivity.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
-        <h4>OD Generator Website for Students</h4>
-        <p>Developed a website for students to generate on-demand certificates, allowing institutions to streamline the
-          process of generating various student documents.</p>
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
+        <h4>OD Certificate Generator</h4>
+        <p>Streamlined platform for student document generation.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
-        <h4>Mobile Shopping Website</h4>
-        <p>Designed and developed a mobile shopping website with an intuitive user interface, dynamic product listings,
-          and secure payment integration.</p>
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
+        <h4>Mobile Shop Website</h4>
+        <p>Mobile-first site with dynamic listings & secure payments.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
-        <h4>Food Ordering Website</h4>
-        <p>Created a food ordering platform where users can browse menus, place orders, and track deliveries in real
-          time, providing a seamless user experience for both customers and restaurants.</p>
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
+        <h4>Food Ordering Platform</h4>
+        <p>Real-time food ordering & tracking platform.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
-        <h4>Appointment Booking Website</h4>
-        <p>Developed an appointment booking system with dynamic pricing, allowing users to book various services such as
-          haircuts and spa treatments, with automatic confirmation and reminders.</p>
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
+        <h4>Appointment Booking System</h4>
+        <p>Automated booking, pricing, confirmations & reminders.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
         <h4>Learning Android App</h4>
-        <p>Developed a Learning Android App allowing users to attend quizzes and see the score, with content to learn
-          under various topics with source code and interactive features.</p>
+        <p>Quizzes and interactive learning app for Android.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
-        <h4>Stock Market Sentiment Analysis and Future Price Prediction using Machine Learning</h4>
-        <p>Developed a Stock Market Sentiment Analysis and Future Price Prediction using Machine Learning Dashboard for
-          users to better understand the market.</p>
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
+        <h4>Stock Market ML Dashboard</h4>
+        <p>Sentiment analysis & future price prediction tool.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
-        <h4>Web Application</h4>
-        <p>Built a fully responsive e-commerce website using React and Node.js for a clothing brand.</p>
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
+        <h4>React E‑Commerce Site</h4>
+        <p>Fully responsive clothing brand storefront.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
-        <h4>Flutter Application</h4>
-        <p>Created a mobile application with Flutter for an event management company with live updates and ticketing
-          system.</p>
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
+        <h4>Event Flutter App</h4>
+        <p>Live ticketing & updates for event management.</p>
       </div>
-      <div class="portfolio-layer" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
-        <h4>Python Application</h4>
-        <p>Developed Python scripts for automation and data analysis tailored to business needs, increasing operational
-          efficiency.</p>
+      <div class="portfolio-layer" style="padding:20px; border:1px solid #ddd; border-radius:8px">
+        <h4>Python Automation Script</h4>
+        <p>Custom data analysis & automation solution.</p>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="contact" id="contact" style="max-width: 1200px; margin: auto; padding: 50px 20px;">
-    <h2 class="heading">Contact <span>Us</span></h2>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-     
-      <form action="#" method="post" style="flex: 1 1 400px; display: flex; flex-direction: column; gap: 15px;">
-        <input type="text" name="name" placeholder="Name" required style="padding: 10px; font-size: 16px;" />
-        <input type="email" name="email" placeholder="Email" required style="padding: 10px; font-size: 16px;" />
-        <input type="tel" name="phone" placeholder="Phone Number" required style="padding: 10px; font-size: 16px;" />
-        <textarea name="message" rows="5" placeholder="Message" required style="padding: 10px; font-size: 16px;"></textarea>
-        <button type="submit" class="btn" style="border-radius:30px;padding: 12px; font-size: 18px; background-color: #7044ff; color: white; border: none; border-radius: 5px; cursor: pointer;">Send
-          Message</button>
-      </form>
-    </div>
+  <section id="contact" class="contact" style="max-width:1200px; margin:auto; padding:50px 20px">
+    <h2 class="heading">Contact <span>Me</span></h2>
+    <form action="#" method="post" style="display:flex; flex-direction:column; max-width:400px; gap:15px; margin:auto">
+      <input type="text" name="name" placeholder="Name" required style="padding:10px; font-size:16px" />
+      <input type="email" name="email" placeholder="Email" required style="padding:10px; font-size:16px" />
+      <input type="tel" name="phone" placeholder="Phone Number" required style="padding:10px; font-size:16px" />  
+      <textarea name="message" rows="5" placeholder="Message" required style="padding:10px; font-size:16px"></textarea>
+      <button type="submit" style="padding:12px; font-size:18px; color:#fff; background:#7044ff; border:none; border-radius:5px; cursor:pointer">
+        Send Message
+      </button>
+    </form>
   </section>
-  <!-- Footer --> 
+
+  <!-- Footer -->
+  <footer class="footer" style="background:#222; color:#ccc; padding:40px 20px">
+    <div class="footer-container" style="display:flex; flex-wrap:wrap; gap:30px; text-align:center; max-width:1200px; margin:auto; flex-direction:column">
+      <div class="footer-text">
+        <h3>DevTechSoft</h3>
+        <p>Freelance web & software developer delivering digital solutions in Coimbatore.<br>
+          &copy; 2025 DevTechSoft. All rights reserved.</p>
+        <p>Visit at <a href="https://www.devtechsoft.in" target="_blank">devtechsoft.in</a></p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact Info</h4>
+        <ul>
+          <li>Email: <a href="mailto:devtechsoft5@gmail.com">devtechsoft5@gmail.com</a></li>
+          <li>Saibaba Colony, Coimbatore, TN 641011</li>
+        </ul>
+      </div>
    
-  <footer class="footer" style="background-color: #222; color: #ccc; padding: 40px 20px;">
-  <div class="footer-container" style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 30px; text-align: center; flex-direction: column;">
-
-    <div class="footer-text" style="flex: 1;">
-      <h3>DevTechSoft</h3>
-      <p>
-        Providing expert web development, software solutions, SEO services, and videography in Coimbatore and beyond. &copy; 2025 DevTechSoft. All rights reserved.
-      </p>
-      <p>Visit us at <a href="https://www.devtechsoft.in" target="_blank" rel="noopener noreferrer">devtechsoft.in</a></p>
     </div>
+  </footer>
 
-    <div class="footer-links" style="flex: 1;">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-links" style="flex: 1;">
-      <h4>Contact</h4>
-      <ul>
-        <li>Email: <a href="mailto:devtechsoft5@gmail.com">devtechsoft5@gmail.com</a></li>
-        <li>Address: Saibaba Colony, Coimbatore, Tamil Nadu 641011</li>
-      </ul>
-    </div>
-
-  <style>
-  /* Footer announcement pills styling */
-  .footer-announcement ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px; /* slightly bigger gap */
-  }
-  .footer-announcement ul li a {
-    color: #6a0dad; /* purple text */
-    background-color: white;
-    border-radius: 25px;
-    padding: 8px 15px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 2px 8px rgba(106, 13, 173, 0.25); /* subtle purple glow */
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    font-size: 1.1rem; /* slightly bigger text */
-    display: inline-flex;
-    align-items: center;
-  }
-  .footer-announcement ul li a:hover,
-  .footer-announcement ul li a:focus {
-    background-color: #6a0dad;
-    color: white;
-    box-shadow: 0 4px 12px rgba(106, 13, 173, 0.5);
-    transform: scale(1.05);
-  }
-</style>
-
-<footer class="footer" style="background-color: #222; color: #ccc; padding: 40px 20px;">
-  <div class="footer-container" style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 30px; text-align: center; flex-direction: column;">
-
-    <!-- ... other footer content ... -->
-
-    <!-- New Project Announcement -->
-    <div class="footer-announcement" style="flex: 1; margin-top: 30px; text-align: center; color: #fff;">
-      <h2>New Project Launched!</h2>
-      <p>Check out the best mobiles under different price ranges:</p>
-      <ul>
-        <li><a href="best-mobile-under-10000.html">Best Mobile Under 10k</a></li>
-        <li><a href="best-mobile-under-20000.html">Best Mobile Under 20k</a></li>
-        <li><a href="best-mobile-under-30000.html">Best Mobile Under 30k</a></li>
-        <li><a href="best-mobile-under-40000.html">Best Mobile Under 40k</a></li>
-        <li><a href="best-mobile-under-50000.html">Best Mobile Under 50k</a></li>
-        <li><a href="best-mobile-under-75000.html">Best Mobile Under 75k</a></li>
-        <li><a href="best-mobile-under-100000.html">Best Mobile Under 1 Lakh</a></li>
-        <li><a href="best-mobile-under-150000.html">Best Mobile Under 1.5 Lakh</a></li>
-      </ul>
-    </div>
-
-  </div>
-</footer>
-
-
-  <!-- Scripts -->
+  <!-- JS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
-    // Example dark mode toggle
-    const darkModeIcon = document.getElementById('darkMode-icon');
-    darkModeIcon.addEventListener('click', () => {
+    document.getElementById('darkMode-icon').addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
-
-    // Menu toggle for mobile
-    const menuIcon = document.getElementById('menu-icon');
-    const navbar = document.querySelector('.navbar');
-    menuIcon.addEventListener('click', () => {
-      navbar.classList.toggle('active');
+    document.getElementById('menu-icon').addEventListener('click', () => {
+      document.querySelector('.navbar').classList.toggle('active');
     });
   </script>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
-
-
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8DL3QEQ44S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8DL3QEQ44S');
-</script>
-
-        
-    </html>
-
+</html>
