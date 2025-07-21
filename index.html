@@ -508,17 +508,23 @@
   margin-bottom: 1.7rem;
 }
 
-/* Responsive Stacking for mobile */
 @media (max-width: 700px) {
   .project-options-container {
-    flex-direction: column;
-    gap: 0.7rem;           /* Reduced gap */
+    flex-direction: row;   /* Keep two boxes side-by-side */
+    gap: 1rem;             /* Smaller gap for reduced total height */
+    flex-wrap: nowrap;     /* Prevent boxes from stacking vertically */
+    justify-content: center;
   }
   .project-option-box {
-    max-width: 100%;
-    padding: 0.7rem 0.7rem; /* Reduced padding on mobile */
+    max-width: 48%;        /* Fit both boxes side by side */
+    padding: 1rem 0.8rem;  /* Less padding for smaller height */
+    margin: 0;
   }
 }
+
+
+
+
 
 
   .btn-glow {
