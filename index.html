@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -440,28 +441,86 @@
     <h1>DevTechSoft</h1>
     <p>A passionate freelance web and software developer, building websites, mobile apps, and software solutions for clients to meet their business needs. Our skills cover web development, mobile app creation, and  software tailored to meet the specific needs of each business.
     </p>
-<div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; text-align: center;">
-
-  <!-- College Projects Section -->
-  <div style="flex: 1; min-width: 250px;">
-    <p style="margin-bottom: 1rem;"> College Projects click below</p>
+<!-- BEGIN: Project Options Two Boxes -->
+<div class="project-options-container">
+  <!-- College Projects Box -->
+  <div class="project-option-box">
+    <h3>College Projects</h3>
+    <p>Order projects quickly with support for all Coimbatore colleges.</p>
     <a href="https://wa.me/+917904314494?text=Hi%2C%20I'm%20interested%20in%20a%20college%20project" target="_blank">
-      <button class="btn-glow">College Projects - Order Now</button>
+      <button class="btn-glow">Order College Project</button>
     </a>
   </div>
-
-  <!-- Professional Projects Section -->
-  <div style="flex: 1; min-width: 250px;">
-    <p style="margin-bottom: 1rem;">Professional Projects click below</p>
+  <!-- Professional Projects Box -->
+  <div class="project-option-box">
+    <h3>Professional Projects</h3>
+    <p>Get full-fledged professional business apps and websites for your business. </p>
     <a href="https://wa.me/+917904314494?text=Hi%2C%20I'm%20interested%20in%20a%20professional%20app%20or%20website%20project" target="_blank">
-      <button class="btn-glow">Professional Projects - Order Now</button>
+      <button class="btn-glow">Order Professional Project</button>
     </a>
   </div>
-
 </div>
+
 
 <!-- Glowing Button CSS -->
 <style>
+
+.project-options-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.2rem;
+  margin: 2rem auto 2.5rem auto;
+  max-width: 820px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.project-option-box {
+  background: #ffffff;
+ 
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,119,255,0.08);
+  flex: 1 1 330px;
+  min-width: 270px;
+  max-width: 390px;
+  padding: 2.2rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #e5efff;
+  transition: box-shadow 0.3s;
+}
+.project-option-box:hover {
+  box-shadow: 0 8px 32px rgba(0,119,255,0.16);
+  border-color: #0077ff33;
+}
+.project-option-box h3 {
+  color: #0077ff;
+  margin-bottom: 0.9rem;
+  font-size: 1.37rem;
+  font-weight: 700;
+}
+.project-option-box p {
+  color: #333;
+  font-size: 1.07rem;
+  font-weight: 500;
+  margin-bottom: 1.7rem;
+}
+
+/* Responsive Stacking for mobile */
+@media (max-width: 700px) {
+  .project-options-container {
+    flex-direction: column;
+    gap: 0.7rem;           /* Reduced gap */
+  }
+  .project-option-box {
+    max-width: 100%;
+    padding: 0.7rem 0.7rem; /* Reduced padding on mobile */
+  }
+}
+
+
   .btn-glow {
     background-color: #4CAF50;
     border: none;
