@@ -440,18 +440,47 @@
     <h1>DevTechSoft</h1>
     <p>A passionate freelance web and software developer, building websites, mobile apps, and software solutions for clients to meet their business needs. Our skills cover web development, mobile app creation, and  software tailored to meet the specific needs of each business.
     </p>
-    <div style="text-align: center; margin-top: 2rem;">
-      
-  <div style="display: flex; justify-content: center; align-items: center;  ">
- 
-  <p style="margin-bottom: 1rem;">College Projects – For custom orders click below</p>
-  </div><button class="btn-glow" id="orderNowBtn">College Projects - Order Now</button>  
+<div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; text-align: center;">
 
-      
-  <p style="margin-bottom: 1rem;">Professional Projects – For custom orders click below</p>
-  </div><a href="https://wa.me/+917904314494?text=Hi%2C%20I'm%20interested%20in%20a%20custom%20app%20or%20website%20project" target="_blank">
-<button class="btn-glow" id="orderNowBtn">Professional Projects - Order Now</button>  </a>
+  <!-- College Projects Section -->
+  <div style="flex: 1; min-width: 250px;">
+    <p style="margin-bottom: 1rem;">🎓 College Projects – For custom orders click below</p>
+    <a href="https://wa.me/+917904314494?text=Hi%2C%20I'm%20interested%20in%20a%20college%20project" target="_blank">
+      <button class="btn-glow">College Projects - Order Now</button>
+    </a>
+  </div>
+
+  <!-- Professional Projects Section -->
+  <div style="flex: 1; min-width: 250px;">
+    <p style="margin-bottom: 1rem;">💼 Professional Projects – For custom orders click below</p>
+    <a href="https://wa.me/+917904314494?text=Hi%2C%20I'm%20interested%20in%20a%20professional%20app%20or%20website%20project" target="_blank">
+      <button class="btn-glow">Professional Projects - Order Now</button>
+    </a>
+  </div>
+
 </div>
+
+<!-- Glowing Button CSS -->
+<style>
+  .btn-glow {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #4CAF50, 0 0 20px #4CAF50;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 20px #45a049, 0 0 30px #45a049;
+    transform: scale(1.05);
+  }
+</style>
+
 <!-- Order Now Popup Modal -->
 <!-- Order Now Popup Modal -->
 <div id="orderModal" class="modal-overlay">
