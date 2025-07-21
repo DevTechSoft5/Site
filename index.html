@@ -523,6 +523,21 @@
   }
 }
 
+@media (max-width: 700px) {
+  .project-options-container {
+    flex-direction: column;   /* Stack boxes vertically */
+    gap: 0.7rem;              /* Space between stacked boxes */
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;     /* Make boxes fill container width */
+    max-width: 100%;
+  }
+  .project-option-box {
+    max-width: 100%;          /* Full width on mobile */
+    padding: 0.7rem 0.7rem;   /* Reduced padding for compactness */
+    margin: 0 auto;
+  }
+}
 
 
 
