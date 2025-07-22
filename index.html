@@ -409,6 +409,56 @@
         display: block;
       }
     }
+
+    
+.project-options-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2.2rem;
+  margin: 2rem auto 2.5rem auto;
+  max-width: 820px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.project-option-box {
+  background: #ffffff;
+ 
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,119,255,0.08);
+  flex: 1 1 330px;
+  min-width: 270px;
+  max-width: 390px;
+  padding: 2.2rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #e5efff;
+  transition: box-shadow 0.3s;
+}
+.project-option-box:hover {
+  box-shadow: 0 8px 32px rgba(0,119,255,0.16);
+  border-color: #0077ff33;
+}
+.project-option-box h3 {
+  color: #0077ff;
+  margin-bottom: 0.9rem;
+  font-size: 1.37rem;
+  font-weight: 700;
+}
+.project-option-box p {
+  color: #333;
+  font-size: 1.07rem;
+  font-weight: 500;
+  margin-bottom: 1.7rem;
+}
+
+
+
+
+
+
   </style>
 </head>
 <body>
@@ -511,21 +561,7 @@
  
 
 
-@media (max-width: 700px) {
-  .project-options-container {
-    flex-direction: column;   /* Stack boxes vertically */
-    gap: 0.7rem;              /* Space between stacked boxes */
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: stretch;     /* Make boxes fill container width */
-    max-width: 100%;
-  }
-  .project-option-box {
-    max-width: 100%;          /* Full width on mobile */
-    padding: 0.7rem 0.7rem;   /* Reduced padding for compactness */
-    margin: 0 auto;
-  }
-}
+
 
 
 
