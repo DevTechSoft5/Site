@@ -508,24 +508,24 @@
   font-weight: 500;
   margin-bottom: 1.7rem;
 }
+ 
+
 
 @media (max-width: 700px) {
   .project-options-container {
-    flex-direction: row;   /* Keep two boxes side-by-side */
-    gap: 1rem;             /* Smaller gap for reduced total height */
-    flex-wrap: nowrap;     /* Prevent boxes from stacking vertically */
+    flex-direction: column;   /* Stack boxes vertically */
+    gap: 0.7rem;              /* Space between stacked boxes */
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: stretch;     /* Make boxes fill container width */
+    max-width: 100%;
   }
   .project-option-box {
-    max-width: 48%;        /* Fit both boxes side by side */
-    padding: 1rem 0.8rem;  /* Less padding for smaller height */
-    margin: 0;
+    max-width: 100%;          /* Full width on mobile */
+    padding: 0.7rem 0.7rem;   /* Reduced padding for compactness */
+    margin: 0 auto;
   }
 }
-
-
-
-
 
 
 
