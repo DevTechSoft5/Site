@@ -501,10 +501,10 @@
   <div class="project-option-box">
     <h3>Book Virtual Training Class</h3>
     <p>Quickly book class for 30 days time span for placement training and full stack development.</p> 
-<button id="orderNowBtn" class="btn-glow">Book Now</button>
+<button id="trainingBtn" class="btn-glow"> Enroll Now</button>
+
  
-  </div>
-<!-- Placement Training Modal --><button class="btn-glow" onclick="openTrainingModal()">📘 Enroll Now</button>
+  </div> 
 <style>
 /* ===== Modal Base ===== */
 .modal {
@@ -650,6 +650,19 @@ form input:focus {
 
 <!-- ✅ Script for Form -->
 <script>
+
+
+  const orderBtn = document.getElementById('orderNowBtn');
+const modal = document.getElementById('orderModal');
+const closeModal = document.getElementById('closeModal');
+
+orderBtn.onclick = () => { modal.style.display = "flex"; }
+closeModal.onclick = () => { modal.style.display = "none"; }
+window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
+
+
+
+  
   const trainingModal = document.getElementById("trainingModal");
   const trainingBtn = document.getElementById("trainingBtn");
   const closeBtn = document.querySelector(".close");
