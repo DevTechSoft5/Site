@@ -47,14 +47,6 @@
     .hero h1 { font-size: 3rem; margin-bottom: 20px; animation: fadeInDown 1.2s ease; }
     .hero p { font-size: 1.3rem; margin-bottom: 30px; animation: fadeInUp 1.5s ease; }
 
-    .btn-glow {
-      display: inline-block; padding: 12px 25px; font-size: 1rem; font-weight: bold;
-      color: white; background: #ff5733; border: none; border-radius: 25px;
-      box-shadow: 0 0 15px rgba(255, 87, 51, 0.6);
-      cursor: pointer; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .btn-glow:hover { transform: scale(1.1); box-shadow: 0 0 25px rgba(255, 87, 51, 0.9); }
-
     section { padding: 60px 20px; text-align: center; }
     .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
     .service-card {
@@ -68,19 +60,6 @@
       background: #222; color: white; text-align: center; padding: 20px;
     }
     footer a { color: #1abc9c; margin: 0 10px; font-size: 1.2rem; }
-
-    /* Modal */
-    .modal {
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center;
-    }
-    .modal-content {
-      background: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px;
-      position: relative; text-align: center;
-    }
-    .close {
-      position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer; color: #333;
-    }
 
     /* Animations */
     @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
@@ -103,7 +82,10 @@
   <section class="hero">
     <h1>Freelance Web & Software Development</h1>
     <p>We build websites, apps, and software solutions that bring your ideas to life.</p>
+
+    <!-- ❌ Removed Order Now button (kept as comment for future use)
     <button class="btn-glow" id="orderNowBtn">Order College Project</button>
+    -->
   </section>
 
   <!-- About -->
@@ -152,7 +134,7 @@
     </div>
   </footer>
 
-  <!-- Modal -->
+  <!-- ❌ Removed Modal + Script (kept as comment for future use)
   <div id="orderModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -167,7 +149,6 @@
     </div>
   </div>
 
-  <!-- Script -->
   <script>
     const modal = document.getElementById("orderModal");
     const orderBtn = document.getElementById("orderNowBtn");
@@ -177,6 +158,8 @@
     closeBtn.onclick = () => { modal.style.display = "none"; }
     window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
   </script>
+  -->
 
 </body>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DL3QEQ44S"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8DL3QEQ44S'); </script>
 </html>
