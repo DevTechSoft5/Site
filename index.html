@@ -502,10 +502,115 @@
     <h3>Book Virtual Training Class</h3>
     <p>Quickly book class for 30 days time span for placement training and full stack development.</p> 
 <button id="orderNowBtn" class="btn-glow">Book Now</button>
-
-    </a>
+ 
   </div>
-<!-- Placement Training Modal -->
+<!-- Placement Training Modal --><button class="btn-glow" onclick="openTrainingModal()">📘 Enroll Now</button>
+<style>
+/* ===== Modal Base ===== */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+/* ===== Modal Content Box ===== */
+.modal-content {
+  background: #fff;
+  border-radius: 15px;
+  max-width: 500px;
+  width: 100%;
+  padding: 25px 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  animation: slideDown 0.4s ease;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close:hover {
+  color: #ff3333;
+  transform: scale(1.2);
+}
+
+/* ===== Form Elements ===== */
+form label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 6px rgba(0,119,255,0.3);
+}
+
+/* Button Glow */
+.btn-glow {
+  width: 100%;
+  background: linear-gradient(135deg, #0077ff, #00d4ff);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn-glow:hover {
+  background: linear-gradient(135deg, #005fcc, #00aaff);
+  box-shadow: 0 6px 15px rgba(0,119,255,0.4);
+  transform: translateY(-2px);
+}
+
+/* ===== Animations ===== */
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .modal-content {
+    max-width: 95%;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+</style>
+
 <div id="trainingModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
