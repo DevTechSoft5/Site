@@ -500,20 +500,87 @@
   <!-- College Projects Box -->
   <div class="project-option-box">
     <h3>Book Virtual Training Class</h3>
-    <p>Quickly book class for 30 days time span for placement training and full stack development.</p>
-    <a href="https://wa.me/+917904314494?text=Hi%2C%20I'm%20interested%20in%20a%20college%20project" target="_blank">
-      <button class="btn-glow">Order College Project</button>
-    </a>
-  </div>
+    <p>Quickly book class for 30 days time span for placement training and full stack development.</p> 
+<button id="orderNowBtn" class="btn-glow">Book Now</button>
 
-  <!-- College Projects Box -->
-  <div class="project-option-box">
-    <h3>College Projects</h3>
-    <p>Order projects quickly with support for all Coimbatore colleges.</p>
-    <a href="https://wa.me/+917904314494?text=Hi%2C%20I'm%20interested%20in%20a%20college%20project" target="_blank">
-      <button class="btn-glow">Order College Project</button>
     </a>
   </div>
+<!-- Placement Training Modal -->
+<div id="trainingModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>📘 30-Day Online Virtual Placement Training</h2>
+    <p>Our intensive training is flexible for students with exams. You’ll complete the full 30-day program without missing classes.</p>
+    <h3>What’s Included:</h3>
+    <ul>
+      <li>✅ Aptitude & Reasoning Practice</li>
+      <li>✅ Full-Stack Web Development (HTML, CSS, JS, PHP, SQL)</li>
+      <li>✅ Resume Building</li>
+    </ul>
+    <p><strong>Flexible Timings:</strong> Sessions are adjusted around your exams and personal schedule.</p>
+    <p><strong>Duration:</strong> 30 Days (Flexible)</p>
+    <p>📩 To enroll, fill the form below 👇</p>
+
+    <!-- ✅ Added Booking Form -->
+    <form id="bookingForm">
+      <label>Full Name:</label><br>
+      <input type="text" id="name" required><br><br>
+
+      <label>College:</label><br>
+      <input type="text" id="college" required><br><br>
+
+      <label>Degree:</label><br>
+      <input type="text" id="degree" required><br><br>
+
+      <label>Email (Gmail):</label><br>
+      <input type="email" id="gmail" required><br><br>
+
+      <label>Phone No:</label><br>
+      <input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="10-digit number"><br><br>
+
+      <button type="submit" class="btn-glow">📩 Book Now</button>
+    </form>
+  </div>
+</div>
+
+<!-- ✅ Script for Form -->
+<script>
+  const trainingModal = document.getElementById("trainingModal");
+  const trainingBtn = document.getElementById("trainingBtn");
+  const closeBtn = document.querySelector(".close");
+
+  trainingBtn.onclick = () => { trainingModal.style.display = "flex"; }
+  closeBtn.onclick = () => { trainingModal.style.display = "none"; }
+  window.onclick = (e) => { if (e.target == trainingModal) trainingModal.style.display = "none"; }
+
+  // ✅ Handle Form Submission
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.getElementById("name").value;
+    const college = document.getElementById("college").value;
+    const degree = document.getElementById("degree").value;
+    const gmail = document.getElementById("gmail").value;
+    const phone = document.getElementById("phone").value;
+
+    // Create mailto link
+    const subject = encodeURIComponent("Placement Training Enrollment");
+    const body = encodeURIComponent(
+      `Hello DevTechSoft,%0D%0A%0D%0A` +
+      `I would like to book the Placement Training.%0D%0A%0D%0A` +
+      `Name: ${name}%0D%0A` +
+      `College: ${college}%0D%0A` +
+      `Degree: ${degree}%0D%0A` +
+      `Email: ${gmail}%0D%0A` +
+      `Phone: ${phone}%0D%0A%0D%0AThank you.`
+    );
+
+    // Open email client
+    window.location.href = `mailto:devtechsoft5@gmail.com?subject=${subject}&body=${body}`;
+  });
+</script>
+
 
 
   <!-- Professional Projects Box -->
@@ -526,6 +593,14 @@
   </div>
 </div>
 
+  <!-- College Projects Box -->
+  <div class="project-option-box">
+    <h3>College Projects</h3>
+    <p>Order projects quickly with support for all Coimbatore colleges.</p>
+    <a href="https://wa.me/+917904314494?text=Hi%2C%20I'm%20interested%20in%20a%20college%20project" target="_blank">
+      <button class="btn-glow">Order College Project</button>
+    </a>
+  </div>
 
 <!-- Glowing Button CSS -->
 <style>
