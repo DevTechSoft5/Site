@@ -10,12 +10,12 @@
 
   <!-- SEO -->
   <meta name="description" content="DevTechSoft offers expert web development, app development, SEO, video editing, and freelance software services in Coimbatore." />
-  <meta name="keywords" content="DevTechSoft, freelance developer Coimbatore, web development, app development, SEO, video editing, software solutions" />
+  <meta name="keywords" content="DevTechSoft, freelance developer Coimbatore, web development, app development, SEO, video editing, software solutions, placement training" />
   <meta name="author" content="DevTechSoft" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="DevTechSoft - Freelance Web & Software Development" />
-  <meta property="og:description" content="Expert web & app development, SEO, video editing, and software solutions in Coimbatore." />
+  <meta property="og:description" content="Expert web & app development, SEO, video editing, placement training, and software solutions in Coimbatore." />
   <meta property="og:image" content="mainlogo.png" />
   <meta property="og:url" content="https://devtechsoft.in" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -47,6 +47,22 @@
     .hero h1 { font-size: 3rem; margin-bottom: 20px; animation: fadeInDown 1.2s ease; }
     .hero p { font-size: 1.3rem; margin-bottom: 30px; animation: fadeInUp 1.5s ease; }
 
+    .btn-glow {
+      background: #ffeb3b;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #333;
+    }
+    .btn-glow:hover {
+      background: #ffc107;
+      transform: scale(1.05);
+    }
+
     section { padding: 60px 20px; text-align: center; }
     .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
     .service-card {
@@ -60,6 +76,25 @@
       background: #222; color: white; text-align: center; padding: 20px;
     }
     footer a { color: #1abc9c; margin: 0 10px; font-size: 1.2rem; }
+
+    /* Modal Styles */
+    .modal {
+      display: none; position: fixed; z-index: 2000; left: 0; top: 0;
+      width: 100%; height: 100%; overflow: auto;
+      background-color: rgba(0,0,0,0.6); justify-content: center; align-items: center;
+    }
+    .modal-content {
+      background: #fff; padding: 30px; border-radius: 15px;
+      width: 90%; max-width: 600px; text-align: left;
+      animation: fadeInUp 0.6s ease;
+    }
+    .modal-content h2 { margin-bottom: 15px; color: #16a085; }
+    .modal-content ul { margin: 15px 0; padding-left: 20px; }
+    .modal-content ul li { margin-bottom: 10px; }
+    .close {
+      float: right; font-size: 24px; font-weight: bold; cursor: pointer; color: #333;
+    }
+    .close:hover { color: #e74c3c; }
 
     /* Animations */
     @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
@@ -82,16 +117,13 @@
   <section class="hero">
     <h1>Freelance Web & Software Development</h1>
     <p>We build websites, apps, and software solutions that bring your ideas to life.</p>
-
-    <!-- ❌ Removed Order Now button (kept as comment for future use)
-    <button class="btn-glow" id="orderNowBtn">Order College Project</button>
-    -->
+    <button class="btn-glow" id="trainingBtn">Book Placement Training</button>
   </section>
 
   <!-- About -->
   <section id="about">
     <h2>About Us</h2>
-    <p>At <strong>DevTechSoft</strong>, we specialize in creating modern websites, mobile apps, SEO solutions, and more. Based in Coimbatore, we provide affordable freelance services tailored to your needs.</p>
+    <p>At <strong>DevTechSoft</strong>, we specialize in creating modern websites, mobile apps, SEO solutions, and more. Based in Coimbatore, we also provide flexible online training programs with placement support.</p>
   </section>
 
   <!-- Services -->
@@ -134,32 +166,37 @@
     </div>
   </footer>
 
-  <!-- ❌ Removed Modal + Script (kept as comment for future use)
-  <div id="orderModal" class="modal">
+  <!-- Placement Training Modal -->
+  <div id="trainingModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h2>Order Your College Project</h2>
-      <p>Fill in the details and we’ll get back to you.</p>
-      <form>
-        <input type="text" placeholder="Your Name" required><br><br>
-        <input type="email" placeholder="Your Email" required><br><br>
-        <textarea placeholder="Project Details" required></textarea><br><br>
-        <button type="submit" class="btn-glow">Submit</button>
-      </form>
+      <h2>📘 30-Day Online Virtual Placement Training</h2>
+      <p>Our intensive training is flexible for students with exams. You’ll complete the full 30-day program without missing classes.</p>
+      <h3>What’s Included:</h3>
+      <ul>
+        <li>✅ Aptitude & Reasoning Practice</li>
+        <li>✅ Full-Stack Web Development (HTML, CSS, JS, Node.js, DB)</li>
+        <li>✅ Mock Interviews & Resume Building</li>
+        <li>✅ Placement Support & Career Guidance</li>
+      </ul>
+      <p><strong>Flexible Timings:</strong> Sessions are adjusted around your exams and personal schedule.</p>
+      <p><strong>Duration:</strong> 30 Days (Flexible)</p>
+      <p>📩 To enroll, WhatsApp us at <a href="https://wa.me/+917904314494" target="_blank">+91 7904314494</a></p>
     </div>
   </div>
 
+  <!-- Script -->
   <script>
-    const modal = document.getElementById("orderModal");
-    const orderBtn = document.getElementById("orderNowBtn");
+    const trainingModal = document.getElementById("trainingModal");
+    const trainingBtn = document.getElementById("trainingBtn");
     const closeBtn = document.querySelector(".close");
 
-    orderBtn.onclick = () => { modal.style.display = "flex"; }
-    closeBtn.onclick = () => { modal.style.display = "none"; }
-    window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
+    trainingBtn.onclick = () => { trainingModal.style.display = "flex"; }
+    closeBtn.onclick = () => { trainingModal.style.display = "none"; }
+    window.onclick = (e) => { if (e.target == trainingModal) trainingModal.style.display = "none"; }
   </script>
-  -->
 
+  <!-- Google Analytics -->
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DL3QEQ44S"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8DL3QEQ44S'); </script>
 </body>
-  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DL3QEQ44S"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8DL3QEQ44S'); </script>
 </html>
