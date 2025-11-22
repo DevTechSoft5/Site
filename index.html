@@ -409,6 +409,65 @@
 #services .card, #projects .card {
   animation: fadeUp 0.6s ease forwards;
 }
+
+/* ===== Global animations & transitions ===== */
+:root{
+  --accent: #0d6efd;
+  --accent-2: #6610f2;
+  --anim-duration: 450ms;
+  --anim-ease: cubic-bezier(.2,.9,.2,1);
+}
+
+*{box-sizing:border-box}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{transition:none !important; animation:none !important}
+}
+
+/* Base reveal class for JS-driven scroll animations */
+.reveal{
+  opacity:0;
+  transform:translateY(18px) scale(.995);
+  will-change:opacity, transform;
+  transition:opacity 520ms var(--anim-ease), transform 520ms var(--anim-ease);
+}
+.reveal.in-view{
+  opacity:1;
+  transform:none;
+}
+
+/* Slightly different subtle motions for images */
+.image-content img, .gradient-banner img{
+  transform-origin:center;
+  transition:transform 600ms var(--anim-ease), box-shadow 300ms var(--anim-ease);
+}
+.image-content img.in-view, .gradient-banner img.in-view{
+  transform:translateY(0) scale(1);
+}
+
+/* Buttons */
+.btn{transition:transform 260ms var(--anim-ease), box-shadow 260ms var(--anim-ease), background 260ms var(--anim-ease)}
+.btn:hover, .btn:focus{transform:translateY(-4px); box-shadow:0 10px 30px rgba(13,110,253,0.12)}
+
+/* Cards and demo project polish */
+#services .card, #projects .card, #demo-projects .demo-project{
+  transition:transform 380ms var(--anim-ease), box-shadow 380ms var(--anim-ease), border-color 380ms var(--anim-ease);
+}
+#demo-projects .demo-project:hover{transform:translateY(-8px) scale(1.01)}
+
+/* Navbar smooth background change */
+.navbar{transition:background-color 300ms var(--anim-ease), box-shadow 300ms var(--anim-ease)}
+
+/* Hero heading subtle entrance */
+.gradient-banner .font-weight-bold{display:inline-block}
+.gradient-banner .font-weight-bold.reveal{transform:translateY(12px); opacity:0}
+.gradient-banner .font-weight-bold.in-view{transform:none; opacity:1; transition:transform 700ms var(--anim-ease), opacity 700ms var(--anim-ease)}
+
+/* testimonial fade */
+.testimonial-slider .item{opacity:0; transform:translateY(12px); transition:opacity 480ms var(--anim-ease), transform 480ms var(--anim-ease)}
+.testimonial-slider .item.in-view{opacity:1; transform:none}
+
 </style>
 <section id="demo-projects" style="padding: 80px 0; background: #f8f9fa;">
   <style>
@@ -575,6 +634,45 @@
 <script src="plugins/aos/aos.js"></script>
 <script src="plugins/google-map/gmap.js"></script>
 <script src="js/script.js"></script>
+<script>
+  (function(){
+    try{
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!prefersReduced && window.AOS){
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, disable: 'mobile' });
+      }
+
+      document.addEventListener('DOMContentLoaded', function(){
+        if(prefersReduced) return;
+        const observer = new IntersectionObserver(function(entries, obs){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              entry.target.classList.add('in-view');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, {threshold: 0.12});
+
+        const selectors = [
+          '.section', '.card', '.service-item', '.demo-project', '.feature-content',
+          '.image-content img', '.testimonial-slider .item', '.navbar-brand', '.btn', '.gradient-banner img'
+        ];
+        document.querySelectorAll(selectors.join(',')).forEach(function(el){
+          // Skip if element already visible
+          el.classList.add('reveal');
+          observer.observe(el);
+        });
+
+        // Apply small stagger delays for grid items
+        document.querySelectorAll('.demo-projects .demo-project, .row .col-md-4 .card').forEach(function(el, i){
+          el.style.transitionDelay = (i * 60) + 'ms';
+        });
+      });
+    }catch(e){
+      console && console.warn && console.warn('Animation init failed', e);
+    }
+  })();
+</script>
 </body>
 
 
