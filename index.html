@@ -73,7 +73,8 @@
 <section class="section pt-0 position-relative pull-top">
   <div class="container">
     <div class="rounded shadow p-4">
-      <div class="row text-center highlight-row align-items-center">
+      <div class="highlight-container">
+        <div class="row text-center highlight-row align-items-center">
         <div class="col-lg-4 col-md-6 mt-0 d-flex justify-content-center">
           <div class="highlight-card glass" data-modal="virtual-training" role="button">
             <i class="ti-layers-alt text-primary"></i>
@@ -83,7 +84,7 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mt-0 d-flex justify-content-center">
-          <div class="highlight-card glass">
+          <div class="highlight-card glass" data-modal="business-projects">
             <i class="ti-briefcase text-primary"></i>
             <div>
               <h3 class="mt-0">Professional Business Projects</h3>
@@ -91,13 +92,14 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 mt-0 d-flex justify-content-center">
-          <div class="highlight-card glass">
+          <div class="highlight-card glass" data-modal="web-app">
             <i class="ti-desktop text-primary"></i>
             <div>
               <h3 class="mt-0">Web & App Development</h3>
                          </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -518,7 +520,7 @@ a:hover{background-size:100% 2px}
   <div class="vt-modal-inner">
     <button class="vt-modal-close" aria-label="Close modal">✕</button>
     <h3 id="vt-modal-title">Join Virtual Training — Express Interest</h3>
-    <p class="muted">Leave your details and we'll contact you with schedule & fees.</p>
+    <p class="muted">Leave your details and we'll contact you</p>
     <form id="vt-form" class="vt-form" autocomplete="on">
       <div class="vt-row"><label>Name<input name="name" type="text" required placeholder="Your full name"></label></div>
       <div class="vt-row"><label>Email<input name="email" type="email" required placeholder="you@domain.com"></label></div>
@@ -555,6 +557,8 @@ a:hover{background-size:100% 2px}
 .vt-modal .vt-row{margin:10px 0}
 .vt-modal label{display:block;font-size:0.9rem;color:rgba(255,255,255,0.9)}
 .vt-modal input,.vt-modal select{width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:#fff;margin-top:6px}
+.vt-modal select{background:rgba(255,255,255,0.06);color:#fff;font-size:1rem}
+.vt-modal select option{background:rgba(6,10,18,0.96);color:#fff}
 .vt-actions{display:flex;gap:12px;margin-top:12px}
 .vt-modal-close{position:absolute;right:12px;top:10px;background:transparent;border:none;color:#fff;font-size:18px}
 .vt-feedback{margin-top:10px;color:#dff0d8;background:rgba(34,139,34,0.08);padding:8px 10px;border-radius:6px;display:none}
@@ -562,6 +566,7 @@ a:hover{background-size:100% 2px}
 @media (prefers-color-scheme: light){
   .vt-modal-inner{color:#0b1720; background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.98)); border:1px solid rgba(13,110,253,0.06)}
   .vt-modal input,.vt-modal select{background:#fff;color:#222;border:1px solid rgba(12,16,30,0.04)}
+  .vt-modal select option{background:#fff;color:#222}
 }
 
 /* Glass-style highlight cards (ensure contrast/readability) */
@@ -878,25 +883,68 @@ a:hover{background-size:100% 2px}
           vtFeedback.classList.remove('show');
         }
 
-        // Attach open trigger to the "Virtual Training Programs" column
-        const vtTriggers = document.querySelectorAll('[data-modal="virtual-training"]');
-        if(vtTriggers.length===0){
-          // fallback: attach to heading text if attribute not set
-          const potential = Array.from(document.querySelectorAll('.section .h3, .section h3')).find(el => /virtual training/i.test(el.textContent || ''));
+        // Attach open trigger to any element with a data-modal attribute
+        const allTriggers = document.querySelectorAll('[data-modal]');
+        if(allTriggers.length===0){
+          // fallback: attach to heading text if attribute not set for virtual training
+          const potential = Array.from(document.querySelectorAll('.section h3')).find(el => /virtual training/i.test(el.textContent || ''));
           if(potential && potential.closest('.col-lg-4')){
             potential.closest('.col-lg-4').setAttribute('data-modal','virtual-training');
           }
         }
-        document.querySelectorAll('[data-modal="virtual-training"]').forEach(function(el){
-          el.style.cursor = 'pointer';
-          // make accessible
-          if(!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
-          el.addEventListener('click', function(e){ e.preventDefault(); openVtModal(); });
-          el.addEventListener('keydown', function(e){
-            if(e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){
-              e.preventDefault(); openVtModal();
+
+        function configureModalFor(type){
+          // reset
+          vtForm.dataset.type = type || 'virtual-training';
+          const title = vtModal.querySelector('#vt-modal-title');
+          const nameLabel = vtModal.querySelector('label[for="vt-name"]') || null;
+          // We'll reuse inputs: name, email, phone, college, language
+          const nameInput = vtForm.querySelector('input[name="name"]');
+          const emailInput = vtForm.querySelector('input[name="email"]');
+          const phoneInput = vtForm.querySelector('input[name="phone"]');
+          const collegeRow = vtForm.querySelector('input[name="college"]') ? vtForm.querySelector('input[name="college"]').closest('.vt-row') : null;
+          const languageRow = vtForm.querySelector('select[name="language"]') ? vtForm.querySelector('select[name="language"]').closest('.vt-row') : null;
+
+          if(type === 'virtual-training'){
+            title.textContent = 'Join Virtual Training — Express Interest';
+            // standard fields: Name, Email, Phone, College, Language
+            if(collegeRow) collegeRow.style.display = '';
+            if(languageRow) languageRow.style.display = '';
+            if(nameInput) nameInput.placeholder = 'Your full name';
+            if(emailInput) emailInput.placeholder = 'you@domain.com';
+            if(phoneInput) phoneInput.placeholder = 'Mobile number';
+          } else if(type === 'business-projects'){
+            title.textContent = 'Professional Business Projects — Contact Us';
+            // fields: Company, Your name, Email, Phone (hide language)
+            if(collegeRow) collegeRow.style.display = '';
+            if(languageRow) languageRow.style.display = 'none';
+            if(nameInput) nameInput.placeholder = 'Your full name';
+            if(emailInput) emailInput.placeholder = 'you@company.com';
+            if(phoneInput) phoneInput.placeholder = 'Company phone number';
+            // rename college input label/placeholder to Company
+            if(collegeRow){
+              const input = collegeRow.querySelector('input');
+              if(input) input.placeholder = 'Company name';
             }
-          });
+          } else if(type === 'web-app'){
+            title.textContent = 'Web & App Development — Contact Us';
+            if(collegeRow) collegeRow.style.display = '';
+            if(languageRow) languageRow.style.display = 'none';
+            if(nameInput) nameInput.placeholder = 'Your full name';
+            if(emailInput) emailInput.placeholder = 'you@company.com';
+            if(phoneInput) phoneInput.placeholder = 'Contact phone number';
+            if(collegeRow){
+              const input = collegeRow.querySelector('input');
+              if(input) input.placeholder = 'Company / Organization';
+            }
+          }
+        }
+
+        document.querySelectorAll('[data-modal]').forEach(function(el){
+          el.style.cursor = 'pointer';
+          if(!el.hasAttribute('tabindex')) el.setAttribute('tabindex','0');
+          el.addEventListener('click', function(e){ e.preventDefault(); const t = el.getAttribute('data-modal') || 'virtual-training'; configureModalFor(t); openVtModal(); });
+          el.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){ e.preventDefault(); const t = el.getAttribute('data-modal') || 'virtual-training'; configureModalFor(t); openVtModal(); } });
         });
 
         vtClose.addEventListener('click', closeVtModal);
@@ -905,6 +953,7 @@ a:hover{background-size:100% 2px}
 
         vtSubmit.addEventListener('click', function(){
           const data = new FormData(vtForm);
+          const type = vtForm.dataset.type || 'virtual-training';
           const name = (data.get('name')||'').trim();
           const email = (data.get('email')||'').trim();
           const phone = (data.get('phone')||'').trim();
@@ -912,38 +961,60 @@ a:hover{background-size:100% 2px}
           const language = (data.get('language')||'').trim();
 
           if(!name || !email || !phone){
-            vtFeedback.textContent = 'Please fill name, email and phone to proceed.';
+            vtFeedback.textContent = 'Please fill required fields to proceed.';
             vtFeedback.classList.add('show');
             return;
           }
 
-          // Build mailto link to open Outlook / default mail client
           const to = 'info@devtechsoft.in';
-          const subject = 'Interested in Virtual Training Program';
-          const bodyLines = [
-            'I am interested in the Virtual Training Program.',
-            '',
-            'Name: ' + name,
-            'Email: ' + email,
-            'Phone: ' + phone,
-            'College/Organization: ' + college,
-            'Preferred Track: ' + language,
-            '',
-            'Please contact me with details and schedule.'
-          ];
+          let subject = '';
+          let bodyLines = [];
+
+          if(type === 'virtual-training'){
+            subject = 'Interested in Virtual Training Program';
+            bodyLines = [
+              'I am interested in the Virtual Training Program.',
+              '',
+              'Name: ' + name,
+              'Email: ' + email,
+              'Phone: ' + phone,
+              'College/Organization: ' + college,
+              'Preferred Track: ' + language,
+              '',
+              'Please contact me with details and schedule.'
+            ];
+          } else if(type === 'business-projects'){
+            subject = 'Inquiry: Professional Business Projects';
+            bodyLines = [
+              'I am contacting regarding Professional Business Projects.',
+              '',
+              'Company: ' + college,
+              'Contact Person: ' + name,
+              'Email: ' + email,
+              'Phone: ' + phone,
+              '',
+              'Please reach out with project details and next steps.'
+            ];
+          } else if(type === 'web-app'){
+            subject = 'Inquiry: Web & App Development';
+            bodyLines = [
+              'I am contacting regarding Web & App Development services.',
+              '',
+              'Company / Organization: ' + college,
+              'Contact Person: ' + name,
+              'Email: ' + email,
+              'Phone: ' + phone,
+              '',
+              'Please reach out with scope and estimated timeline.'
+            ];
+          }
+
           const body = encodeURIComponent(bodyLines.join('\n'));
           const mailto = 'mailto:' + encodeURIComponent(to) + '?subject=' + encodeURIComponent(subject) + '&body=' + body;
 
-          // Provide quick feedback then redirect to mailto to open Outlook
-          vtFeedback.textContent = 'Opening mail client to send your interest...';
+          vtFeedback.textContent = 'Opening mail client...';
           vtFeedback.classList.add('show');
-
-          // small delay to show feedback, then navigate to mailto
-          setTimeout(function(){
-            window.location.href = mailto;
-            // close modal after attempting to open mail client
-            closeVtModal();
-          }, 450);
+          setTimeout(function(){ window.location.href = mailto; closeVtModal(); }, 450);
         });
 
       }); // DOMContentLoaded
