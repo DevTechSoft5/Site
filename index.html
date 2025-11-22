@@ -502,6 +502,58 @@ a:hover{background-size:100% 2px}
 }
 
 </style>
+
+<!-- Glassmorphism modal markup -->
+<div id="vt-modal-backdrop" class="vt-modal-backdrop" aria-hidden="true"></div>
+<div id="vt-modal" class="vt-modal" role="dialog" aria-modal="true" aria-labelledby="vt-modal-title">
+  <div class="vt-modal-inner">
+    <button class="vt-modal-close" aria-label="Close modal">✕</button>
+    <h3 id="vt-modal-title">Join Virtual Training — Express Interest</h3>
+    <p class="muted">Leave your details and we'll contact you with schedule & fees.</p>
+    <form id="vt-form" class="vt-form" autocomplete="on">
+      <div class="vt-row"><label>Name<input name="name" type="text" required placeholder="Your full name"></label></div>
+      <div class="vt-row"><label>Email<input name="email" type="email" required placeholder="you@domain.com"></label></div>
+      <div class="vt-row"><label>Phone<input name="phone" type="tel" required placeholder="Mobile number"></label></div>
+      <div class="vt-row"><label>College / Organization<input name="college" type="text" placeholder="College or Organization"></label></div>
+      <div class="vt-row"><label>Programming Language / Track
+        <select name="language">
+          <option value="Flutter">Flutter</option>
+          <option value="React">React</option>
+          <option value="Python">Python</option>
+          <option value="Full Stack">Full Stack</option>
+          <option value="Other">Other</option>
+        </select>
+      </label></div>
+      <div class="vt-actions">
+        <button type="button" id="vt-submit" class="btn btn-main-md">I'm Interested</button>
+        <button type="button" id="vt-cancel" class="btn btn-outline-secondary">Cancel</button>
+      </div>
+    </form>
+    <div id="vt-feedback" class="vt-feedback" role="status" aria-live="polite"></div>
+  </div>
+</div>
+
+<style>
+/* Glassmorphism modal styles */
+.vt-modal-backdrop{position:fixed;inset:0;background:rgba(8,12,20,0.45);backdrop-filter:blur(4px);z-index:1200;opacity:0;pointer-events:none;transition:opacity 240ms ease}
+.vt-modal-backdrop.show{opacity:1;pointer-events:auto}
+.vt-modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.98);z-index:1201;max-width:720px;width:92%;opacity:0;pointer-events:none;transition:opacity 280ms ease, transform 280ms cubic-bezier(.2,.9,.2,1)}
+.vt-modal.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+.vt-modal-inner{background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));border:1px solid rgba(255,255,255,0.12);backdrop-filter:blur(10px);padding:26px;border-radius:12px;color:#fff;box-shadow:0 12px 40px rgba(2,6,23,0.6)}
+.vt-modal .muted{color:rgba(255,255,255,0.75);margin-bottom:8px}
+.vt-modal h3{margin:0 0 8px;font-size:1.25rem}
+.vt-modal .vt-row{margin:10px 0}
+.vt-modal label{display:block;font-size:0.9rem;color:rgba(255,255,255,0.9)}
+.vt-modal input,.vt-modal select{width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:#fff;margin-top:6px}
+.vt-actions{display:flex;gap:12px;margin-top:12px}
+.vt-modal-close{position:absolute;right:12px;top:10px;background:transparent;border:none;color:#fff;font-size:18px}
+.vt-feedback{margin-top:10px;color:#dff0d8;background:rgba(34,139,34,0.08);padding:8px 10px;border-radius:6px;display:none}
+.vt-feedback.show{display:block}
+@media (prefers-color-scheme: light){
+  .vt-modal-inner{color:#0b1720; background:linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.96)); border:1px solid rgba(13,110,253,0.06)}
+  .vt-modal input,.vt-modal select{background:#fff;color:#222;border:1px solid rgba(12,16,30,0.04)}
+}
+</style>
 <section id="demo-projects" style="padding: 80px 0; background: #f8f9fa;">
   <style>
     #demo-projects .section-title {
@@ -763,6 +815,89 @@ a:hover{background-size:100% 2px}
         document.querySelectorAll('a,button').forEach(function(el){
           el.addEventListener('focus', function(){ el.classList.add('in-view'); });
           el.addEventListener('blur', function(){ el.classList.remove('in-view'); });
+        });
+        
+        /* Virtual Training modal interactions */
+        const vtBackdrop = document.getElementById('vt-modal-backdrop');
+        const vtModal = document.getElementById('vt-modal');
+        const vtClose = vtModal.querySelector('.vt-modal-close');
+        const vtCancel = document.getElementById('vt-cancel');
+        const vtSubmit = document.getElementById('vt-submit');
+        const vtForm = document.getElementById('vt-form');
+        const vtFeedback = document.getElementById('vt-feedback');
+
+        function openVtModal(){
+          vtBackdrop.classList.add('show');
+          vtModal.classList.add('show');
+          // focus first input
+          const first = vtForm.querySelector('input[name="name"]');
+          if(first) first.focus();
+        }
+        function closeVtModal(){
+          vtBackdrop.classList.remove('show');
+          vtModal.classList.remove('show');
+          vtFeedback.classList.remove('show');
+        }
+
+        // Attach open trigger to the "Virtual Training Programs" column
+        const vtTriggers = document.querySelectorAll('[data-modal="virtual-training"]');
+        if(vtTriggers.length===0){
+          // fallback: attach to heading text if attribute not set
+          const potential = Array.from(document.querySelectorAll('.section .h3, .section h3')).find(el => /virtual training/i.test(el.textContent || ''));
+          if(potential && potential.closest('.col-lg-4')){
+            potential.closest('.col-lg-4').setAttribute('data-modal','virtual-training');
+          }
+        }
+        document.querySelectorAll('[data-modal="virtual-training"]').forEach(function(el){
+          el.style.cursor = 'pointer';
+          el.addEventListener('click', function(e){ e.preventDefault(); openVtModal(); });
+        });
+
+        vtClose.addEventListener('click', closeVtModal);
+        vtCancel.addEventListener('click', closeVtModal);
+        vtBackdrop.addEventListener('click', closeVtModal);
+
+        vtSubmit.addEventListener('click', function(){
+          const data = new FormData(vtForm);
+          const name = (data.get('name')||'').trim();
+          const email = (data.get('email')||'').trim();
+          const phone = (data.get('phone')||'').trim();
+          const college = (data.get('college')||'').trim();
+          const language = (data.get('language')||'').trim();
+
+          if(!name || !email || !phone){
+            vtFeedback.textContent = 'Please fill name, email and phone to proceed.';
+            vtFeedback.classList.add('show');
+            return;
+          }
+
+          // Build mailto link to open Outlook / default mail client
+          const to = 'info@devtechsoft.in';
+          const subject = 'Interested in Virtual Training Program';
+          const bodyLines = [
+            'I am interested in the Virtual Training Program.',
+            '',
+            'Name: ' + name,
+            'Email: ' + email,
+            'Phone: ' + phone,
+            'College/Organization: ' + college,
+            'Preferred Track: ' + language,
+            '',
+            'Please contact me with details and schedule.'
+          ];
+          const body = encodeURIComponent(bodyLines.join('\n'));
+          const mailto = 'mailto:' + encodeURIComponent(to) + '?subject=' + encodeURIComponent(subject) + '&body=' + body;
+
+          // Provide quick feedback then redirect to mailto to open Outlook
+          vtFeedback.textContent = 'Opening mail client to send your interest...';
+          vtFeedback.classList.add('show');
+
+          // small delay to show feedback, then navigate to mailto
+          setTimeout(function(){
+            window.location.href = mailto;
+            // close modal after attempting to open mail client
+            closeVtModal();
+          }, 450);
         });
 
       }); // DOMContentLoaded
