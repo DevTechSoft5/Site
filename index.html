@@ -719,6 +719,64 @@
     }
   })();
 </script>
+<script>
+  /* Additional interaction enhancements: parallax and tilt */
+  (function(){
+    try{
+      const isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(prefersReduced) return;
+
+      // Parallax: move hero image slightly on scroll
+      const hero = document.querySelector('.gradient-banner');
+      const heroImg = document.querySelector('.gradient-banner img, .gradient-banner .parallax');
+      if(hero && heroImg && !isTouch){
+        let lastScroll = 0;
+        window.addEventListener('scroll', function(){
+          const rect = hero.getBoundingClientRect();
+          const mid = window.innerHeight / 2;
+          const progress = Math.max(-1, Math.min(1, (rect.top - mid) / mid));
+          heroImg.style.transform = 'translateY(' + (progress * -10) + 'px)';
+        }, {passive:true});
+      }
+
+      // Card tilt using mousemove — apply to visible cards only
+      const cards = Array.from(document.querySelectorAll('.card'));
+      cards.forEach(function(card){
+        // wrap content to apply transforms cleanly
+        if(!card.querySelector('.card-inner')){
+          const inner = document.createElement('div');
+          inner.className = 'card-inner';
+          while(card.firstChild) inner.appendChild(card.firstChild);
+          card.appendChild(inner);
+        }
+        const inner = card.querySelector('.card-inner');
+        let rect;
+        function onMove(e){
+          rect = rect || card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width;
+          const y = (e.clientY - rect.top) / rect.height;
+          const rotateY = (x - 0.5) * 6; // degrees
+          const rotateX = (0.5 - y) * 6;
+          inner.style.transform = 'rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateZ(0)';
+        }
+        function onLeave(){ inner.style.transform = 'none'; }
+        if(!isTouch){
+          card.addEventListener('mousemove', onMove);
+          card.addEventListener('mouseleave', onLeave);
+        }
+      });
+
+      // Nav link stagger appearance on load
+      document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link, i){
+        link.style.transition = 'opacity 420ms var(--anim-ease) '+ (i*80) +'ms, transform 420ms var(--anim-ease) '+ (i*80) +'ms';
+        link.style.opacity = 0; link.style.transform = 'translateY(6px)';
+        requestAnimationFrame(function(){ link.style.opacity = 1; link.style.transform = 'none'; });
+      });
+
+    }catch(e){ console && console.warn && console.warn('Enhancement init failed', e); }
+  })();
+</script>
 </body>
 
 
