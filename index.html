@@ -337,10 +337,12 @@
 
 #services .card,
 #projects .card {
-  border: none;
+  border: 1px solid rgba(13,110,253,0.06);
   border-radius: 16px;
-  background: #ffffff;
-  transition: all 0.4s ease;
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.72));
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  transition: transform 380ms var(--anim-ease), box-shadow 380ms var(--anim-ease), border-color 380ms var(--anim-ease), background 380ms var(--anim-ease);
   position: relative;
   overflow: hidden;
 }
@@ -375,7 +377,7 @@
   position: relative;
   z-index: 1;
   font-size: 1.2rem;
-  color: #212529;
+  color: #0b2740;
   margin-bottom: 12px;
 }
 
@@ -383,9 +385,26 @@
 #projects .card p {
   position: relative;
   z-index: 1;
-  color: #555;
+  color: rgba(8,33,59,0.86);
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+/* subtle inner accent for headings to pair with glass look */
+#services .card::after, #projects .card::after{
+  content: '';
+  position: absolute;left:0;right:0;bottom:-40%;height:120%;pointer-events:none;
+  background: radial-gradient(800px 200px at 10% 10%, rgba(13,110,253,0.04), transparent 18%), radial-gradient(600px 160px at 90% 90%, rgba(111,66,193,0.03), transparent 18%);
+  z-index:0;transform:translateZ(0);
+}
+
+@media (prefers-color-scheme: dark){
+  #services .card, #projects .card{
+    background: linear-gradient(180deg, rgba(18,24,32,0.56), rgba(10,14,20,0.42));
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  #services .card h5, #projects .card h5{ color: #e8f1fb }
+  #services .card p, #projects .card p{ color: rgba(230,240,251,0.84) }
 }
 
 #services .card,
@@ -421,6 +440,63 @@
   animation: fadeUp 0.6s ease forwards;
 }
 
+/* ===== Dynamic Island / iOS-style glass for Project cards ===== */
+#projects .card{
+  border-radius:20px;
+  padding:22px 24px 22px 88px; /* leave space for pseudo-icon */
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+  transition:transform 420ms var(--anim-ease), box-shadow 420ms var(--anim-ease), border-color 420ms var(--anim-ease), background 420ms var(--anim-ease);
+  position:relative;overflow:visible;
+}
+
+/* circular accent (acts like a dynamic-island icon) */
+#projects .card::before{
+  content:'';
+  position:absolute;left:18px;top:50%;transform:translateY(-50%);
+  width:64px;height:64px;border-radius:999px;z-index:1;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  box-shadow:0 18px 40px rgba(13,110,253,0.16), inset 0 2px 6px rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* subtle sheen that moves on hover */
+#projects .card::after{
+  content:'';position:absolute;left:0;right:0;top:0;height:100%;pointer-events:none;z-index:2;
+  background:linear-gradient(120deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 12%, rgba(255,255,255,0.02) 30%, transparent 40%);
+  transform:translateX(-30%);opacity:0;transition:transform 600ms var(--anim-ease), opacity 420ms var(--anim-ease);
+}
+
+#projects .card:hover::after{transform:translateX(20%);opacity:1}
+
+#projects .card h5, #projects .card p{position:relative;z-index:3;margin-left:0}
+
+/* hover lift + scale for pronounced island feel */
+#projects .card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 30px 80px rgba(11,22,40,0.14);border-color:rgba(13,110,253,0.18)}
+
+/* make center card pop slightly to mimic dynamic island grouping */
+@media(min-width:980px){
+  #projects .card:nth-child(2){transform-origin:center;}
+}
+
+/* mobile: remove left padding and hide pseudo icon to save space */
+@media(max-width:768px){
+  #projects .card{padding-left:20px}
+  #projects .card::before{display:none}
+}
+
+/* dark mode: keep contrast high */
+@media (prefers-color-scheme: dark){
+  #projects .card::before{box-shadow:0 12px 30px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.04)}
+  #projects .card::after{background:linear-gradient(120deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.04) 12%, rgba(255,255,255,0.01) 30%, transparent 40%)}
+  #projects .card h5{color:#eaf6ff}
+  #projects .card p{color:rgba(230,240,251,0.84)}
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  #projects .card, #projects .card::after, #projects .card::before{transition:none !important; animation:none !important}
+}
+
 /* ===== Global animations & transitions ===== */
 :root{
   --accent: #0d6efd;
@@ -447,6 +523,11 @@
   opacity:1;
   transform:none;
 }
+
+/* directional slide-in helpers for services cards */
+.from-left.reveal{ transform: translateX(-36px) translateY(10px) scale(.995); }
+.from-right.reveal{ transform: translateX(36px) translateY(10px) scale(.995); }
+.from-left.in-view, .from-right.in-view{ transform: none; }
 
 /* Slightly different subtle motions for images */
 .image-content img, .gradient-banner img{
@@ -512,6 +593,60 @@ a:hover{background-size:100% 2px}
   .icon-float, .gradient-banner img, .card, .reveal{transition:none !important; animation:none !important}
 }
 
+/* ===== Glassmorphism for Services (Web/Mobile/Software/SEO) ===== */
+/* Provides a translucent frosted card, readable text, and strong icon contrast */
+#services .service-item{
+  background: linear-gradient(180deg, rgba(255,255,255,0.76), rgba(255,255,255,0.64));
+  backdrop-filter: blur(10px) saturate(130%);
+  -webkit-backdrop-filter: blur(10px) saturate(130%);
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #08213b;
+  padding: 26px 22px;
+  border-radius: 14px;
+  transition:transform 320ms var(--anim-ease), box-shadow 320ms var(--anim-ease), border-color 320ms var(--anim-ease), background 320ms var(--anim-ease);
+  position:relative; overflow:hidden;
+}
+
+#services .service-item i{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:56px;height:56px;border-radius:50%;font-size:22px;
+  color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  box-shadow:0 10px 26px rgba(13,110,253,0.12);margin-bottom:12px;
+}
+
+#services .service-item h3{margin:0 0 8px;color:inherit;font-size:1.05rem}
+#services .service-item p{margin:0;color:rgba(8,33,59,0.85);line-height:1.5}
+
+/* Hover and focus micro interactions */
+#services .service-item:hover, #services .service-item:focus-within{transform:translateY(-10px);box-shadow:0 24px 60px rgba(11,22,40,0.12);border-color:rgba(13,110,253,0.18)}
+#services .service-item:hover i, #services .service-item:focus-within i{box-shadow:0 14px 36px rgba(13,110,253,0.16)}
+
+/* Icon pop animation for hover (respects reduced motion) */
+@keyframes iconPop{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.06)}100%{transform:translateY(0) scale(1)}}
+#services .service-item:hover i{animation:iconPop 540ms var(--anim-ease)}
+
+/* Dark theme adjustments for contrast */
+@media (prefers-color-scheme: dark){
+  #services .service-item{
+    background: linear-gradient(180deg, rgba(12,18,24,0.56), rgba(8,12,18,0.46));
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #e6f0fb;
+  }
+  #services .service-item p{color:rgba(230,240,251,0.86)}
+  #services .service-item i{box-shadow:0 8px 20px rgba(0,0,0,0.32)}
+}
+
+/* Ensure good behavior on small screens */
+@media (max-width: 768px){
+  #services .service-item{padding:18px;border-radius:12px}
+  #services .service-item i{width:48px;height:48px;font-size:20px}
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  #services .service-item, #services .service-item i{transition:none !important; animation:none !important}
+}
+
 </style>
 
 <!-- Glassmorphism modal markup -->
@@ -570,7 +705,7 @@ a:hover{background-size:100% 2px}
 }
 
 /* Glass-style highlight cards (ensure contrast/readability) */
-.highlight-row{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:nowrap;transform:translateY(-36px)}
+.highlight-row{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:nowrap;transform:translateY(-48px)}
 .highlight-card{position:relative;border-radius:999px;padding:18px 30px;margin:8px;background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.68));backdrop-filter:blur(12px) saturate(140%);border:1px solid rgba(255,255,255,0.6);box-shadow:0 18px 50px rgba(11,22,40,0.08);color:#08213b;transition:transform 320ms var(--anim-ease), box-shadow 320ms var(--anim-ease), border-color 320ms var(--anim-ease);display:flex;align-items:center;gap:14px;min-width:260px;max-width:420px}
 .highlight-card i{color:var(--accent);opacity:0.98;font-size:34px}
 .highlight-card .h3, .highlight-card h3{font-size:1.05rem;font-weight:600;margin:0}
@@ -798,6 +933,23 @@ a:hover{background-size:100% 2px}
           revealObserver.observe(el);
         });
 
+        // Random left/right slide-in specifically for service cards to add a polished, professional feel
+        (function(){
+          const serviceCards = Array.from(document.querySelectorAll('#services .card'));
+          serviceCards.forEach(function(card, i){
+            // respect reduced motion
+            if(prefersReduced) return;
+            // randomly pick left or right entrance
+            const dir = (Math.random() < 0.5) ? 'from-left' : 'from-right';
+            card.classList.add(dir);
+            // stagger with a little jitter for natural feeling
+            const delay = (i * 80) + Math.floor(Math.random() * 60);
+            card.style.transitionDelay = delay + 'ms';
+            // ensure it's observed by the same reveal observer
+            revealObserver.observe(card);
+          });
+        })();
+
         // Stagger grid items more naturally (row/col basis)
         document.querySelectorAll('.demo-projects .demo-project, .row .col-md-4 .card').forEach(function(el, i){
           el.style.transitionDelay = (i * 60) + 'ms';
@@ -966,7 +1118,7 @@ a:hover{background-size:100% 2px}
             return;
           }
 
-          const to = 'info@devtechsoft.in';
+          const to = 'devtechsoft5@gmail.com';
           let subject = '';
           let bodyLines = [];
 
