@@ -72,22 +72,31 @@
 <!-- Highlights -->
 <section class="section pt-0 position-relative pull-top">
   <div class="container">
-    <div class="rounded shadow p-5 bg-white">
-    <div class="row text-center highlight-row">
-        <div class="col-lg-4 col-md-6 mt-4 highlight-card glass" data-modal="virtual-training">
-          <i class="ti-layers-alt text-primary h1"></i>
-          <h3 class="mt-3 h5">Virtual Training Programs</h3>
-          <p class="regular text-muted">Empowering students and professionals with practical project-based training in Coimbatore and beyond.</p>
+    <div class="rounded shadow p-4">
+      <div class="row text-center highlight-row align-items-center">
+        <div class="col-lg-4 col-md-6 mt-0 d-flex justify-content-center">
+          <div class="highlight-card glass" data-modal="virtual-training" role="button">
+            <i class="ti-layers-alt text-primary"></i>
+            <div>
+              <h3 class="mt-0">Virtual Training Programs</h3>
         </div>
-        <div class="col-lg-4 col-md-6 mt-4 highlight-card glass">
-          <i class="ti-briefcase text-primary h1"></i>
-          <h3 class="mt-3 h5">Professional Business Projects</h3>
-          <p class="regular text-muted">Delivering enterprise-grade web and software solutions tailored to business needs with on-time execution.</p>
+          </div>
         </div>
-        <div class="col-lg-4 col-md-6 mt-4 highlight-card glass">
-          <i class="ti-desktop text-primary h1"></i>
-          <h3 class="mt-3 h5">Web & App Development</h3>
-          <p class="regular text-muted">Building responsive websites and mobile apps optimized for performance, security, and user experience.</p>
+        <div class="col-lg-4 col-md-6 mt-0 d-flex justify-content-center">
+          <div class="highlight-card glass">
+            <i class="ti-briefcase text-primary"></i>
+            <div>
+              <h3 class="mt-0">Professional Business Projects</h3>
+                </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mt-0 d-flex justify-content-center">
+          <div class="highlight-card glass">
+            <i class="ti-desktop text-primary"></i>
+            <div>
+              <h3 class="mt-0">Web & App Development</h3>
+                         </div>
+          </div>
         </div>
       </div>
     </div>
@@ -556,8 +565,8 @@ a:hover{background-size:100% 2px}
 }
 
 /* Glass-style highlight cards (ensure contrast/readability) */
-.highlight-row{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:nowrap}
-.highlight-card{border-radius:999px;padding:18px 30px;margin:8px;background:linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.64));backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(255,255,255,0.6);box-shadow:0 14px 40px rgba(11,22,40,0.08);color:#08213b;transition:transform 320ms var(--anim-ease), box-shadow 320ms var(--anim-ease), border-color 320ms var(--anim-ease);display:flex;align-items:center;gap:14px;min-width:260px;max-width:420px}
+.highlight-row{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:nowrap;transform:translateY(-36px)}
+.highlight-card{position:relative;border-radius:999px;padding:18px 30px;margin:8px;background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.68));backdrop-filter:blur(12px) saturate(140%);border:1px solid rgba(255,255,255,0.6);box-shadow:0 18px 50px rgba(11,22,40,0.08);color:#08213b;transition:transform 320ms var(--anim-ease), box-shadow 320ms var(--anim-ease), border-color 320ms var(--anim-ease);display:flex;align-items:center;gap:14px;min-width:260px;max-width:420px}
 .highlight-card i{color:var(--accent);opacity:0.98;font-size:34px}
 .highlight-card .h3, .highlight-card h3{font-size:1.05rem;font-weight:600;margin:0}
 .highlight-card h3{color:#08213b;margin:0}
@@ -570,7 +579,7 @@ a:hover{background-size:100% 2px}
 
 /* responsive: collapse to stacked cards on small screens */
 @media (max-width: 900px){
-  .highlight-row{flex-wrap:wrap;gap:12px}
+  .highlight-row{flex-wrap:wrap;gap:12px;transform:none}
   .highlight-card{min-width:72%;max-width:92%;border-radius:12px;padding:16px 18px}
   .highlight-card i{font-size:28px}
 }
