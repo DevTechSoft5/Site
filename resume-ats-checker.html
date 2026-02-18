@@ -1,11 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DL3QEQ44S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8DL3QEQ44S');
+  </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <title>Free Resume ATS Checker – Score Your Resume Instantly | DevTechSoft</title>
+    <title>Free Resume ATS Checker â€“ Score Your Resume Instantly | DevTechSoft</title>
     <meta name="description"
         content="Check your resume's ATS compatibility for free. Get an instant score with keyword analysis, section detection, and formatting tips. 100% private, nothing uploaded.">
     <meta name="keywords"
@@ -14,7 +23,7 @@
     <link rel="canonical" href="https://devtechsoft.in/resume-ats-checker.html">
     <link rel="icon" href="logo.png">
 
-    <meta property="og:title" content="Free Resume ATS Checker – Score Your Resume Instantly">
+    <meta property="og:title" content="Free Resume ATS Checker â€“ Score Your Resume Instantly">
     <meta property="og:description"
         content="Check your resume's ATS compatibility for free. Instant score with keyword analysis.">
     <meta property="og:type" content="website">
@@ -75,15 +84,15 @@
                 <div class="nav-dropdown">
                     <a href="index.html#tools">Tools</a>
                     <div class="dropdown-menu">
-                        <a href="image-compressor.html">🖼️ Image Compressor</a>
-                        <a href="image-to-webp.html">🔄 Image to WebP</a>
-                        <a href="ai-prompt-generator.html">🤖 AI Prompt Generator</a>
-                        <a href="resume-ats-checker.html">📝 Resume ATS Checker</a>
-                        <a href="seo-meta-generator.html">🔍 SEO Meta Generator</a>
-                        <a href="json-formatter.html">📋 JSON Formatter</a>
-                        <a href="pdf-merger.html">📄 PDF Merger</a>
-                        <a href="pomodoro-timer.html">⏱️ Pomodoro Timer</a>
-                        <a href="text-case-converter.html">🔤 Text Case Converter</a>
+                        <a href="image-compressor.html">ðŸ–¼ï¸ Image Compressor</a>
+                        <a href="image-to-webp.html">ðŸ”„ Image to WebP</a>
+                        <a href="ai-prompt-generator.html">ðŸ¤– AI Prompt Generator</a>
+                        <a href="resume-ats-checker.html">ðŸ“ Resume ATS Checker</a>
+                        <a href="seo-meta-generator.html">ðŸ” SEO Meta Generator</a>
+                        <a href="json-formatter.html">ðŸ“‹ JSON Formatter</a>
+                        <a href="pdf-merger.html">ðŸ“„ PDF Merger</a>
+                        <a href="pomodoro-timer.html">â±ï¸ Pomodoro Timer</a>
+                        <a href="text-case-converter.html">ðŸ”¤ Text Case Converter</a>
                     </div>
                 </div>
                 <a href="about.html">About</a>
@@ -95,20 +104,20 @@
     <main style="padding-top:32px">
         <div class="tool-header">
             <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-                <a href="index.html">Home</a> <span class="breadcrumb-sep">›</span> <strong>Resume ATS Checker</strong>
+                <a href="index.html">Home</a> <span class="breadcrumb-sep">â€º</span> <strong>Resume ATS Checker</strong>
             </nav>
-            <h1>Free Resume ATS Checker – Score Your Resume Instantly</h1>
+            <h1>Free Resume ATS Checker â€“ Score Your Resume Instantly</h1>
             <p class="lead">Paste your resume text and get an instant ATS compatibility score with actionable tips.</p>
         </div>
 
         <div class="tool-intro">
             <p>Most large companies use Applicant Tracking Systems (ATS) to automatically screen resumes before a human
                 recruiter ever sees them. These systems parse your resume for keywords, section structure, formatting,
-                and relevance. If your resume doesn't pass the ATS, it may never reach a hiring manager — regardless of
+                and relevance. If your resume doesn't pass the ATS, it may never reach a hiring manager â€” regardless of
                 your qualifications.</p>
             <p>Our free ATS checker analyzes your resume text for the factors that ATS systems look for: keyword
                 density, section headings, word count, contact information, and formatting patterns. All analysis runs
-                locally in your browser — your resume text is never uploaded or stored anywhere.</p>
+                locally in your browser â€” your resume text is never uploaded or stored anywhere.</p>
         </div>
 
         <div class="tool-card">
@@ -118,8 +127,8 @@
                     placeholder="Paste your entire resume text here... Include your name, contact info, experience, education, and skills sections."></textarea>
             </div>
             <div class="btn-group" style="margin-top:12px">
-                <button class="btn-tool primary" id="analyzeBtn">📊 Analyze Resume</button>
-                <button class="btn-tool secondary" id="clearBtn">🔄 Clear</button>
+                <button class="btn-tool primary" id="analyzeBtn">ðŸ“Š Analyze Resume</button>
+                <button class="btn-tool secondary" id="clearBtn">ðŸ”„ Clear</button>
             </div>
 
             <div class="results" id="results">
@@ -165,7 +174,7 @@
                 <!-- Sections detected -->
                 <div class="output-section">
                     <div class="output-header">
-                        <h3>📋 Sections Detected</h3>
+                        <h3>ðŸ“‹ Sections Detected</h3>
                     </div>
                     <div class="tag-list" id="sectionTags"></div>
                 </div>
@@ -173,13 +182,13 @@
                 <!-- Tips -->
                 <div class="output-section">
                     <div class="output-header">
-                        <h3>💡 Tips & Recommendations</h3>
+                        <h3>ðŸ’¡ Tips & Recommendations</h3>
                     </div>
                     <div class="output-box" id="tipsBox"></div>
                 </div>
             </div>
 
-            <div class="trust-badge">🔒 Your resume never leaves your device. All analysis runs locally in your browser.
+            <div class="trust-badge">ðŸ”’ Your resume never leaves your device. All analysis runs locally in your browser.
             </div>
         </div>
 
@@ -189,17 +198,17 @@
             <div class="how-to-steps">
                 <div class="how-to-step">
                     <div class="how-to-num">1</div>
-                    <p><strong>Paste your resume text</strong> — Copy the full text of your resume and paste it into the
+                    <p><strong>Paste your resume text</strong> â€” Copy the full text of your resume and paste it into the
                         text area. Include all sections: name, contact, experience, education, and skills.</p>
                 </div>
                 <div class="how-to-step">
                     <div class="how-to-num">2</div>
-                    <p><strong>Click Analyze</strong> — The tool scans your resume for ATS-relevant factors including
+                    <p><strong>Click Analyze</strong> â€” The tool scans your resume for ATS-relevant factors including
                         keyword density, section structure, word count, and formatting patterns.</p>
                 </div>
                 <div class="how-to-step">
                     <div class="how-to-num">3</div>
-                    <p><strong>Review your score and tips</strong> — Check your ATS score, review detected sections and
+                    <p><strong>Review your score and tips</strong> â€” Check your ATS score, review detected sections and
                         keywords, and follow the recommendations to improve your resume.</p>
                 </div>
             </div>
@@ -304,9 +313,9 @@
 
             // Word count scoring
             if (wc >= 300 && wc <= 900) { score += 15; }
-            else if (wc >= 150 && wc < 300) { score += 8; tips.push('📏 Consider adding more detail — ATS performs better with 300-900 words.'); }
-            else if (wc > 900) { score += 10; tips.push('📏 Your resume is quite long. Consider tightening to 600-900 words for best ATS results.'); }
-            else { score += 3; tips.push('📏 Your resume seems very short. Add relevant experience, skills, and achievements.'); }
+            else if (wc >= 150 && wc < 300) { score += 8; tips.push('ðŸ“ Consider adding more detail â€” ATS performs better with 300-900 words.'); }
+            else if (wc > 900) { score += 10; tips.push('ðŸ“ Your resume is quite long. Consider tightening to 600-900 words for best ATS results.'); }
+            else { score += 3; tips.push('ðŸ“ Your resume seems very short. Add relevant experience, skills, and achievements.'); }
 
             // Section detection
             const detected = [];
@@ -315,36 +324,36 @@
             }
             const sectionScore = Math.min(detected.length * 5, 25);
             score += sectionScore;
-            if (!detected.includes('Experience')) tips.push('💼 Add a clear "Experience" or "Work History" section.');
-            if (!detected.includes('Education')) tips.push('🎓 Add a clear "Education" section with degrees and institutions.');
-            if (!detected.includes('Skills')) tips.push('🛠️ Add a dedicated "Skills" or "Technical Skills" section.');
-            if (!detected.includes('Summary')) tips.push('📝 Add a "Professional Summary" or "Objective" section at the top.');
+            if (!detected.includes('Experience')) tips.push('ðŸ’¼ Add a clear "Experience" or "Work History" section.');
+            if (!detected.includes('Education')) tips.push('ðŸŽ“ Add a clear "Education" section with degrees and institutions.');
+            if (!detected.includes('Skills')) tips.push('ðŸ› ï¸ Add a dedicated "Skills" or "Technical Skills" section.');
+            if (!detected.includes('Summary')) tips.push('ðŸ“ Add a "Professional Summary" or "Objective" section at the top.');
 
             // Keyword analysis
             const lowerText = text.toLowerCase();
             const foundKeywords = atsKeywords.filter(kw => lowerText.includes(kw));
             const kwScore = Math.min(foundKeywords.length * 2, 20);
             score += kwScore;
-            if (foundKeywords.length < 5) tips.push('🔑 Use more action verbs (managed, developed, implemented, etc.) to describe achievements.');
+            if (foundKeywords.length < 5) tips.push('ðŸ”‘ Use more action verbs (managed, developed, implemented, etc.) to describe achievements.');
 
             // Contact info
             let contactPts = 0;
             if (/[\w.+-]+@[\w-]+\.[\w.]+/.test(text)) contactPts += 5;
-            else tips.push('📧 Include your email address.');
+            else tips.push('ðŸ“§ Include your email address.');
             if (/\+?\d[\d\s\-()]{7,}/.test(text)) contactPts += 5;
-            else tips.push('📞 Include your phone number.');
+            else tips.push('ðŸ“ž Include your phone number.');
             if (/linkedin\.com/i.test(text)) contactPts += 5;
-            else tips.push('🔗 Include your LinkedIn profile URL.');
+            else tips.push('ðŸ”— Include your LinkedIn profile URL.');
             score += contactPts;
 
             // Formatting
             if (!/[A-Z]{2,}/.test(text.replace(/ATS|SEO|MBA|CEO|CTO|API|HTML|CSS|SQL|AWS|GCP/g, ''))) { score += 5; }
-            else { tips.push('⚠️ Avoid excessive uppercase text — ATS may misparse it.'); }
+            else { tips.push('âš ï¸ Avoid excessive uppercase text â€” ATS may misparse it.'); }
 
             // Quantified achievements
             const nums = text.match(/\d+%|\$\d+|\d+\+/g);
             if (nums && nums.length >= 2) { score += 10; }
-            else { tips.push('📊 Add quantified achievements (e.g., "Increased sales by 25%", "Managed $1M budget").'); }
+            else { tips.push('ðŸ“Š Add quantified achievements (e.g., "Increased sales by 25%", "Managed $1M budget").'); }
 
             score = Math.min(score, 100);
 
@@ -354,16 +363,16 @@
             const circumference = 2 * Math.PI * 70;
             const offset = circumference - (score / 100) * circumference;
             scoreProgress.style.strokeDashoffset = offset;
-            scoreLabel.textContent = score >= 80 ? '🎉 Excellent ATS Score!' : score >= 60 ? '👍 Good — Room for Improvement' : '⚠️ Needs Work';
+            scoreLabel.textContent = score >= 80 ? 'ðŸŽ‰ Excellent ATS Score!' : score >= 60 ? 'ðŸ‘ Good â€” Room for Improvement' : 'âš ï¸ Needs Work';
 
             wordCountEl.textContent = wc;
             sectionsFound.textContent = detected.length;
             keywordCount.textContent = foundKeywords.length;
-            contactScore.textContent = contactPts >= 10 ? '✅ Good' : '⚠️ Incomplete';
+            contactScore.textContent = contactPts >= 10 ? 'âœ… Good' : 'âš ï¸ Incomplete';
 
-            sectionTags.innerHTML = detected.map(s => `<span class="tag">✅ ${s}</span>`).join('');
+            sectionTags.innerHTML = detected.map(s => `<span class="tag">âœ… ${s}</span>`).join('');
 
-            if (tips.length === 0) tips.push('🎉 Your resume looks great! No major ATS issues found.');
+            if (tips.length === 0) tips.push('ðŸŽ‰ Your resume looks great! No major ATS issues found.');
             tipsBox.textContent = tips.join('\n\n');
         });
 
