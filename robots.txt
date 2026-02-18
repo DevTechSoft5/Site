@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devtechsoft.in/sitemap.xml
+
+# Disallow nothing — all pages should be indexed
+# AdSense crawler needs full access

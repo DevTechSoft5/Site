@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>Pomodoro Study Timer – Focus Better Online | DevTechSoft</title>
+    <meta name="description"
+        content="Free Pomodoro timer for studying and productivity. Configurable work and break intervals, exam mode, session tracking, and sound alerts. Works offline.">
+    <meta name="keywords"
+        content="Pomodoro timer, study timer, focus timer, productivity timer, exam timer, online timer">
+    <meta name="author" content="DevTechSoft">
+    <link rel="canonical" href="https://devtechsoft.in/pomodoro-timer.html">
+    <link rel="icon" href="logo.png">
+    <meta property="og:title" content="Pomodoro Study Timer – Focus Better Online">
+    <meta property="og:description"
+        content="Free Pomodoro timer for studying and productivity. Configurable intervals and session tracking.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devtechsoft.in/pomodoro-timer.html">
+    <meta property="og:image" content="https://devtechsoft.in/logo.png">
+    <meta property="og:site_name" content="DevTechSoft">
+    <meta name="twitter:card" content="summary_large_image">
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Pomodoro Study Timer","url":"https://devtechsoft.in/pomodoro-timer.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"isPartOf":{"@type":"WebSite","name":"DevTechSoft","url":"https://devtechsoft.in"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://devtechsoft.in/"},{"@type":"ListItem","position":2,"name":"Pomodoro Timer","item":"https://devtechsoft.in/pomodoro-timer.html"}]}}</script>
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Pomodoro Technique?","acceptedAnswer":{"@type":"Answer","text":"A time management method where you work in focused 25-minute intervals separated by 5-minute breaks."}},{"@type":"Question","name":"Can I customize the timer?","acceptedAnswer":{"@type":"Answer","text":"Yes! Adjust work, short break, and long break durations. Use exam mode for a custom single timer."}},{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once loaded, the timer works offline. Session data is saved in localStorage."}},{"@type":"Question","name":"Will I get a sound alert?","acceptedAnswer":{"@type":"Answer","text":"Yes! Audio alerts play when intervals end, generated in-browser with no external files."}},{"@type":"Question","name":"Is my data saved?","acceptedAnswer":{"@type":"Answer","text":"Session counts and settings are saved in your browser's localStorage. Nothing is sent to any server."}}]}</script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .timer-card {
+            text-align: center
+        }
+
+        .mode-tabs {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap
+        }
+
+        .mode-tab {
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            background: var(--surface-glass);
+            border: 1.5px solid rgba(99, 102, 241, .12);
+            color: var(--muted);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: .85rem;
+            transition: all var(--transition)
+        }
+
+        .mode-tab.active {
+            background: var(--gradient-primary);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 16px rgba(99, 102, 241, .3)
+        }
+
+        .timer-display {
+            font-size: clamp(3rem, 12vw, 5rem);
+            font-weight: 800;
+            letter-spacing: 4px;
+            margin: 16px 0;
+            font-variant-numeric: tabular-nums;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .timer-label {
+            font-size: .9rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: 600
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(99, 102, 241, .1);
+            border-radius: 3px;
+            margin: 16px 0;
+            overflow: hidden
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+            transition: width .5s;
+            width: 0
+        }
+
+        .timer-controls {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap
+        }
+
+        .sessions {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin: 16px 0;
+            flex-wrap: wrap
+        }
+
+        .session-stat {
+            text-align: center
+        }
+
+        .session-stat .num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .session-stat .lbl {
+            font-size: .72rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600
+        }
+
+        .settings-toggle {
+            font-size: .85rem;
+            color: var(--accent-2);
+            cursor: pointer;
+            margin-top: 12px;
+            display: inline-block;
+            font-weight: 600
+        }
+
+        .settings-panel {
+            display: none;
+            margin-top: 12px;
+            padding: 16px;
+            background: var(--bg-main);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(99, 102, 241, .08)
+        }
+
+        .settings-panel.show {
+            display: block
+        }
+
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: .88rem;
+            color: var(--muted)
+        }
+
+        .setting-row input {
+            width: 70px;
+            text-align: center
+        }
+
+        .exam-input {
+            margin: 12px 0
+        }
+
+        .exam-input input {
+            width: 100px;
+            text-align: center;
+            font-size: 1.1rem
+        }
+    </style>
+</head>
+
+<body>
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-wrap"><a href="index.html" class="brand"><img src="logo.png" alt="DevTechSoft logo"
+                    loading="eager" width="40" height="40">
+                <div class="title">DevTechSoft</div>
+            </a><button class="hamburger" aria-label="Toggle menu"
+                aria-expanded="false"><span></span><span></span><span></span></button>
+            <div class="nav-links" aria-hidden="false"><a href="index.html">Home</a>
+                <div class="nav-dropdown"><a href="index.html#tools">Tools</a>
+                    <div class="dropdown-menu"><a href="image-compressor.html">🖼️ Image Compressor</a><a
+                            href="image-to-webp.html">🔄 Image to WebP</a><a href="ai-prompt-generator.html">🤖 AI
+                            Prompt Generator</a><a href="resume-ats-checker.html">📝 Resume ATS Checker</a><a
+                            href="seo-meta-generator.html">🔍 SEO Meta Generator</a><a href="json-formatter.html">📋
+                            JSON Formatter</a><a href="pdf-merger.html">📄 PDF Merger</a><a
+                            href="pomodoro-timer.html">⏱️ Pomodoro Timer</a><a href="text-case-converter.html">🔤 Text
+                            Case Converter</a></div>
+                </div><a href="about.html">About</a><a href="contact.html" class="cta">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top:32px">
+        <div class="tool-header">
+            <nav aria-label="Breadcrumb" class="breadcrumb-nav"><a href="index.html">Home</a> <span
+                    class="breadcrumb-sep">›</span> <strong>Pomodoro Timer</strong></nav>
+            <h1>Pomodoro Study Timer – Focus Better Online</h1>
+            <p class="lead">Master the Pomodoro Technique and supercharge your study sessions. Configurable,
+                offline-ready, and distraction-free.</p>
+        </div>
+        <div class="tool-intro">
+            <p>The Pomodoro Technique, developed by Francesco Cirillo in the 1980s, is one of the most effective time
+                management methods for students and professionals. It works by breaking work into focused 25-minute
+                intervals (called "pomodoros") separated by short 5-minute breaks. After four pomodoros, you take a
+                longer 15-minute break.</p>
+            <p>Research shows that this structured approach reduces mental fatigue, improves concentration, and helps
+                you accomplish more in less time. Our free timer runs entirely in your browser — your session data is
+                saved locally and never sent to any server. Use it for studying, coding, writing, or any task that
+                requires sustained focus.</p>
+        </div>
+        <div class="tool-card timer-card">
+            <div class="mode-tabs">
+                <div class="mode-tab active" data-mode="pomodoro">🍅 Pomodoro</div>
+                <div class="mode-tab" data-mode="short">☕ Short Break</div>
+                <div class="mode-tab" data-mode="long">🌿 Long Break</div>
+                <div class="mode-tab" data-mode="exam">📝 Exam Mode</div>
+            </div>
+            <div class="timer-label" id="timerLabel">Focus Time</div>
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="exam-input" id="examInput" style="display:none"><label
+                    style="font-size:.85rem;color:var(--muted)">Exam Duration (minutes):</label><br><input type="number"
+                    id="examDuration" value="60" min="1" max="360"></div>
+            <div class="timer-controls">
+                <button class="btn-tool primary" id="startBtn">▶ Start</button>
+                <button class="btn-tool secondary" id="resetBtn">⏹ Reset</button>
+            </div>
+            <div class="sessions">
+                <div class="session-stat">
+                    <div class="num" id="sessionCount">0</div>
+                    <div class="lbl">Sessions</div>
+                </div>
+                <div class="session-stat">
+                    <div class="num" id="totalMinutes">0</div>
+                    <div class="lbl">Minutes Focused</div>
+                </div>
+            </div>
+            <span class="settings-toggle" id="settingsToggle">⚙️ Settings</span>
+            <div class="settings-panel" id="settingsPanel">
+                <div class="setting-row"><span>Work (min)</span><input type="number" id="workMin" value="25" min="1"
+                        max="120"></div>
+                <div class="setting-row"><span>Short Break (min)</span><input type="number" id="shortMin" value="5"
+                        min="1" max="30"></div>
+                <div class="setting-row"><span>Long Break (min)</span><input type="number" id="longMin" value="15"
+                        min="1" max="60"></div>
+                <div class="setting-row"><span>Long Break After</span><input type="number" id="longAfter" value="4"
+                        min="1" max="10"></div>
+            </div>
+            <div class="trust-badge" style="margin-top:20px">🔒 Sessions saved locally. No data sent to any server.
+            </div>
+        </div>
+        <div class="how-to">
+            <h2>How to Use the Pomodoro Timer</h2>
+            <p class="desc">Boost your productivity with these simple steps:</p>
+            <div class="how-to-steps">
+                <div class="how-to-step">
+                    <div class="how-to-num">1</div>
+                    <p><strong>Choose your mode</strong> — Select Pomodoro for a focused work session, Short/Long Break
+                        for rest, or Exam Mode for a custom-duration countdown.</p>
+                </div>
+                <div class="how-to-step">
+                    <div class="how-to-num">2</div>
+                    <p><strong>Press Start</strong> — The timer begins counting down. Focus on your task until the audio
+                        alert plays. You can pause and resume at any time.</p>
+                </div>
+                <div class="how-to-step">
+                    <div class="how-to-num">3</div>
+                    <p><strong>Track your progress</strong> — Completed sessions and total focused minutes are tracked
+                        and saved in your browser. Use ⚙️ Settings to customize intervals.</p>
+                </div>
+            </div>
+        </div>
+        <section class="faq-section" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-item card">
+                    <div class="faq-q">What is the Pomodoro Technique?</div>
+                    <div class="faq-a">A time management method where you work in focused 25-minute intervals separated
+                        by 5-minute breaks. After 4 pomodoros, take a longer 15-minute break.</div>
+                </div>
+                <div class="faq-item card">
+                    <div class="faq-q">Can I customize the timer duration?</div>
+                    <div class="faq-a">Yes! Click ⚙️ Settings to adjust work, short break, and long break durations. Use
+                        exam mode for any custom duration.</div>
+                </div>
+                <div class="faq-item card">
+                    <div class="faq-q">Does the timer work offline?</div>
+                    <div class="faq-a">Yes. Once loaded, the timer works offline. Session data is saved in your
+                        browser's localStorage.</div>
+                </div>
+                <div class="faq-item card">
+                    <div class="faq-q">Will I get a sound alert?</div>
+                    <div class="faq-a">Yes! An audio alert plays when each interval ends. The sound is generated
+                        in-browser — no external files needed.</div>
+                </div>
+                <div class="faq-item card">
+                    <div class="faq-q">Is my data saved?</div>
+                    <div class="faq-a">Session counts and settings are saved in localStorage. Nothing is sent to any
+                        server.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-brand"><img src="logo.png" alt="DevTechSoft logo" loading="lazy" width="40" height="40">
+                <div><strong>DevTechSoft</strong>
+                    <div class="footer-tagline">Free, privacy-first browser tools</div>
+                </div>
+            </div>
+            <nav class="footer-links" aria-label="Footer navigation"><a href="about.html">About</a><a
+                    href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms</a><a
+                    href="contact.html">Contact</a></nav>
+            <div class="footer-meta">
+                <div>&copy; 2026 DevTechSoft. All rights reserved.</div><a
+                    href="mailto:devtechsoft5@gmail.com">devtechsoft5@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js" defer></script>
+    <script>
+        let mode = 'pomodoro', timeLeft = 25 * 60, totalTime = 25 * 60, running = false, interval = null;
+        let sessions = parseInt(localStorage.getItem('pomo_sessions') || '0');
+        let totalMin = parseInt(localStorage.getItem('pomo_totalMin') || '0');
+        const display = document.getElementById('timerDisplay'), label = document.getElementById('timerLabel'), progress = document.getElementById('progressFill'), startBtn = document.getElementById('startBtn'), resetBtn = document.getElementById('resetBtn');
+        document.getElementById('sessionCount').textContent = sessions; document.getElementById('totalMinutes').textContent = totalMin;
+        document.querySelectorAll('.mode-tab').forEach(tab => { tab.addEventListener('click', () => { document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active')); tab.classList.add('active'); mode = tab.dataset.mode; stopTimer(); document.getElementById('examInput').style.display = mode === 'exam' ? 'block' : 'none'; setMode() }) });
+        function setMode() { const w = parseInt(document.getElementById('workMin').value) || 25; const s = parseInt(document.getElementById('shortMin').value) || 5; const l = parseInt(document.getElementById('longMin').value) || 15; const e = parseInt(document.getElementById('examDuration').value) || 60; if (mode === 'pomodoro') { totalTime = w * 60; label.textContent = 'Focus Time' } else if (mode === 'short') { totalTime = s * 60; label.textContent = 'Short Break' } else if (mode === 'long') { totalTime = l * 60; label.textContent = 'Long Break' } else { totalTime = e * 60; label.textContent = 'Exam Mode' } timeLeft = totalTime; updateDisplay(); progress.style.width = '0%' }
+        function updateDisplay() { const m = Math.floor(timeLeft / 60); const s = timeLeft % 60; display.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`; document.title = `${display.textContent} – Pomodoro Timer` }
+        startBtn.addEventListener('click', () => { if (running) { stopTimer() } else { startTimer() } });
+        resetBtn.addEventListener('click', () => { stopTimer(); setMode() });
+        function startTimer() { if (mode === 'exam') { totalTime = parseInt(document.getElementById('examDuration').value) * 60; timeLeft = totalTime } running = true; startBtn.textContent = '⏸ Pause'; interval = setInterval(() => { if (timeLeft <= 0) { stopTimer(); playAlert(); onComplete(); return } timeLeft--; updateDisplay(); const pct = ((totalTime - timeLeft) / totalTime) * 100; progress.style.width = pct + '%' }, 1000) }
+        function stopTimer() { running = false; clearInterval(interval); startBtn.textContent = '▶ Start' }
+        function onComplete() { if (mode === 'pomodoro' || mode === 'exam') { sessions++; totalMin += Math.round(totalTime / 60); localStorage.setItem('pomo_sessions', sessions); localStorage.setItem('pomo_totalMin', totalMin); document.getElementById('sessionCount').textContent = sessions; document.getElementById('totalMinutes').textContent = totalMin } label.textContent = '✅ Complete!'; progress.style.width = '100%' }
+        function playAlert() { try { const ac = new (window.AudioContext || window.webkitAudioContext)();[440, 554.37, 659.25].forEach((freq, i) => { const osc = ac.createOscillator(); const gain = ac.createGain(); osc.connect(gain); gain.connect(ac.destination); osc.frequency.value = freq; osc.type = 'sine'; gain.gain.setValueAtTime(0.3, ac.currentTime + i * 0.3); gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + i * 0.3 + 0.5); osc.start(ac.currentTime + i * 0.3); osc.stop(ac.currentTime + i * 0.3 + 0.5) }) } catch (e) { } }
+        document.getElementById('settingsToggle').addEventListener('click', () => document.getElementById('settingsPanel').classList.toggle('show'));
+        ['workMin', 'shortMin', 'longMin', 'examDuration'].forEach(id => document.getElementById(id).addEventListener('change', () => { if (!running) setMode() }));
+        document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('open')));
+        updateDisplay();
+    </script>
+</body>
+
+</html>
