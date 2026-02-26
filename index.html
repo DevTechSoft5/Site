@@ -1,37 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
 <title>Final Year & IEEE Academic Projects | Student Project Guidance</title>
 
-<meta name="description" content="Academic project guidance for B.Tech, MCA, M.Tech, BCA and M.Sc students. Final year, mini and IEEE projects with source code, report, PPT and viva support.">
-
-<meta name="keywords" content="final year projects, ieee projects, academic projects, mini projects, btech projects, mca projects, mtech projects, student project guidance, ai ml projects, web development projects, blockchain projects, embedded systems projects">
-
-<meta name="author" content="DevTechSoft Academic Project Guidance">
+<meta name="description" content="Final year, mini and IEEE academic project guidance for B.E, B.Tech, MCA, M.Tech, BCA and M.Sc students. Complete support with source code, report, PPT and viva.">
+<meta name="keywords" content="final year projects, ieee projects, mini projects, academic projects, btech projects, mtech projects, mca projects, student project guidance, ai ml projects, web projects, android projects">
+<meta name="author" content="DevTechSoft Academic Guidance">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Final Year & IEEE Academic Project Guidance">
-<meta property="og:description" content="Student-focused academic project guidance with source code, documentation and viva preparation.">
+<meta property="og:title" content="Devtechsoft Final Year & IEEE Academic Project Guidance">
+<meta property="og:description" content="Student-focused academic project guidance with complete documentation and viva support.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="logo.png">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Academic Project Guidance for Students">
-<meta name="twitter:description" content="Final year, mini & IEEE projects with complete academic support.">
-
-<!-- Canonical (change domain later) -->
-<link rel="canonical" href="https://yourdomainname.com/">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DL3QEQ44S"></script>
@@ -42,349 +31,586 @@
 
     gtag('config', 'G-8DL3QEQ44S');
   </script>
+
+
+<!-- =========================
+        GLOBAL CSS
+========================= -->
 <style>
+:root{
+  --primary:#0d6efd;
+  --accent:#6610f2;
+  --dark:#0b0b0b;
+  --muted:#6c757d;
+}
+
+*{box-sizing:border-box}
+
+html,body{
+  font-family:'Poppins',sans-serif;
+  background:#f4f6f8;
+  color:#212529;
+  scroll-behavior:smooth;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar{
+  background:#0b0b0b;
+}
+.navbar-brand span{
+  font-weight:700;
+  font-size:20px;
+}
+.nav-link{
+  color:#ffffff !important;
+  font-weight:500;
+  margin-left:12px;
+}
+.nav-link:hover{
+  color:#ffc107 !important;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;
+  padding:120px 0 90px;
+  text-align:center;
+}
+.hero h1{
+  font-weight:700;
+}
+.hero p{
+  opacity:.92;
+  max-width:780px;
+  margin:15px auto;
+}
+
+/* ---------- ATTENTION BUTTON ---------- */
+.attention-btn{
+  position:relative;
+  overflow:hidden;
+  border-radius:40px;
+  animation:pulseGlow 2s infinite;
+  box-shadow:0 0 18px rgba(255,193,7,.6);
+}
+@keyframes pulseGlow{
+  0%{box-shadow:0 0 12px rgba(255,193,7,.5)}
+  50%{box-shadow:0 0 32px rgba(255,193,7,.9)}
+  100%{box-shadow:0 0 12px rgba(255,193,7,.5)}
+}
+.attention-btn::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.4),transparent 70%);
+  animation:shine 3s infinite;
+}
+@keyframes shine{
+  0%{transform:translateX(-100%)}
+  60%{transform:translateX(100%)}
+  100%{transform:translateX(100%)}
+}
+
+/* ---------- SECTION BASE ---------- */
+.section-padding{
+  padding:80px 0;
+}
+.section-title{
+  font-weight:700;
+  margin-bottom:10px;
+}
+.section-subtitle{
+  color:var(--muted);
+  margin-bottom:50px;
+}
+
+/* ---------- CARDS ---------- */
+.glass-card{
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(10px);
+  border-radius:16px;
+  padding:26px;
+  transition:.35s;
+}
+.glass-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background:#0b0b0b;
+  color:#fff;
+  padding:28px 0;
+}
+footer a{color:#fff;text-decoration:none}
 
 
-/* ===== ULTRA ATTENTION BUTTON ===== */
+
+
+/* =========================================
+   PREMIUM UI ENHANCEMENT PACK
+   (Add-on CSS – SAFE)
+========================================= */
+
+/* ---------- GLOBAL SMOOTHNESS ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, #f6f8fc 0%, #fdfefe 100%);
+}
+
+/* ---------- SECTION DEPTH ---------- */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.05), transparent);
+}
+
+/* ---------- HERO TEXT POLISH ---------- */
+.hero h1 {
+  letter-spacing: -0.5px;
+  text-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.hero p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- GLASS CARDS (UPGRADE) ---------- */
+.card,
+.consult-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.88),
+    rgba(255,255,255,0.75)
+  );
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+  border: 1px solid rgba(13,110,253,0.08);
+}
+
+/* ---------- CARD HOVER DEPTH ---------- */
+.card:hover,
+.consult-card:hover {
+  transform: translateY(-10px) scale(1.015);
+  box-shadow:
+    0 20px 50px rgba(13,110,253,0.15),
+    0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ---------- PROJECT ICON GLOW ---------- */
+.project-icon {
+  position: relative;
+}
+
+.project-icon::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 12px;
+  background: radial-gradient(circle, rgba(13,110,253,0.35), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .project-icon::after {
+  opacity: 1;
+}
+
+/* ---------- INPUT FOCUS PREMIUM ---------- */
+.form-control,
+.form-select {
+  border: 1px solid rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow:
+    0 0 0 4px rgba(13,110,253,0.15),
+    0 10px 25px rgba(13,110,253,0.12);
+}
+
+/* ---------- BUTTON LUXURY FEEL ---------- */
+.btn {
+  border-radius: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0b5ed7, #520dc2);
+}
+
+/* ---------- ATTENTION BUTTON (UPGRADE) ---------- */
 .attention-btn {
   position: relative;
   overflow: hidden;
-  isolation: isolate;
-  animation: glowPulse 2s infinite ease-in-out,
-             microBounce 3s infinite ease-in-out;
-  box-shadow:
-    0 0 12px rgba(255,193,7,0.65),
-    0 0 28px rgba(255,193,7,0.35);
 }
 
-/* Glow breathing */
-@keyframes glowPulse {
-  0% {
-    box-shadow:
-      0 0 10px rgba(255,193,7,0.55),
-      0 0 22px rgba(255,193,7,0.25);
-  }
-  50% {
-    box-shadow:
-      0 0 22px rgba(255,193,7,0.9),
-      0 0 48px rgba(255,193,7,0.45);
-  }
-  100% {
-    box-shadow:
-      0 0 10px rgba(255,193,7,0.55),
-      0 0 22px rgba(255,193,7,0.25);
-  }
-}
-
-/* Micro bounce to grab attention */
-@keyframes microBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-
-/* Neon animated border */
-.attention-btn::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.9),
-    transparent
-  );
-  filter: blur(1px);
-  animation: borderRun 2.2s linear infinite;
-  z-index: -1;
-}
-
-@keyframes borderRun {
-  0% { transform: translateX(-120%); }
-  100% { transform: translateX(120%); }
-}
-
-/* Shimmer light sweep */
 .attention-btn::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     120deg,
-    transparent 30%,
-    rgba(255,255,255,0.35),
-    transparent 70%
+    transparent 25%,
+    rgba(255,255,255,0.4),
+    transparent 75%
   );
-  transform: translateX(-100%);
-  animation: shimmer 3.5s infinite;
-  z-index: 1;
+  transform: translateX(-120%);
+  animation: buttonShine 3s infinite;
 }
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  60% { transform: translateX(100%); }
-  100% { transform: translateX(100%); }
+@keyframes buttonShine {
+  0% { transform: translateX(-120%); }
+  60% { transform: translateX(120%); }
+  100% { transform: translateX(120%); }
 }
 
-/* Pause animations on hover (luxury feel) */
-.attention-btn:hover {
-  animation-play-state: paused;
-  transform: scale(1.04);
+/* ---------- SECTION HEADINGS ---------- */
+.section-title {
+  position: relative;
+  display: inline-block;
 }
 
-.attention-btn:hover::before,
-.attention-btn:hover::after {
-  animation-play-state: paused;
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+
+/* ---------- FOOTER POLISH ---------- */
+footer {
+  background: linear-gradient(135deg, #0b0f1a, #0b0b0b);
+}
+
+footer a {
+  position: relative;
+}
+
+footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #ffc107;
+  transition: width 0.25s ease;
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+
+/* ---------- SCROLL MICRO ANIMATION ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .card,
+  .consult-card,
+  .btn {
+    transition: transform 0.35s cubic-bezier(.2,.9,.2,1),
+                box-shadow 0.35s cubic-bezier(.2,.9,.2,1);
+  }
+}
+
+/* ---------- MOBILE POLISH ---------- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
 }
 
 
-
-:root{--primary:#0d6efd;--accent:#6610f2;--muted:#6c757d}
-html,body{height:100%}
-body { font-family: 'Poppins', sans-serif; background:#f4f6f8; padding-top:72px; color:#212529 }
-.navbar-brand img{transition:transform .25s ease}
-.navbar-brand img:hover{transform:scale(1.06)}
-
-.hero{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;padding:100px 0 70px}
-.hero .lead{opacity:.92}
-
-.section-padding{padding:72px 0}
-.project-card{transition:transform .28s ease,box-shadow .28s ease;border:0;border-radius:12px}
-.project-card:hover{transform:translateY(-8px);box-shadow:0 10px 30px rgba(18,38,63,.08)}
-.project-icon{font-size:28px;color:var(--primary);width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#fff;margin-right:12px}
-
-.consult-card{background:#fff;border-radius:14px}
-.consult-title{font-weight:700;letter-spacing:.3px}
-.form-control,.form-select{padding:12px;border-radius:10px}
-
-footer{background:#0b0b0b;color:#ffffff;padding:28px 0}
-footer a{color:#ffffff}
-footer .text-muted{color:#ffffff !important}
-
-@media (max-width:767px){.hero{padding:64px 0}}
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+<!-- =========================
+        NAVBAR
+========================= -->
+<nav class="navbar navbar-expand-lg fixed-top shadow">
 <div class="container">
-<a class="navbar-brand d-flex align-items-center" href="#">
-<img src="logo.png" alt="DevTechSoft Academic Projects Logo" height="40" class="me-2">
-<span class="fw-bold">DevTechSoft</span>
-</a>
-
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="nav">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="#projects">Domains</a></li>
-<li class="nav-item"><a class="nav-link" href="#consultation">Consultation</a></li>
-<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-</ul>
-</div>
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <span>DevTechSoft</span>
+  </a>
+  <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="nav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#academic">Academic Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#practice">Practice Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#consultation">Consultation</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+    </ul>
+  </div>
 </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero text-center">
+<!-- =========================
+        HERO
+========================= -->
+<section class="hero" id="home">
 <div class="container">
-<h1 class="fw-bold display-5">Final Year & IEEE Academic Project Guidance</h1>
-<p class="lead mt-3">AI • ML • Blockchain • Web • Mobile • Hardware</p>
-<p class="mt-2 opacity-75">
-Complete academic support with source code, documentation & viva preparation
-</p>
-<a href="#consultation" class="btn btn-warning btn-lg mt-4 px-5 attention-btn">
-Request Consultation
-</a>
+  <h1 class="display-5">Devtechsoft Final Year & IEEE Academic Project Guidance</h1>
+  <p class="lead">
+    • Academic Projects   • Professional Projects  
+    <br>Complete guidance with source code, report, PPT & viva support
+  </p>
+  <a href="#consultation" class="btn btn-warning btn-lg px-5 mt-4 attention-btn">
+    Request Project Guidance
+  </a>
 </div>
 </section>
 
-<!-- SEO SUPPORT TEXT -->
-<section class="py-4 bg-white">
+
+
+
+<!-- =========================
+    ACADEMIC PROJECTS (80%)
+========================= -->
+<section id="academic" class="section-padding bg-white">
 <div class="container">
-<p class="text-muted text-center">
-DevTechSoft- Coimbatore provides academic project guidance for B.E, B.Tech, MCA, M.Tech, BCA and M.Sc students.
-We support final year projects, mini projects and IEEE implementations in Artificial Intelligence,
-Machine Learning, Web Development, Mobile Applications, Blockchain, Cyber Security, Networking
-and Embedded Systems with complete source code, documentation, PPT and viva preparation.
-</p>
+  <div class="text-center">
+    <h2 class="section-title">Academic Project Domains</h2>
+    <p class="section-subtitle">
+      Final year, mini & IEEE projects strictly aligned with college and university requirements
+    </p>
+  </div>
+
+  <div class="row g-4 mt-4">
+    <div class="col-md-4">
+      <div class="glass-card h-100">
+        <h5 class="fw-bold"><i class="bi bi-robot me-2 text-primary"></i>AI & Machine Learning</h5>
+        <p class="text-muted mt-2">
+          Prediction systems, medical diagnosis, sentiment analysis, recommendation engines.
+        </p>
+        <ul class="small text-muted">
+          <li>IEEE papers support</li>
+          <li>Python + ML models</li>
+          <li>Complete documentation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="glass-card h-100">
+        <h5 class="fw-bold"><i class="bi bi-browser-chrome me-2 text-primary"></i>Web Application Development</h5>
+        <p class="text-muted mt-2">
+          College-level and IEEE-based web applications with real-world use cases.
+        </p>
+        <ul class="small text-muted">
+          <li>PHP / Python / MERN</li>
+          <li>Admin + User modules</li>
+          <li>Report & PPT included</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="glass-card h-100">
+        <h5 class="fw-bold"><i class="bi bi-phone me-2 text-primary"></i>Mobile Application Development</h5>
+        <p class="text-muted mt-2">
+          Android & Flutter apps designed as academic projects with viva-ready flow.
+        </p>
+        <ul class="small text-muted">
+          <li>Android / Flutter</li>
+          <li>Mini & Final year</li>
+          <li>Source code explanation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="glass-card h-100">
+        <h5 class="fw-bold"><i class="bi bi-shield-lock me-2 text-primary"></i>Blockchain & Cyber Security</h5>
+        <p class="text-muted mt-2">
+          Secure systems focusing on authentication, voting and data integrity.
+        </p>
+        <ul class="small text-muted">
+          <li>Blockchain concepts</li>
+          <li>IEEE mapped topics</li>
+          <li>Flow + diagrams</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="glass-card h-100">
+        <h5 class="fw-bold"><i class="bi bi-hdd-network me-2 text-primary"></i>Networking Projects</h5>
+        <p class="text-muted mt-2">
+          Client-server models, chat applications and monitoring systems.
+        </p>
+        <ul class="small text-muted">
+          <li>Python networking</li>
+          <li>Socket programming</li>
+          <li>College-approved flow</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="glass-card h-100">
+        <h5 class="fw-bold"><i class="bi bi-cpu me-2 text-primary"></i>Hardware & IoT</h5>
+        <p class="text-muted mt-2">
+          Arduino, IoT and sensor-based academic projects with circuit explanation.
+        </p>
+        <ul class="small text-muted">
+          <li>Mini & Final year</li>
+          <li>Hardware diagrams</li>
+          <li>Viva-ready notes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 
-<!-- PROJECT DOMAINS -->
-<section id="projects" class="section-padding">
+<!-- =========================
+    PRACTICE PROJECTS (20%)
+========================= -->
+<section id="practice" class="section-padding bg-light">
 <div class="container">
-<div class="text-center mb-5">
-<h2 class="fw-bold">Academic Project Domains</h2>
-<p class="text-muted">Student-oriented final year & IEEE project solutions</p>
-</div>
+  <div class="text-center">
+    <h2 class="section-title">Practice & Demo Projects</h2>
+    <p class="section-subtitle">
+      Skill-building projects for learning and implementation (non-commercial)
+    </p>
+  </div>
 
-<div class="row g-4">
-<div class="col-md-4">
-  <div class="card project-card shadow-sm h-100">
-    <div class="card-body d-flex align-items-start">
-      <div class="project-icon"><i class="bi bi-robot"></i></div>
-      <div>
-        <h6 class="fw-bold mb-1">Artificial Intelligence & Machine Learning</h6>
-        <p class="text-muted mb-0">Prediction systems, medical diagnosis, sentiment analysis.</p>
+  <div class="row g-4 mt-4">
+    <div class="col-md-4">
+      <div class="glass-card h-100">
+        <h6 class="fw-bold">Salon Booking System</h6>
+        <p class="small text-muted">
+          Appointment booking web application to understand CRUD and admin flow.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="glass-card h-100">
+        <h6 class="fw-bold">Student Attendance System</h6>
+        <p class="small text-muted">
+          Simple web-based attendance system for practice and learning.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="glass-card h-100">
+        <h6 class="fw-bold">Android Learning App</h6>
+        <p class="small text-muted">
+          Educational mobile app focusing on UI flow and local storage.
+        </p>
       </div>
     </div>
   </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card project-card shadow-sm h-100">
-    <div class="card-body d-flex align-items-start">
-      <div class="project-icon"><i class="bi bi-browser-chrome"></i></div>
-      <div>
-        <h6 class="fw-bold mb-1">Web Application Development</h6>
-        <p class="text-muted mb-0">Management systems, dashboards, portals.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card project-card shadow-sm h-100">
-    <div class="card-body d-flex align-items-start">
-      <div class="project-icon"><i class="bi bi-phone"></i></div>
-      <div>
-        <h6 class="fw-bold mb-1">Mobile Application Development</h6>
-        <p class="text-muted mb-0">Flutter & Android academic applications.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card project-card shadow-sm h-100">
-    <div class="card-body d-flex align-items-start">
-      <div class="project-icon"><i class="bi bi-shield-lock"></i></div>
-      <div>
-        <h6 class="fw-bold mb-1">Blockchain & Cyber Security</h6>
-        <p class="text-muted mb-0">Secure voting, authentication systems.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card project-card shadow-sm h-100">
-    <div class="card-body d-flex align-items-start">
-      <div class="project-icon"><i class="bi bi-hdd-network"></i></div>
-      <div>
-        <h6 class="fw-bold mb-1">Networking & Distributed Systems</h6>
-        <p class="text-muted mb-0">Chat apps, monitoring, client-server systems.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-4">
-  <div class="card project-card shadow-sm h-100">
-    <div class="card-body d-flex align-items-start">
-      <div class="project-icon"><i class="bi bi-cpu"></i></div>
-      <div>
-        <h6 class="fw-bold mb-1">Hardware & Embedded Systems</h6>
-        <p class="text-muted mb-0">IoT, Arduino, energy monitoring projects.</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 </div>
 </section>
 
-<!-- CONSULTATION -->
+<!-- =========================
+    WHY CHOOSE US (STUDENT)
+========================= -->
+<section class="section-padding bg-white">
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-lg-6 mb-4">
+      <h2 class="section-title">Why Students Choose This Guidance</h2>
+      <ul class="mt-4 text-muted">
+        <li>✔ College & IEEE-aligned project topics</li>
+        <li>✔ Step-by-step explanation support</li>
+        <li>✔ Report, PPT & viva preparation</li>
+        <li>✔ Ethical academic guidance only</li>
+        <li>✔ WhatsApp-based communication</li>
+      </ul>
+    </div>
+    <div class="col-lg-6">
+      <div class="glass-card">
+        <h6 class="fw-bold mb-2">Academic Integrity Focus</h6>
+        <p class="text-muted small">
+          This platform is designed strictly for educational guidance.  
+          Students are encouraged to understand, modify and present projects
+          in accordance with their university rules.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<!-- =========================
+    CONSULTATION (WHATSAPP)
+========================= -->
 <section id="consultation" class="section-padding bg-light">
 <div class="container">
-<div class="row align-items-center">
+  <div class="row align-items-center">
 
-<div class="col-lg-5 mb-4">
-<h2 class="fw-bold">Project Request</h2>
-<p class="text-muted mt-3">
-Share your academic requirements and get a suitable project recommendation.
-</p>
-<ul class="mt-4 text-muted">
-<li>✔ IEEE & college-approved topics</li>
-<li>✔ Source code with explanation</li>
-<li>✔ Report, PPT & viva support</li>
-<li>✔ End-to-end guidance</li>
-</ul>
-</div>
+    <div class="col-lg-5 mb-4">
+      <h2 class="section-title">Project Consultation</h2>
+      <p class="text-muted mt-3">
+        Share your academic requirement.  
+        You will be redirected to WhatsApp for direct guidance.
+      </p>
+      <ul class="text-muted mt-4">
+        <li>✔ Final year / Mini / IEEE</li>
+        <li>✔ Any department</li>
+        <li>✔ WhatsApp response</li>
+      </ul>
+    </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+    <div class="col-lg-7">
+      <div class="consult-card shadow-lg p-4">
+<form id="consultForm">
 
-  const form = document.getElementById('consultationForm');
-  if (!form) return;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const name = document.getElementById('student_name').value.trim();
-    const phone = document.getElementById('contact_number').value.trim();
-    const degree = document.getElementById('degree').value;
-    const projectType = document.getElementById('project_type').value;
-    const preferred = document.getElementById('preferred_project').value;
-    const custom = document.getElementById('custom_project_title')?.value || '';
-
-    let message =
-`Hello DevTechSoft 👋
-
-I am interested in an academic project consultation.
-
-👤 Name: ${name}
-📞 Contact: ${phone}
-🎓 Degree: ${degree}
-📌 Project Type: ${projectType}
-📘 Preferred Project: ${preferred}`;
-
-    if (custom.trim() !== '') {
-      message += `\n✏️ Custom Title: ${custom}`;
-    }
-
-    message += `\n\nPlease guide me with suitable project details. Thank you.`;
-
-    const whatsappNumber = "919788974742"; // ✅ country code + number (NO +)
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    window.open(whatsappURL, '_blank');
-  });
-
-});
-</script>
-
-
-
-<div class="col-lg-7">
-<div class="consult-card shadow-lg p-5">
-
-  <form id="consultationForm" action="javascript:void(0)">
-  <h5 class="consult-title mb-4">Student Details</h5>
-
+  <!-- Student Details -->
   <div class="row g-3">
     <div class="col-md-6">
-      <label class="visually-hidden" for="student_name">Full name</label>
-      <input id="student_name" name="student_name" type="text" class="form-control" placeholder="Full name" required aria-label="Full name">
+      <input type="text" id="name" class="form-control" placeholder="Student Name" required>
     </div>
     <div class="col-md-6">
-      <label class="visually-hidden" for="contact_number">Mobile number</label>
-      <input id="contact_number" name="contact_number" type="tel" class="form-control" placeholder="Mobile number" required aria-label="Mobile number">
+      <input type="tel" id="phone" class="form-control" placeholder="Mobile Number" required>
     </div>
   </div>
 
-  <hr class="my-4">
-
-  <div class="row g-3">
+  <!-- Degree & Project Type -->
+  <div class="row g-3 mt-3">
     <div class="col-md-6">
-      <label class="visually-hidden" for="degree">Degree program</label>
-      <select id="degree" class="form-select" name="degree" required aria-label="Degree program">
-        <option value="">Degree program</option>
+      <select id="degree" class="form-select" required>
+        <option value="">Degree</option>
         <option>B.E / B.Tech</option>
         <option>M.E / M.Tech</option>
         <option>BCA</option>
@@ -393,9 +619,8 @@ I am interested in an academic project consultation.
       </select>
     </div>
     <div class="col-md-6">
-      <label class="visually-hidden" for="project_type">Project category</label>
-      <select id="project_type" class="form-select" name="project_type" required aria-label="Project category">
-        <option value="">Project category</option>
+      <select id="type" class="form-select" required>
+        <option value="">Project Type</option>
         <option>Mini Project</option>
         <option>Final Year Project</option>
         <option>IEEE Project</option>
@@ -403,124 +628,222 @@ I am interested in an academic project consultation.
     </div>
   </div>
 
-  <hr class="my-4">
+  <!-- Project Selection -->
+  <div class="mt-3">
+    <select id="projectSelect" class="form-select" required>
+      <option value="">Select Project</option>
 
-  <label class="visually-hidden" for="preferred_project">Preferred project</label>
-  <select id="preferred_project" class="form-select mb-4" name="preferred_project" required aria-label="Preferred project">
-    <option value="">Preferred project topic</option>
-    <option>Customized ML Project</option>
-    <option>Customized Hardware Project</option>
-    <option>Customized Android App Project</option>
-    <option>Customized Blockchain Project</option>
-    <option>Automated Amazon Product Scraper &amp; Sentiment Analyzer</option>
-    <option>Smart Supermarket Management System</option>
-    <option>AI-Powered Traffic Time Saver System</option>
-    <option>Smart Supermarket Billing &amp; Inventory System</option>
-    <option>Secure Blockchain-Based Voting System</option>
-    <option>Smart Crime Detection &amp; Face Recognition Surveillance System</option>
-    <option>Smart Calories Burnt Prediction System</option>
-    <option>Smart Mobile Banking &amp; Loan Calculator App</option>
-    <option>AI-Based Scholarship Recommendation System</option>
-    <option>Lung Disease Prediction Using X-Ray Images</option>
-    <option>Pay Replication Android App (Flutter)</option>
-    <option>Calories Prediction Using Machine Learning Web App</option>
-    <option>Rainfall Prediction Using Machine Learning</option>
-    <option>Sensor Tap Power Generation System (Hardware Project)</option>
-    <option>Simple Chat Application Using Python &amp; Streamlit</option>
-    <option>Network Speed Test Dashboard</option>
-    <option>File Transfer Application (Local Network)</option>
-    <option>API Data Fetch &amp; Visualizer</option>
-    <option>Live IP &amp; Network Information Checker</option>
-    <option>Simple Load Balancing System Using Python</option>
-    <option>Client-Server Group Chat Application</option>
-    <option>Piezoelectric Energy Measurement System</option>
-  </select>
+      <!-- ⭐ CUSTOM PROJECT FIRST -->
+      <option value="custom">Custom Project (Your Own Idea)</option>
 
-  <div id="custom_project_wrap" class="mb-3" style="display:none;">
-    <label for="custom_project_title" class="form-label">Custom project title</label>
-    <input id="custom_project_title" name="custom_project_title" type="text" class="form-control" placeholder="Enter your custom project title">
-    <div class="form-text">Provide a short title if you selected a Customized project option.</div>
+      <option value="1">Automated Amazon Product Scraper & Sentiment Analyzer</option>
+      <option value="2">Smart Supermarket Management System</option>
+      <option value="3">AI-Powered Traffic Time Saver System</option>
+      <option value="4">Smart Supermarket Billing & Inventory System</option>
+      <option value="5">Secure Blockchain-Based Voting System</option>
+      <option value="6">Smart Crime Detection & Face Recognition System</option>
+      <option value="7">Smart Calories Burnt Prediction System</option>
+      <option value="8">Smart Mobile Banking & Loan Calculator App</option>
+      <option value="9">AI-Based Scholarship Recommendation System</option>
+      <option value="10">Lung Disease Prediction Using X-Ray Images</option>
+      <option value="11">GPay Replication Android App (Flutter)</option>
+      <option value="12">Calories Prediction Using ML Web App</option>
+      <option value="13">Rainfall Prediction Using Machine Learning</option>
+      <option value="14">Sensor Tap Power Generation System</option>
+      <option value="15">Simple Chat Application (Python & Streamlit)</option>
+      <option value="16">Network Speed Test Dashboard</option>
+      <option value="17">File Transfer Application (Local Network)</option>
+      <option value="18">API Data Fetch & Visualizer</option>
+      <option value="19">Live IP & Network Information Checker</option>
+      <option value="20">Simple Load Balancing System Using Python</option>
+      <option value="21">Client–Server Group Chat Application</option>
+      <option value="22">Piezoelectric Energy Measurement System</option>
+    </select>
   </div>
-<button type="submit" class="btn btn-primary btn-lg w-100 py-3 attention-btn">
-Submit Project Request
-</button>
-  <p class="small text-muted mt-3 mb-0">We respect your privacy — your contact details are used only to respond to this request.</p>
+
+  <!-- Custom Project Title (Hidden by default) -->
+  <div class="mt-3" id="customProjectBox" style="display:none;">
+    <input type="text" id="customTitle" class="form-control"
+      placeholder="Enter Custom Project Title (eg: AI Attendance System)">
+  </div>
+
+  <!-- Project Description -->
+  <div class="mt-3">
+    <div id="projectDescription" class="form-control"
+      style="min-height:120px; background:#f8f9fa;">
+      Select a project to view description.
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" class="btn btn-primary w-100 mt-4 attention-btn">
+    Send via WhatsApp
+  </button>
 
 </form>
-</div>
-</div>
 
+<script>
+const descriptions = {
+  custom: "Describe your own project idea. Our team will analyze feasibility, tools, and academic scope.",
+  1: "Collects Amazon product details and reviews, performs sentiment analysis, and generates reports.",
+  2: "Online supermarket platform with admin control for products and orders.",
+  3: "Traffic image analysis system that dynamically adjusts signal timings.",
+  4: "Billing and inventory system with invoices and sales tracking.",
+  5: "Blockchain-based secure voting system preventing fraud.",
+  6: "Face recognition surveillance system with real-time alerts.",
+  7: "ML-based system predicting calories burned.",
+  8: "Mobile banking demo app with secure transactions and EMI calculator.",
+  9: "Scholarship recommendation system using machine learning.",
+  10: "Detects lung disease from X-ray images using ML.",
+  11: "Flutter-based digital payment application.",
+  12: "Web application predicting calorie consumption using ML.",
+  13: "Rainfall prediction system using weather datasets.",
+  14: "Hardware project generating power using sensors.",
+  15: "Python socket-based chat application with Streamlit UI.",
+  16: "Dashboard showing internet speed and network metrics.",
+  17: "Local network file transfer system using Python.",
+  18: "Fetches and visualizes public API data.",
+  19: "Live IP address and network information checker.",
+  20: "Python-based load balancing system.",
+  21: "Multi-user client-server chat system.",
+  22: "Piezoelectric sensor-based energy measurement system."
+};
+
+const projectSelect = document.getElementById("projectSelect");
+const descBox = document.getElementById("projectDescription");
+const customBox = document.getElementById("customProjectBox");
+const customTitle = document.getElementById("customTitle");
+
+projectSelect.addEventListener("change", function () {
+  const value = this.value;
+  descBox.innerText = descriptions[value] || "Select a project to view description.";
+
+  if (value === "custom") {
+    customBox.style.display = "block";
+    customTitle.required = true;
+  } else {
+    customBox.style.display = "none";
+    customTitle.required = false;
+    customTitle.value = "";
+  }
+});
+
+document.getElementById("consultForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const degree = document.getElementById("degree").value;
+  const type = document.getElementById("type").value;
+  const project = projectSelect.options[projectSelect.selectedIndex].text;
+  const custom = customTitle.value;
+
+  let message =
+`Hello DevTechSoft 👋
+I am interested in an academic project.
+
+👤 Name: ${name}
+📞 Mobile: ${phone}
+🎓 Degree: ${degree}
+📘 Project Type: ${type}
+📌 Project: ${project}`;
+
+  if (projectSelect.value === "custom") {
+    message += `\n✏️ Custom Title: ${custom}`;
+  }
+
+  message += `\n\nPlease guide me with project details.`;
+
+  // 🔴 CHANGE TO YOUR WHATSAPP NUMBER (no +)
+  const whatsappURL = `https://wa.me/9788974742?text=${encodeURIComponent(message)}`;
+  window.open(whatsappURL, "_blank");
+});
+</script>
 </div>
+    </div>
+
+  </div>
 </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="py-5">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 mb-3 mb-md-0">
-        <h4 class="fw-bold">DevTechSoft</h4>
-        <p class="mb-1 text-muted">Academic project guidance for final year & IEEE students.</p>
-        <p class="mb-0">Email: <a href="mailto:devtechsoft5@gmail.com" class="text-decoration-none">devtechsoft5@gmail.com</a></p>
-        <p class="small text-muted mt-2">Available for project Project and technical mentorship.</p>
-      </div>
-      <div class="col-md-6 text-md-end">
-        <p class="mb-1 fw-semibold">Quick Links</p>
-        <a href="#projects" class="me-3 text-muted text-decoration-none">Domains</a>
-        <a href="#consultation" class="me-3 text-muted text-decoration-none">Consultation</a>
-        <a href="#contact" class="text-muted text-decoration-none">Contact</a>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- =========================
+    FOOTER
+========================= -->
+<footer class="bg-dark text-light pt-4 pb-3">
+<div class="container text-center">
+  <h5 class="fw-bold">DevTechSoft</h5>
+  <p class="small opacity-75">
+    Academic Project Guidance for Students
+  </p>
 
-<footer>
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-        <small class="text-muted">© 2026 DevTechSoft — Academic Project Guidance  </small>
-      </div>
-      <div class="col-md-6 text-center text-md-end">
-       </div>
-    </div>
+  <div class="d-flex justify-content-center gap-3 mt-2">
+    <a href="#academic" class="text-light text-decoration-none">Academic</a>
+    <a href="#practice" class="text-light text-decoration-none">Practice</a>
+    <a href="#consultation" class="text-light text-decoration-none">Consultation</a>
   </div>
+
+  <p class="small mt-3 opacity-75">
+    © 2026 DevTechSoft • For educational guidance only
+  </p>
+</div>
 </footer>
 
-<!-- Educational Schema -->
+<!-- =========================
+    WHATSAPP SCRIPT
+========================= -->
+<script>
+document.getElementById("consultForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const degree = document.getElementById("degree").value;
+  const type = document.getElementById("type").value;
+  const topic = document.getElementById("topic").value.trim();
+
+  let message =
+`Hello DevTechSoft 👋
+
+I need academic project guidance.
+
+👤 Name: ${name}
+📞 Mobile: ${phone}
+🎓 Degree: ${degree}
+📌 Project Type: ${type}`;
+
+  if(topic !== ""){
+    message += `\n📘 Topic: ${topic}`;
+  }
+
+  message += `\n\nPlease guide me.`;
+
+  const whatsappNumber = "919788974742"; // ← change if needed
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
+});
+</script>
+
+<!-- =========================
+    SEO SCHEMA
+========================= -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "name": "DevTechSoft Academic Project Guidance",
-  "description": "Academic project guidance for final year, mini and IEEE projects with documentation and technical support.",
-  "email": "devtechsoft5@gmail.com",
+  "@type": "EducationalOrganization",
+  "name": "DevTechSoft",
+  "description": "Academic project guidance for final year, mini and IEEE projects",
   "audience": {
     "@type": "EducationalAudience",
     "educationalRole": "student"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "WhatsApp Consultation"
   }
 }
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  const select = document.getElementById('preferred_project');
-  const wrap = document.getElementById('custom_project_wrap');
-  const input = document.getElementById('custom_project_title');
-  if(!select || !wrap || !input) return;
-  function toggle(){
-    const v = (select.value || '').trim();
-    if(/^Customized/i.test(v)){
-      wrap.style.display = 'block';
-      input.required = true;
-    } else {
-      wrap.style.display = 'none';
-      input.required = false;
-      input.value = '';
-    }
-  }
-  select.addEventListener('change', toggle);
-  toggle();
-});
-</script>
 </body>
 </html>
+
