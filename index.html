@@ -306,10 +306,43 @@ Share your academic requirements and get a suitable project recommendation.
 <li>✔ End-to-end guidance</li>
 </ul>
 </div>
+<script>
+document.getElementById('consultationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
 
+  const name = document.getElementById('student_name').value.trim();
+  const phone = document.getElementById('contact_number').value.trim();
+  const degree = document.getElementById('degree').value;
+  const projectType = document.getElementById('project_type').value;
+  const preferred = document.getElementById('preferred_project').value;
+  const custom = document.getElementById('custom_project_title')?.value || '';
+
+  let message =
+`Hello DevTechSoft 👋
+
+I am interested in an academic project consultation.
+
+👤 Name: ${name}
+📞 Contact: ${phone}
+🎓 Degree: ${degree}
+📌 Project Type: ${projectType}
+📘 Preferred Project: ${preferred}`;
+
+  if (custom.trim() !== '') {
+    message += `\n✏️ Custom Title: ${custom}`;
+  }
+
+  message += `\n\nPlease guide me with suitable project details. Thank you.`;
+
+  const whatsappNumber = "919363123359"; // 🔴 CHANGE TO YOUR WHATSAPP NUMBER (no +)
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, '_blank');
+});
+</script>
 <div class="col-lg-7">
 <div class="consult-card shadow-lg p-5">
-<form action="mailto:devtechsoft5@gmail.com" method="post" enctype="text/plain">
+<form id="consultationForm">
 
   <h5 class="consult-title mb-4">Student Details</h5>
 
