@@ -2,42 +2,156 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>DevTechSoft | Academic Project Consultancy</title>
+
+<title>Final Year & IEEE Academic Projects | Student Project Guidance</title>
+
+<meta name="description" content="Academic project guidance for B.Tech, MCA, M.Tech, BCA and M.Sc students. Final year, mini and IEEE projects with source code, report, PPT and viva support.">
+
+<meta name="keywords" content="final year projects, ieee projects, academic projects, mini projects, btech projects, mca projects, mtech projects, student project guidance, ai ml projects, web development projects, blockchain projects, embedded systems projects">
+
+<meta name="author" content="DevTechSoft Academic Project Guidance">
+<meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Open Graph -->
+<meta property="og:title" content="Final Year & IEEE Academic Project Guidance">
+<meta property="og:description" content="Student-focused academic project guidance with source code, documentation and viva preparation.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="logo.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Academic Project Guidance for Students">
+<meta name="twitter:description" content="Final year, mini & IEEE projects with complete academic support.">
+
+<!-- Canonical (change domain later) -->
+<link rel="canonical" href="https://yourdomainname.com/">
+
 <!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body { font-family: 'Poppins', sans-serif; background:#f8f9fa; }
-.hero {
-  background: linear-gradient(135deg,#0d6efd,#2b0a7f);
-  color: #fff;
-  padding: 120px 0;
+
+
+/* ===== ULTRA ATTENTION BUTTON ===== */
+.attention-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  animation: glowPulse 2s infinite ease-in-out,
+             microBounce 3s infinite ease-in-out;
+  box-shadow:
+    0 0 12px rgba(255,193,7,0.65),
+    0 0 28px rgba(255,193,7,0.35);
 }
-.section-padding { padding: 90px 0; }
-.project-card {
-  transition: all 0.3s ease;
-  border: none;
+
+/* Glow breathing */
+@keyframes glowPulse {
+  0% {
+    box-shadow:
+      0 0 10px rgba(255,193,7,0.55),
+      0 0 22px rgba(255,193,7,0.25);
+  }
+  50% {
+    box-shadow:
+      0 0 22px rgba(255,193,7,0.9),
+      0 0 48px rgba(255,193,7,0.45);
+  }
+  100% {
+    box-shadow:
+      0 0 10px rgba(255,193,7,0.55),
+      0 0 22px rgba(255,193,7,0.25);
+  }
 }
-.project-card:hover {
-  transform: translateY(-6px);
+
+/* Micro bounce to grab attention */
+@keyframes microBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
 }
-.consult-card {
-  background: #fff;
-  border-radius: 18px;
+
+/* Neon animated border */
+.attention-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.9),
+    transparent
+  );
+  filter: blur(1px);
+  animation: borderRun 2.2s linear infinite;
+  z-index: -1;
 }
-.consult-title {
-  font-weight: 600;
-  letter-spacing: .4px;
+
+@keyframes borderRun {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
 }
-.form-control, .form-select {
-  padding: 15px;
-  border-radius: 12px;
+
+/* Shimmer light sweep */
+.attention-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.35),
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 3.5s infinite;
+  z-index: 1;
 }
-hr { opacity: 0.1; }
-footer { background:#0b0b0b; color:#aaa; }
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  60% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Pause animations on hover (luxury feel) */
+.attention-btn:hover {
+  animation-play-state: paused;
+  transform: scale(1.04);
+}
+
+.attention-btn:hover::before,
+.attention-btn:hover::after {
+  animation-play-state: paused;
+}
+
+
+
+:root{--primary:#0d6efd;--accent:#6610f2;--muted:#6c757d}
+html,body{height:100%}
+body { font-family: 'Poppins', sans-serif; background:#f4f6f8; padding-top:72px; color:#212529 }
+.navbar-brand img{transition:transform .25s ease}
+.navbar-brand img:hover{transform:scale(1.06)}
+
+.hero{background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;padding:100px 0 70px}
+.hero .lead{opacity:.92}
+
+.section-padding{padding:72px 0}
+.project-card{transition:transform .28s ease,box-shadow .28s ease;border:0;border-radius:12px}
+.project-card:hover{transform:translateY(-8px);box-shadow:0 10px 30px rgba(18,38,63,.08)}
+.project-icon{font-size:28px;color:var(--primary);width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#fff;margin-right:12px}
+
+.consult-card{background:#fff;border-radius:14px}
+.consult-title{font-weight:700;letter-spacing:.3px}
+.form-control,.form-select{padding:12px;border-radius:10px}
+
+footer{background:#0b0b0b;color:#ffffff;padding:28px 0}
+footer a{color:#ffffff}
+footer .text-muted{color:#ffffff !important}
+
+@media (max-width:767px){.hero{padding:64px 0}}
 </style>
 </head>
 
@@ -46,10 +160,15 @@ footer { background:#0b0b0b; color:#aaa; }
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
 <div class="container">
-<a class="navbar-brand fw-bold" href="#">DevTechSoft</a>
+<a class="navbar-brand d-flex align-items-center" href="#">
+<img src="logo.png" alt="DevTechSoft Academic Projects Logo" height="40" class="me-2">
+<span class="fw-bold">DevTechSoft</span>
+</a>
+
 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
 <span class="navbar-toggler-icon"></span>
 </button>
+
 <div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto">
 <li class="nav-item"><a class="nav-link" href="#projects">Domains</a></li>
@@ -63,16 +182,26 @@ footer { background:#0b0b0b; color:#aaa; }
 <!-- HERO -->
 <section class="hero text-center">
 <div class="container">
-<h1 class="fw-bold display-5">Academic Project Consultancy</h1>
-<p class="lead mt-3">
-AI • ML • Blockchain • Web • Mobile • Hardware
-</p>
+<h1 class="fw-bold display-5">Final Year & IEEE Academic Project Guidance</h1>
+<p class="lead mt-3">AI • ML • Blockchain • Web • Mobile • Hardware</p>
 <p class="mt-2 opacity-75">
-Industry-aligned projects with complete documentation & guidance
+Complete academic support with source code, documentation & viva preparation
 </p>
-<a href="#consultation" class="btn btn-warning btn-lg mt-4 px-5">
+<a href="#consultation" class="btn btn-warning btn-lg mt-4 px-5 attention-btn">
 Request Consultation
 </a>
+</div>
+</section>
+
+<!-- SEO SUPPORT TEXT -->
+<section class="py-4 bg-white">
+<div class="container">
+<p class="text-muted text-center">
+DevTechSoft provides academic project guidance for B.E, B.Tech, MCA, M.Tech, BCA and M.Sc students.
+We support final year projects, mini projects and IEEE implementations in Artificial Intelligence,
+Machine Learning, Web Development, Mobile Applications, Blockchain, Cyber Security, Networking
+and Embedded Systems with complete source code, documentation, PPT and viva preparation.
+</p>
 </div>
 </section>
 
@@ -80,63 +209,81 @@ Request Consultation
 <section id="projects" class="section-padding">
 <div class="container">
 <div class="text-center mb-5">
-<h2 class="fw-bold">Project Domains Offered</h2>
-<p class="text-muted">College & IEEE-ready project solutions</p>
+<h2 class="fw-bold">Academic Project Domains</h2>
+<p class="text-muted">Student-oriented final year & IEEE project solutions</p>
 </div>
 
 <div class="row g-4">
 <div class="col-md-4">
-<div class="card project-card shadow-sm h-100">
-<div class="card-body">
-<h6 class="fw-bold">Artificial Intelligence & Machine Learning</h6>
-<p class="text-muted mb-0">Prediction systems, medical diagnosis, sentiment analysis, recommendation engines.</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card project-card shadow-sm h-100">
-<div class="card-body">
-<h6 class="fw-bold">Web Application Development</h6>
-<p class="text-muted mb-0">Management systems, dashboards, billing, analytics and portals.</p>
-</div>
-</div>
+  <div class="card project-card shadow-sm h-100">
+    <div class="card-body d-flex align-items-start">
+      <div class="project-icon"><i class="bi bi-robot"></i></div>
+      <div>
+        <h6 class="fw-bold mb-1">Artificial Intelligence & Machine Learning</h6>
+        <p class="text-muted mb-0">Prediction systems, medical diagnosis, sentiment analysis.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="col-md-4">
-<div class="card project-card shadow-sm h-100">
-<div class="card-body">
-<h6 class="fw-bold">Mobile Application Development</h6>
-<p class="text-muted mb-0">Flutter & Android apps for banking, payments and utilities.</p>
-</div>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card project-card shadow-sm h-100">
-<div class="card-body">
-<h6 class="fw-bold">Blockchain & Cyber Security</h6>
-<p class="text-muted mb-0">Secure voting, authentication, fraud prevention systems.</p>
-</div>
-</div>
+  <div class="card project-card shadow-sm h-100">
+    <div class="card-body d-flex align-items-start">
+      <div class="project-icon"><i class="bi bi-browser-chrome"></i></div>
+      <div>
+        <h6 class="fw-bold mb-1">Web Application Development</h6>
+        <p class="text-muted mb-0">Management systems, dashboards, portals.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="col-md-4">
-<div class="card project-card shadow-sm h-100">
-<div class="card-body">
-<h6 class="fw-bold">Networking & Distributed Systems</h6>
-<p class="text-muted mb-0">Chat systems, load balancing, file transfer, monitoring tools.</p>
-</div>
-</div>
+  <div class="card project-card shadow-sm h-100">
+    <div class="card-body d-flex align-items-start">
+      <div class="project-icon"><i class="bi bi-phone"></i></div>
+      <div>
+        <h6 class="fw-bold mb-1">Mobile Application Development</h6>
+        <p class="text-muted mb-0">Flutter & Android academic applications.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="col-md-4">
-<div class="card project-card shadow-sm h-100">
-<div class="card-body">
-<h6 class="fw-bold">Hardware & Embedded Systems</h6>
-<p class="text-muted mb-0">IoT, energy harvesting, sensor-based Arduino projects.</p>
+  <div class="card project-card shadow-sm h-100">
+    <div class="card-body d-flex align-items-start">
+      <div class="project-icon"><i class="bi bi-shield-lock"></i></div>
+      <div>
+        <h6 class="fw-bold mb-1">Blockchain & Cyber Security</h6>
+        <p class="text-muted mb-0">Secure voting, authentication systems.</p>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="col-md-4">
+  <div class="card project-card shadow-sm h-100">
+    <div class="card-body d-flex align-items-start">
+      <div class="project-icon"><i class="bi bi-hdd-network"></i></div>
+      <div>
+        <h6 class="fw-bold mb-1">Networking & Distributed Systems</h6>
+        <p class="text-muted mb-0">Chat apps, monitoring, client-server systems.</p>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="col-md-4">
+  <div class="card project-card shadow-sm h-100">
+    <div class="card-body d-flex align-items-start">
+      <div class="project-icon"><i class="bi bi-cpu"></i></div>
+      <div>
+        <h6 class="fw-bold mb-1">Hardware & Embedded Systems</h6>
+        <p class="text-muted mb-0">IoT, Arduino, energy monitoring projects.</p>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 </div>
@@ -150,99 +297,176 @@ Request Consultation
 <div class="col-lg-5 mb-4">
 <h2 class="fw-bold">Project Consultation Request</h2>
 <p class="text-muted mt-3">
-Share your academic requirements and our experts will recommend
-a suitable project with scope, tools and documentation plan.
+Share your academic requirements and get a suitable project recommendation.
 </p>
 <ul class="mt-4 text-muted">
-<li>✔ College & IEEE-approved topics</li>
-<li>✔ Full source code with explanation</li>
-<li>✔ Report, PPT & viva preparation</li>
-<li>✔ End-to-end technical support</li>
+<li>✔ IEEE & college-approved topics</li>
+<li>✔ Source code with explanation</li>
+<li>✔ Report, PPT & viva support</li>
+<li>✔ End-to-end guidance</li>
 </ul>
 </div>
 
 <div class="col-lg-7">
 <div class="consult-card shadow-lg p-5">
-
 <form action="mailto:devtechsoft5@gmail.com" method="post" enctype="text/plain">
 
-<h5 class="consult-title mb-4">Student & Academic Details</h5>
+  <h5 class="consult-title mb-4">Student Details</h5>
 
-<div class="row g-3">
-<div class="col-md-6">
-<input type="text" class="form-control" name="Student Name" placeholder="Full Name" required>
-</div>
-<div class="col-md-6">
-<input type="tel" class="form-control" name="Contact Number" placeholder="Mobile Number" required>
-</div>
-</div>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="visually-hidden" for="student_name">Full name</label>
+      <input id="student_name" name="student_name" type="text" class="form-control" placeholder="Full name" required aria-label="Full name">
+    </div>
+    <div class="col-md-6">
+      <label class="visually-hidden" for="contact_number">Mobile number</label>
+      <input id="contact_number" name="contact_number" type="tel" class="form-control" placeholder="Mobile number" required aria-label="Mobile number">
+    </div>
+  </div>
 
-<hr class="my-4">
+  <hr class="my-4">
 
-<div class="row g-3">
-<div class="col-md-6">
-<select class="form-select" name="Degree" required>
-<option value="">Degree Program</option>
-<option>B.E / B.Tech</option>
-<option>M.E / M.Tech</option>
-<option>BCA</option>
-<option>MCA</option>
-<option>M.Sc</option>
-</select>
-</div>
-<div class="col-md-6">
-<select class="form-select" name="Project Type" required>
-<option value="">Project Category</option>
-<option>Mini Project</option>
-<option>Final Year Project</option>
-<option>IEEE Project</option>
-</select>
-</div>
-</div>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <label class="visually-hidden" for="degree">Degree program</label>
+      <select id="degree" class="form-select" name="degree" required aria-label="Degree program">
+        <option value="">Degree program</option>
+        <option>B.E / B.Tech</option>
+        <option>M.E / M.Tech</option>
+        <option>BCA</option>
+        <option>MCA</option>
+        <option>M.Sc</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="visually-hidden" for="project_type">Project category</label>
+      <select id="project_type" class="form-select" name="project_type" required aria-label="Project category">
+        <option value="">Project category</option>
+        <option>Mini Project</option>
+        <option>Final Year Project</option>
+        <option>IEEE Project</option>
+      </select>
+    </div>
+  </div>
 
-<hr class="my-4">
+  <hr class="my-4">
 
-<select class="form-select mb-4" name="Preferred Project" required>
-<option value="">Preferred Project Topic</option>
-<option>Automated Amazon Product Scraper & Sentiment Analyzer</option>
-<option>Smart Supermarket Management System</option>
-<option>AI-Powered Traffic Time Saver System</option>
-<option>Blockchain-Based Voting System</option>
-<option>Crime Detection & Face Recognition System</option>
-<option>Lung Disease Prediction Using X-Ray</option>
-<option>GPay Replication Flutter App</option>
-<option>Rainfall Prediction Using ML</option>
-<option>Sensor Tap Power Generation System</option>
-<option>Network Speed Test Dashboard</option>
-<option>Client–Server Group Chat Application</option>
-<option>Piezoelectric Energy Measurement System</option>
-</select>
+  <label class="visually-hidden" for="preferred_project">Preferred project</label>
+  <select id="preferred_project" class="form-select mb-4" name="preferred_project" required aria-label="Preferred project">
+    <option value="">Preferred project topic</option>
+    <option>Customized ML Project</option>
+    <option>Customized Hardware Project</option>
+    <option>Customized Android App Project</option>
+    <option>Customized Blockchain Project</option>
+    <option>Automated Amazon Product Scraper &amp; Sentiment Analyzer</option>
+    <option>Smart Supermarket Management System</option>
+    <option>AI-Powered Traffic Time Saver System</option>
+    <option>Smart Supermarket Billing &amp; Inventory System</option>
+    <option>Secure Blockchain-Based Voting System</option>
+    <option>Smart Crime Detection &amp; Face Recognition Surveillance System</option>
+    <option>Smart Calories Burnt Prediction System</option>
+    <option>Smart Mobile Banking &amp; Loan Calculator App</option>
+    <option>AI-Based Scholarship Recommendation System</option>
+    <option>Lung Disease Prediction Using X-Ray Images</option>
+    <option>Pay Replication Android App (Flutter)</option>
+    <option>Calories Prediction Using Machine Learning Web App</option>
+    <option>Rainfall Prediction Using Machine Learning</option>
+    <option>Sensor Tap Power Generation System (Hardware Project)</option>
+    <option>Simple Chat Application Using Python &amp; Streamlit</option>
+    <option>Network Speed Test Dashboard</option>
+    <option>File Transfer Application (Local Network)</option>
+    <option>API Data Fetch &amp; Visualizer</option>
+    <option>Live IP &amp; Network Information Checker</option>
+    <option>Simple Load Balancing System Using Python</option>
+    <option>Client-Server Group Chat Application</option>
+    <option>Piezoelectric Energy Measurement System</option>
+  </select>
 
-<button class="btn btn-primary btn-lg w-100 py-3">
+  <div id="custom_project_wrap" class="mb-3" style="display:none;">
+    <label for="custom_project_title" class="form-label">Custom project title</label>
+    <input id="custom_project_title" name="custom_project_title" type="text" class="form-control" placeholder="Enter your custom project title">
+    <div class="form-text">Provide a short title if you selected a Customized project option.</div>
+  </div>
+<button type="submit" class="btn btn-primary btn-lg w-100 py-3 attention-btn">
 Submit Consultation Request
 </button>
+  <p class="small text-muted mt-3 mb-0">We respect your privacy — your contact details are used only to respond to this request.</p>
 
 </form>
+</div>
+</div>
 
-</div>
-</div>
 </div>
 </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="bg-dark text-light text-center py-5">
-<div class="container">
-<h4 class="fw-bold">DevTechSoft</h4>
-<p class="mb-1">Academic Project Consultancy & Development</p>
-<p>Email: <a href="mailto:devtechsoft5@gmail.com" class="text-warning">devtechsoft5@gmail.com</a></p>
-</div>
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <h4 class="fw-bold">DevTechSoft</h4>
+        <p class="mb-1 text-muted">Academic project guidance for final year & IEEE students.</p>
+        <p class="mb-0">Email: <a href="mailto:devtechsoft5@gmail.com" class="text-decoration-none">devtechsoft5@gmail.com</a></p>
+        <p class="small text-muted mt-2">Available for project consultation and technical mentorship.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="mb-1 fw-semibold">Quick Links</p>
+        <a href="#projects" class="me-3 text-muted text-decoration-none">Domains</a>
+        <a href="#consultation" class="me-3 text-muted text-decoration-none">Consultation</a>
+        <a href="#contact" class="text-muted text-decoration-none">Contact</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer class="text-center py-3">
-<p class="mb-0">© 2026 DevTechSoft. All Rights Reserved.</p>
+<footer>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+        <small class="text-muted">© 2026 DevTechSoft — Academic Project Guidance</small>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+       </div>
+    </div>
+  </div>
 </footer>
 
+<!-- Educational Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "name": "DevTechSoft Academic Project Guidance",
+  "description": "Academic project guidance for final year, mini and IEEE projects with documentation and technical support.",
+  "email": "devtechsoft5@gmail.com",
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student"
+  }
+}
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const select = document.getElementById('preferred_project');
+  const wrap = document.getElementById('custom_project_wrap');
+  const input = document.getElementById('custom_project_title');
+  if(!select || !wrap || !input) return;
+  function toggle(){
+    const v = (select.value || '').trim();
+    if(/^Customized/i.test(v)){
+      wrap.style.display = 'block';
+      input.required = true;
+    } else {
+      wrap.style.display = 'none';
+      input.required = false;
+      input.value = '';
+    }
+  }
+  select.addEventListener('change', toggle);
+  toggle();
+});
+</script>
 </body>
 </html>
