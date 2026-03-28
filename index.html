@@ -1,1132 +1,592 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>DevTechSoft — Web, App & Software Solutions</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description"
-    content="DevTechSoft offers expert web development, SEO services, video editing, advertisement videography, and custom software solutions in Saibaba Colony, Coimbatore. Explore our portfolio showcasing proficiency in React, Python, and Flutter development.">
-  <meta name="keywords"
-    content="DevTechSoft, web development Coimbatore, SEO services Saibaba Colony, video editing Coimbatore, advertisement videography Tamil Nadu, software solutions Coimbatore, React development Coimbatore, Python development Saibaba Colony, Flutter app development Tamil Nadu, responsive web design Coimbatore, custom app development Saibaba Colony, scalable software solutions Tamil Nadu, mobile app development Coimbatore">
-  <meta name="author" content="DevTechSoft">
-  <meta name="robots" content="index, follow">
-  <meta name="geo.region" content="IN-TN">
-  <meta name="geo.placename" content="Coimbatore">
-  <meta name="geo.position" content="11.0168;76.9558">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="DevTechSoft">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link rel="shortcut icon" type="image/x-icon" href="https://.devtechsoft.com/logo.png" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8DL3QEQ44S"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-8DL3QEQ44S');
-  </script>
-
-
-  <!-- =========================
-        GLOBAL CSS
-========================= -->
-  <style>
-    /* ================================
-   PREMIUM FORM UI – ADD ON
-================================ */
-
-    /* Form container polish */
-    #consultForm {
-      background: linear-gradient(180deg,
-          rgba(255, 255, 255, 0.95),
-          rgba(255, 255, 255, 0.85));
-      padding: 28px;
-      border-radius: 22px;
-      border: 1px solid rgba(13, 110, 253, 0.08);
-      box-shadow:
-        0 30px 70px rgba(13, 110, 253, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    }
-
-    /* Inputs & selects – glass look */
-    #consultForm .form-control,
-    #consultForm .form-select {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 14px;
-      padding: 14px 16px;
-      font-size: 0.95rem;
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      transition: all 0.28s cubic-bezier(.2, .9, .2, 1);
-    }
-
-    /* Hover feel */
-    #consultForm .form-control:hover,
-    #consultForm .form-select:hover {
-      border-color: rgba(13, 110, 253, 0.45);
-    }
-
-    /* Focus premium glow */
-    #consultForm .form-control:focus,
-    #consultForm .form-select:focus {
-      outline: none;
-      border-color: #0d6efd;
-      background: #ffffff;
-      box-shadow:
-        0 0 0 5px rgba(13, 110, 253, 0.15),
-        0 15px 30px rgba(13, 110, 253, 0.18);
-    }
-
-    /* Placeholder styling */
-    #consultForm ::placeholder {
-      color: #9aa5b1;
-      font-weight: 500;
-    }
-
-    /* Project description box */
-    #projectDescription {
-      background: linear-gradient(135deg,
-          rgba(248, 249, 250, 0.9),
-          rgba(255, 255, 255, 0.9));
-      border-radius: 16px;
-      padding: 16px;
-      font-size: 0.92rem;
-      color: #495057;
-      border: 1px dashed rgba(13, 110, 253, 0.25);
-    }
-
-    /* Custom project input highlight */
-    #customProjectBox input {
-      border-left: 5px solid #6610f2;
-    }
-
-    /* Submit button – SUPER PREMIUM */
-    #consultForm .btn {
-      margin-top: 6px;
-      padding: 16px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      border-radius: 999px;
-      letter-spacing: 0.4px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Button glow */
-    #consultForm .btn::before {
-      content: "";
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(120deg,
-          transparent,
-          rgba(255, 255, 255, 0.8),
-          transparent);
-      transform: translateX(-120%);
-      animation: btnSweep 3.5s infinite;
-    }
-
-    @keyframes btnSweep {
-      0% {
-        transform: translateX(-120%)
-      }
-
-      60% {
-        transform: translateX(120%)
-      }
-
-      100% {
-        transform: translateX(120%)
-      }
-    }
-
-    /* Button hover lift */
-    #consultForm .btn:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow:
-        0 18px 40px rgba(13, 110, 253, 0.35),
-        0 6px 18px rgba(0, 0, 0, 0.12);
-    }
-
-    /* Button active */
-    #consultForm .btn:active {
-      transform: translateY(0) scale(0.99);
-    }
-
-    /* Row spacing refinement */
-    #consultForm .row.g-3 {
-      margin-bottom: 6px;
-    }
-
-    /* Mobile optimisation */
-    @media (max-width:768px) {
-      #consultForm {
-        padding: 22px;
-        border-radius: 18px;
-      }
-
-      #consultForm .btn {
-        font-size: 1rem;
-        padding: 15px;
-      }
-    }
-
-    /* Reduced motion respect */
-    @media (prefers-reduced-motion: reduce) {
-
-      #consultForm *,
-      #consultForm *::before {
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-
-
-
-
-    :root {
-      --primary: #0d6efd;
-      --accent: #6610f2;
-      --dark: #0b0b0b;
-      --muted: #6c757d;
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html,
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f4f6f8;
-      color: #212529;
-      scroll-behavior: smooth;
-    }
-
-    /* ---------- NAVBAR ---------- */
-    .navbar {
-      background: #0b0b0b;
-    }
-
-    .navbar-brand span {
-      font-weight: 700;
-      font-size: 20px;
-    }
-
-    .nav-link {
-      color: #ffffff !important;
-      font-weight: 500;
-      margin-left: 12px;
-    }
-
-    .nav-link:hover {
-      color: #ffc107 !important;
-    }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff;
-      padding: 120px 0 90px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-weight: 700;
-    }
-
-    .hero p {
-      opacity: .92;
-      max-width: 780px;
-      margin: 15px auto;
-    }
-
-    /* ---------- ATTENTION BUTTON ---------- */
-    .attention-btn {
-      position: relative;
-      overflow: hidden;
-      border-radius: 40px;
-      animation: pulseGlow 2s infinite;
-      box-shadow: 0 0 18px rgba(255, 193, 7, .6);
-    }
-
-    @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 12px rgba(255, 193, 7, .5)
-      }
-
-      50% {
-        box-shadow: 0 0 32px rgba(255, 193, 7, .9)
-      }
-
-      100% {
-        box-shadow: 0 0 12px rgba(255, 193, 7, .5)
-      }
-    }
-
-    .attention-btn::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, .4), transparent 70%);
-      animation: shine 3s infinite;
-    }
-
-    @keyframes shine {
-      0% {
-        transform: translateX(-100%)
-      }
-
-      60% {
-        transform: translateX(100%)
-      }
-
-      100% {
-        transform: translateX(100%)
-      }
-    }
-
-    /* ---------- SECTION BASE ---------- */
-    .section-padding {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      margin-bottom: 50px;
-    }
-
-    /* ---------- CARDS ---------- */
-    .glass-card {
-      background: rgba(255, 255, 255, .85);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 26px;
-      transition: .35s;
-    }
-
-    .glass-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, .12);
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background: #0b0b0b;
-      color: #fff;
-      padding: 28px 0;
-    }
-
-    footer a {
-      color: #fff;
-      text-decoration: none
-    }
-
-
-
-
-    /* =========================================
-   PREMIUM UI ENHANCEMENT PACK
-   (Add-on CSS – SAFE)
-========================================= */
-
-    /* ---------- GLOBAL SMOOTHNESS ---------- */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: linear-gradient(180deg, #f6f8fc 0%, #fdfefe 100%);
-    }
-
-    /* ---------- SECTION DEPTH ---------- */
-    section {
-      position: relative;
-      overflow: hidden;
-    }
-
-    section::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.05), transparent);
-    }
-
-    /* ---------- HERO TEXT POLISH ---------- */
-    .hero h1 {
-      letter-spacing: -0.5px;
-      text-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .hero p {
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ---------- GLASS CARDS (UPGRADE) ---------- */
-    .card,
-    .consult-card {
-      background: linear-gradient(180deg,
-          rgba(255, 255, 255, 0.88),
-          rgba(255, 255, 255, 0.75));
-      backdrop-filter: blur(12px) saturate(130%);
-      -webkit-backdrop-filter: blur(12px) saturate(130%);
-      border: 1px solid rgba(13, 110, 253, 0.08);
-    }
-
-    /* ---------- CARD HOVER DEPTH ---------- */
-    .card:hover,
-    .consult-card:hover {
-      transform: translateY(-10px) scale(1.015);
-      box-shadow:
-        0 20px 50px rgba(13, 110, 253, 0.15),
-        0 10px 25px rgba(0, 0, 0, 0.08);
-    }
-
-    /* ---------- PROJECT ICON GLOW ---------- */
-    .project-icon {
-      position: relative;
-    }
-
-    .project-icon::after {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      border-radius: 12px;
-      background: radial-gradient(circle, rgba(13, 110, 253, 0.35), transparent 70%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .card:hover .project-icon::after {
-      opacity: 1;
-    }
-
-    /* ---------- INPUT FOCUS PREMIUM ---------- */
-    .form-control,
-    .form-select {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      transition: all 0.25s ease;
-    }
-
-    .form-control:focus,
-    .form-select:focus {
-      border-color: #0d6efd;
-      box-shadow:
-        0 0 0 4px rgba(13, 110, 253, 0.15),
-        0 10px 25px rgba(13, 110, 253, 0.12);
-    }
-
-    /* ---------- BUTTON LUXURY FEEL ---------- */
-    .btn {
-      border-radius: 14px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #0d6efd, #6610f2);
-      border: none;
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #0b5ed7, #520dc2);
-    }
-
-    /* ---------- ATTENTION BUTTON (UPGRADE) ---------- */
-    .attention-btn {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .attention-btn::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg,
-          transparent 25%,
-          rgba(255, 255, 255, 0.4),
-          transparent 75%);
-      transform: translateX(-120%);
-      animation: buttonShine 3s infinite;
-    }
-
-    @keyframes buttonShine {
-      0% {
-        transform: translateX(-120%);
-      }
-
-      60% {
-        transform: translateX(120%);
-      }
-
-      100% {
-        transform: translateX(120%);
-      }
-    }
-
-    /* ---------- SECTION HEADINGS ---------- */
-    .section-title {
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title::after {
-      content: "";
-      display: block;
-      width: 70px;
-      height: 4px;
-      margin: 12px auto 0;
-      border-radius: 4px;
-      background: linear-gradient(90deg, #0d6efd, #6610f2);
-    }
-
-    /* ---------- FOOTER POLISH ---------- */
-    footer {
-      background: linear-gradient(135deg, #0b0f1a, #0b0b0b);
-    }
-
-    footer a {
-      position: relative;
-    }
-
-    footer a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0;
-      height: 2px;
-      background: #ffc107;
-      transition: width 0.25s ease;
-    }
-
-    footer a:hover::after {
-      width: 100%;
-    }
-
-    /* ---------- SCROLL MICRO ANIMATION ---------- */
-    @media (prefers-reduced-motion: no-preference) {
-
-      .card,
-      .consult-card,
-      .btn {
-        transition: transform 0.35s cubic-bezier(.2, .9, .2, 1),
-          box-shadow 0.35s cubic-bezier(.2, .9, .2, 1);
-      }
-    }
-
-    /* ---------- MOBILE POLISH ---------- */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.9rem;
-      }
-
-      .section-title {
-        font-size: 1.6rem;
-      }
-    }
-
-
-    /* ---------- BRAND LOGO ---------- */
-    .navbar-logo {
-      height: 42px;
-      width: auto;
-      transition: transform .3s ease;
-    }
-
-    .navbar-logo:hover {
-      transform: scale(1.08);
-    }
-
-    .brand-text {
-      font-weight: 700;
-      font-size: 20px;
-      color: #fff;
-      letter-spacing: .4px;
-    }
-
-    /* Mobile logo resize */
-    @media(max-width:768px) {
-      .navbar-logo {
-        height: 34px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevTechSoft | Web Development, Mobile Apps & AI Solutions</title>
+<meta name="description" content="DevTechSoft offers professional web development, mobile app development, AI integration, e-commerce, and academic project solutions in India. 5+ years experience. Call +91 9788974742.">
+<meta name="keywords" content="web development India, mobile app development, AI solutions, e-commerce development, academic projects, final year projects, IEEE projects, Flutter app development, MERN stack, DevTechSoft">
+<meta name="robots" content="index, follow">
+<meta name="author" content="DevTechSoft">
+<meta property="og:title" content="DevTechSoft | Web, App & AI Development India">
+<meta property="og:description" content="Professional web, mobile, AI & academic project solutions in India. 5+ years experience. Get a free quote today.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://devtechsoft.in/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"DevTechSoft","telephone":"+919788974742","email":"devtechsoft5@gmail.com","address":{"@type":"PostalAddress","addressCountry":"IN"},"url":"https://devtechsoft.in","priceRange":"₹₹","foundingDate":"2020"}</script>
+<style>
+:root{
+--bg:#03050f;--bg2:#070b1a;--surface:rgba(255,255,255,0.03);--surface2:rgba(255,255,255,0.06);
+--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+--sky:#00d4ff;--violet:#7c3aed;--violet2:#a855f7;--emerald:#00ff88;--amber:#ffb800;
+--text:#e8eaf6;--muted:#7986a3;--muted2:#4a5568;
+--font:'Outfit',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--font);overflow-x:hidden;line-height:1.7;}
+::selection{background:rgba(0,212,255,0.25);color:#fff;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:linear-gradient(to bottom,var(--sky),var(--violet2));border-radius:2px;}
+
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;}
+.cursor{position:fixed;width:8px;height:8px;background:var(--sky);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:transform 0.1s;}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(0,212,255,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all 0.12s ease;mix-blend-mode:screen;}
+
+nav{position:fixed;width:100%;padding:14px 6%;display:flex;justify-content:space-between;align-items:center;background:rgba(3,5,15,0.5);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(0,212,255,0.07);z-index:998;transition:all 0.4s;}
+nav.scrolled{background:rgba(3,5,15,0.92);border-color:rgba(0,212,255,0.15);}
+.logo{font-family:var(--font);font-size:1.3rem;font-weight:900;letter-spacing:-0.5px;background:linear-gradient(135deg,var(--sky),var(--violet2));-webkit-background-clip:text;color:transparent;}
+.nav-links a{margin-left:26px;text-decoration:none;color:var(--muted);font-size:0.88rem;font-weight:500;transition:color 0.3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--sky);transition:width 0.3s;}
+.nav-links a:hover{color:var(--sky);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:linear-gradient(135deg,var(--sky),var(--violet2))!important;color:#fff!important;padding:9px 22px;border-radius:50px;font-weight:700!important;font-size:0.85rem!important;box-shadow:0 0 20px rgba(0,212,255,0.2);transition:all 0.3s!important;}
+.nav-cta:hover{box-shadow:0 0 40px rgba(0,212,255,0.5)!important;transform:translateY(-1px)!important;}
+.nav-cta::after{display:none!important;}
+
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:130px 6% 80px;position:relative;overflow:hidden;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);color:var(--sky);padding:7px 20px;border-radius:50px;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:28px;animation:fadeslide 1s 0.2s both;}
+.badge-dot{width:6px;height:6px;background:var(--sky);border-radius:50%;animation:pulse2 2s infinite;}
+@keyframes pulse2{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+.hero h1{font-size:clamp(2.6rem,6vw,5.2rem);font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:24px;animation:fadeslide 1s 0.35s both;}
+.hero h1 .line1{display:block;color:var(--text);}
+.hero h1 .grad{display:block;background:linear-gradient(135deg,var(--sky) 0%,var(--violet2) 50%,var(--emerald) 100%);-webkit-background-clip:text;color:transparent;background-size:200% 200%;animation:gradmove 5s ease infinite alternate;}
+@keyframes gradmove{0%{background-position:0% 50%;}100%{background-position:100% 50%;}}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:580px;margin:0 auto 42px;animation:fadeslide 1s 0.5s both;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fadeslide 1s 0.65s both;}
+
+.btn-glow{padding:15px 38px;border:none;border-radius:50px;cursor:pointer;background:linear-gradient(135deg,var(--sky),var(--violet2));color:#fff;font-family:var(--font);font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-block;box-shadow:0 0 30px rgba(0,212,255,0.3);transition:all 0.35s;position:relative;overflow:hidden;}
+.btn-glow::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,0.18),transparent);transform:translateX(-100%);transition:transform 0.5s;}
+.btn-glow:hover::before{transform:translateX(100%);}
+.btn-glow:hover{transform:translateY(-3px);box-shadow:0 0 55px rgba(0,212,255,0.55),0 10px 30px rgba(0,0,0,0.4);}
+.btn-ghost{padding:15px 38px;border-radius:50px;border:1px solid var(--border2);background:transparent;color:var(--text);font-family:var(--font);font-size:0.95rem;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.35s;font-weight:500;}
+.btn-ghost:hover{border-color:var(--sky);color:var(--sky);background:rgba(0,212,255,0.05);transform:translateY(-3px);}
+
+.hero-stats{margin-top:70px;display:flex;justify-content:center;gap:60px;flex-wrap:wrap;animation:fadeslide 1s 0.85s both;}
+.stat{text-align:center;}
+.stat-n{font-size:2.6rem;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,var(--sky),var(--violet2));-webkit-background-clip:text;color:transparent;}
+.stat-l{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.12em;margin-top:2px;}
+.stat-sep{width:1px;background:var(--border2);align-self:stretch;}
+
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted2);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;animation:fadeslide 1s 1.2s both;}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--sky),transparent);}
+.scroll-dot{width:4px;height:4px;background:var(--sky);border-radius:50%;animation:scrolldot 1.5s ease-in-out infinite;}
+@keyframes scrolldot{0%,100%{transform:translateY(0);}50%{transform:translateY(20px);opacity:0;}}
+@keyframes fadeslide{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+section{padding:100px 6%;position:relative;z-index:1;}
+.stag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.15);color:var(--sky);padding:5px 16px;border-radius:50px;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:18px;}
+.stag::before{content:'';width:4px;height:4px;background:currentColor;border-radius:50%;}
+.sh{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-1px;line-height:1.1;margin-bottom:16px;}
+.sh span{background:linear-gradient(135deg,var(--sky),var(--violet2));-webkit-background-clip:text;color:transparent;}
+.sp{color:var(--muted);font-size:0.95rem;max-width:560px;margin-bottom:56px;line-height:1.8;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);border:none;margin:0;}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
+.tc{text-align:center;}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0;}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:30px;position:relative;overflow:hidden;transition:all 0.45s cubic-bezier(0.23,1,0.32,1);opacity:0;transform:translateY(40px);}
+.card.show{opacity:1;transform:translateY(0);}
+.card::before{content:'';position:absolute;inset:0;border-radius:20px;background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),rgba(0,212,255,0.07),transparent 45%);opacity:0;transition:opacity 0.4s;}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--sky),transparent);opacity:0;transition:opacity 0.4s;}
+.card:hover::before{opacity:1;}
+.card:hover::after{opacity:1;}
+.card:hover{border-color:rgba(0,212,255,0.22);transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,0.45),0 0 0 1px rgba(0,212,255,0.08);}
+
+.ico{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;flex-shrink:0;}
+.ico-sky{background:rgba(0,212,255,0.1);box-shadow:0 0 20px rgba(0,212,255,0.1);}
+.ico-vio{background:rgba(124,58,237,0.15);box-shadow:0 0 20px rgba(124,58,237,0.1);}
+.ico-grn{background:rgba(0,255,136,0.08);box-shadow:0 0 20px rgba(0,255,136,0.08);}
+.ico-amb{background:rgba(255,184,0,0.1);box-shadow:0 0 20px rgba(255,184,0,0.08);}
+.card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px;letter-spacing:-0.3px;}
+.card p{font-size:0.875rem;color:var(--muted);line-height:1.75;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
+.tag{background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted);font-size:0.7rem;padding:3px 10px;border-radius:50px;font-weight:500;}
+.cklist{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:14px;}
+.cklist li{font-size:0.84rem;color:var(--muted);display:flex;align-items:flex-start;gap:10px;}
+.cklist li::before{content:'✓';color:#00ff88;font-weight:700;font-size:0.8rem;flex-shrink:0;margin-top:2px;}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.about-p{color:var(--muted);font-size:0.93rem;margin-bottom:16px;line-height:1.8;}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;}
+.val{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;transition:all 0.3s;}
+.val:hover{border-color:rgba(0,212,255,0.2);background:rgba(0,212,255,0.04);}
+.val strong{display:block;font-size:0.88rem;font-weight:600;margin-bottom:3px;}
+.val span{font-size:0.78rem;color:var(--muted);}
+
+.skills-panel{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:36px;}
+.skill-row{margin-bottom:20px;}
+.skill-top{display:flex;justify-content:space-between;margin-bottom:8px;font-size:0.85rem;font-weight:500;}
+.skill-pct{color:var(--sky);font-family:var(--mono);font-size:0.8rem;}
+.bar-bg{height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;}
+.bar-fg{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--sky),var(--violet2));width:0;transition:width 1.4s cubic-bezier(0.23,1,0.32,1);box-shadow:0 0 10px rgba(0,212,255,0.4);}
+
+.pbadge{display:inline-block;font-size:0.68rem;font-weight:700;padding:3px 10px;border-radius:50px;margin-bottom:12px;letter-spacing:0.1em;text-transform:uppercase;}
+.p-app{background:rgba(0,212,255,0.1);color:var(--sky);}
+.p-web{background:rgba(0,255,136,0.08);color:#00ff88;}
+.p-ai{background:rgba(168,85,247,0.1);color:var(--violet2);}
+
+.process-list{display:flex;flex-direction:column;gap:0;position:relative;}
+.process-list::before{content:'';position:absolute;left:24px;top:24px;bottom:24px;width:1px;background:linear-gradient(to bottom,var(--sky),var(--violet2),transparent);opacity:0.3;}
+.step{display:flex;gap:24px;padding:24px 0;align-items:flex-start;}
+.step-n{width:50px;height:50px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--sky),var(--violet2));display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:0.85rem;color:#fff;position:relative;z-index:1;box-shadow:0 0 20px rgba(0,212,255,0.35);}
+.step h3{font-size:1rem;font-weight:700;margin-bottom:6px;}
+.step p{font-size:0.86rem;color:var(--muted);}
+
+.tech-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+.tech{background:var(--surface);border:1px solid var(--border);padding:8px 18px;border-radius:50px;font-size:0.8rem;color:var(--muted);font-weight:500;transition:all 0.3s;cursor:default;}
+.tech:hover{border-color:var(--sky);color:var(--sky);background:rgba(0,212,255,0.06);transform:translateY(-2px);box-shadow:0 0 15px rgba(0,212,255,0.15);}
+
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:960px;margin:0 auto;}
+.pcard{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:38px 32px;position:relative;transition:all 0.4s;opacity:1;transform:none;}
+.pcard:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,0.4);}
+.pcard.featured{border-color:rgba(0,212,255,0.3);background:linear-gradient(145deg,rgba(0,212,255,0.05),rgba(124,58,237,0.05));box-shadow:0 0 40px rgba(0,212,255,0.1);}
+.pcard.featured:hover{box-shadow:0 30px 70px rgba(0,0,0,0.5),0 0 50px rgba(0,212,255,0.2);}
+.ftag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--sky),var(--violet2));color:#fff;font-size:0.7rem;font-weight:700;padding:4px 18px;border-radius:50px;white-space:nowrap;letter-spacing:0.08em;box-shadow:0 4px 15px rgba(0,212,255,0.4);}
+.pcard h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;}
+.pdesc{font-size:0.85rem;color:var(--muted);margin-bottom:18px;}
+.price-n{font-size:2.6rem;font-weight:900;letter-spacing:-1px;line-height:1;margin:14px 0 22px;background:linear-gradient(135deg,var(--sky),var(--violet2));-webkit-background-clip:text;color:transparent;}
+.pcard ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.pcard ul li{font-size:0.85rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start;}
+.pcard ul li::before{content:'✓';color:#00ff88;font-weight:700;flex-shrink:0;margin-top:2px;}
+
+.addon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:960px;margin:40px auto 0;}
+.addon{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;transition:all 0.3s;}
+.addon:hover{border-color:rgba(0,212,255,0.2);background:rgba(0,212,255,0.03);}
+.addon span:first-child{font-size:0.88rem;font-weight:500;}
+.addon-p{color:var(--sky);font-weight:700;font-size:0.88rem;font-family:var(--mono);}
+
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
+.cinfo{display:flex;flex-direction:column;gap:16px;}
+.citem{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;text-decoration:none;color:var(--text);transition:all 0.35s;}
+.citem:hover{border-color:rgba(0,212,255,0.25);background:rgba(0,212,255,0.04);transform:translateX(6px);}
+.cico{font-size:1.4rem;width:44px;text-align:center;}
+.citem strong{display:block;font-size:0.75rem;color:var(--muted);margin-bottom:2px;font-weight:500;}
+.citem span{font-size:0.95rem;font-weight:600;}
+.cform{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:38px;}
+.cform h3{font-size:1.2rem;font-weight:800;margin-bottom:24px;letter-spacing:-0.3px;}
+.fg{margin-bottom:18px;}
+.fg label{display:block;font-size:0.75rem;color:var(--muted);margin-bottom:7px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;padding:12px 16px;color:var(--text);font-family:var(--font);font-size:0.9rem;outline:none;transition:all 0.3s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:rgba(0,212,255,0.4);background:rgba(0,212,255,0.04);box-shadow:0 0 0 3px rgba(0,212,255,0.08);}
+.fg select option{background:#070b1a;}
+.fg textarea{height:90px;resize:vertical;}
+.btn-submit{width:100%;padding:14px;border:none;border-radius:50px;background:linear-gradient(135deg,var(--sky),var(--violet2));color:#fff;font-family:var(--font);font-weight:700;font-size:0.95rem;cursor:pointer;transition:all 0.35s;box-shadow:0 0 25px rgba(0,212,255,0.2);}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,212,255,0.45);}
+
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 6% 30px;position:relative;z-index:1;}
+.ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:50px;margin-bottom:50px;}
+.ft-brand p{font-size:0.86rem;color:var(--muted);margin-top:14px;max-width:280px;line-height:1.75;}
+.ft-col h4{font-size:0.8rem;font-weight:700;margin-bottom:18px;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+.ft-col a{display:block;color:var(--muted);text-decoration:none;font-size:0.86rem;margin-bottom:10px;transition:all 0.3s;}
+.ft-col a:hover{color:var(--sky);padding-left:6px;}
+.ft-bot{border-top:1px solid var(--border);padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-bot p{font-size:0.8rem;color:var(--muted2);}
+.ft-bot a{color:var(--sky);text-decoration:none;}
+
+.wa{position:fixed;bottom:26px;right:26px;z-index:900;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s;animation:wapulse 3s ease-in-out infinite;}
+.wa:hover{transform:scale(1.12);box-shadow:0 6px 30px rgba(37,211,102,0.6);}
+@keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.3);}50%{box-shadow:0 4px 20px rgba(37,211,102,0.4),0 0 0 14px rgba(37,211,102,0);}}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:5px;}
+.hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s;}
+.mob-menu{display:none;position:fixed;inset:0;background:rgba(3,5,15,0.98);z-index:997;align-items:center;justify-content:center;flex-direction:column;gap:34px;}
+.mob-menu.open{display:flex;}
+.mob-menu a{font-size:1.6rem;font-weight:800;color:var(--text);text-decoration:none;transition:color 0.3s;}
+.mob-menu a:hover{color:var(--sky);}
+.close-mob{position:absolute;top:24px;right:6%;font-size:1.5rem;cursor:pointer;color:var(--muted);background:none;border:none;font-family:var(--font);}
+
+@media(max-width:768px){
+.nav-links{display:none;}.hamburger{display:flex;}
+.about-grid{grid-template-columns:1fr;}
+.contact-wrap{grid-template-columns:1fr;}
+.ft-top{grid-template-columns:1fr;}
+.hero h1{letter-spacing:-1px;}
+.hero-stats{gap:30px;}
+.stat-sep{display:none;}
+section{padding:70px 5%;}
+nav{padding:14px 5%;}
+}
+@media(max-width:600px){
+.g3{grid-template-columns:1fr;}
+.vals{grid-template-columns:1fr;}
+.why-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
 </head>
-
 <body>
 
-  <!-- =========================
-        NAVBAR
-========================= -->
-  <nav class="navbar navbar-expand-lg fixed-top shadow">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
-        <img src="logo.png" alt="DevTechSoft Logo" class="navbar-logo">
-        <span class="brand-text">DevTechSoft</span>
-      </a>
-      <span>DevTechSoft</span>
-      </a>
-      <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#academic">Academic Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#consultation">Consultation</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        </ul>
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+<canvas id="bg-canvas"></canvas>
+
+<div class="mob-menu" id="mob">
+  <button class="close-mob" onclick="closeMob()">✕</button>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#portfolio" onclick="closeMob()">Portfolio</a>
+  <a href="#academic" onclick="closeMob()">Academic</a>
+  <a href="#pricing" onclick="closeMob()">Pricing</a>
+  <a href="#contact" onclick="closeMob()" style="color:var(--sky)">Get Quote →</a>
+</div>
+
+<nav id="nav">
+  <div class="logo">DevTechSoft</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#academic">Academic</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact" class="nav-cta">Get Quote</a>
+  </div>
+  <div class="hamburger" onclick="openMob()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="orb" style="width:700px;height:700px;background:radial-gradient(circle,rgba(0,212,255,0.07),transparent 70%);top:-150px;left:50%;transform:translateX(-50%);"></div>
+  <div class="orb" style="width:450px;height:450px;background:radial-gradient(circle,rgba(124,58,237,0.07),transparent 70%);bottom:0;right:0%;"></div>
+  <div class="orb" style="width:300px;height:300px;background:radial-gradient(circle,rgba(0,255,136,0.05),transparent 70%);bottom:100px;left:5%;"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="hero-badge"><span class="badge-dot"></span>Trusted by 100+ Clients Across India</div>
+    <h1>
+      <span class="line1">We Build Digital Solutions</span>
+      <span class="grad">That Scale &amp; Inspire</span>
+    </h1>
+    <p class="hero-sub">From blazing-fast websites and mobile apps to AI-powered platforms and final-year academic projects — DevTechSoft turns ambitious ideas into powerful digital reality.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-glow">Start Your Project →</a>
+      <a href="#portfolio" class="btn-ghost">View Our Work</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n" data-target="5">0</div><div class="stat-l">Years Experience</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><div class="stat-n" data-target="100">0</div><div class="stat-l">Projects Delivered</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><div class="stat-n" data-target="50">0</div><div class="stat-l">Happy Clients</div></div>
+      <div class="stat-sep"></div>
+      <div class="stat"><div class="stat-n" style="font-size:2.2rem;">24/7</div><div class="stat-l">Support Available</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><div class="scroll-dot"></div><span style="margin-top:4px;">Scroll</span></div>
+</section>
+
+<hr class="divider">
+
+<section id="about">
+  <div class="orb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(0,212,255,0.04),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+  <div class="about-grid" style="position:relative;z-index:1;">
+    <div>
+      <div class="stag">About Us</div>
+      <h2 class="sh">Built by Developers.<br><span>Driven by Results.</span></h2>
+      <p class="about-p">DevTechSoft is a passionate team of technology freelancers with over 5 years of hands-on experience delivering custom digital solutions across India. We specialise in web development, mobile application development, AI integration, e-commerce platforms, and academic project assistance.</p>
+      <p class="about-p">Our mission is simple: to help businesses, startups, and students leverage the power of modern technology to achieve their goals. Whether you are a small business looking to establish an online presence or a college student needing a polished final-year project, we deliver quality that exceeds expectations every single time.</p>
+      <p class="about-p">We stay ahead of industry trends, follow modern best practices, and prioritise scalability, performance, and security in everything we build — from SEO-optimised landing pages to complex multi-role applications with robust backend systems.</p>
+      <div class="vals">
+        <div class="val"><strong>🎯 Client-First</strong><span>Your goals drive every decision we make.</span></div>
+        <div class="val"><strong>⚡ Fast Delivery</strong><span>We respect deadlines and honour timelines.</span></div>
+        <div class="val"><strong>🔐 Secure Code</strong><span>Security-first architecture always.</span></div>
+        <div class="val"><strong>🔁 Ongoing Support</strong><span>We don't disappear after launch.</span></div>
       </div>
     </div>
-  </nav>
-
-  <!-- =========================
-        HERO
-========================= -->
-  <section class="hero" id="home">
-    <div class="container">
-      <h1 class="display-5"> DevTechSoft – Professional Projects & Final Year Academic Project Guidance</h1>
-      <p class="lead">
-        • Academic Projects • Professional Projects
-        <br>Complete guidance with source code, report, PPT & viva support
-      </p>
-      <a href="#consultation" class="btn btn-warning btn-lg px-5 mt-4 attention-btn">
-        Request Project Guidance
-      </a>
+    <div class="skills-panel">
+      <h3 style="font-weight:800;margin-bottom:6px;letter-spacing:-0.3px;">Our Expertise</h3>
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:26px;">Skills refined over 5+ years of real-world delivery.</p>
+      <div class="skill-row"><div class="skill-top"><span>Web Development</span><span class="skill-pct">95%</span></div><div class="bar-bg"><div class="bar-fg" style="--w:95%"></div></div></div>
+      <div class="skill-row"><div class="skill-top"><span>Mobile Apps</span><span class="skill-pct">90%</span></div><div class="bar-bg"><div class="bar-fg" style="--w:90%"></div></div></div>
+      <div class="skill-row"><div class="skill-top"><span>AI Integration</span><span class="skill-pct">85%</span></div><div class="bar-bg"><div class="bar-fg" style="--w:85%"></div></div></div>
+      <div class="skill-row"><div class="skill-top"><span>E-Commerce</span><span class="skill-pct">92%</span></div><div class="bar-bg"><div class="bar-fg" style="--w:92%"></div></div></div>
+      <div class="skill-row"><div class="skill-top"><span>UI/UX Design</span><span class="skill-pct">88%</span></div><div class="bar-bg"><div class="bar-fg" style="--w:88%"></div></div></div>
+      <div class="skill-row" style="margin-bottom:0;"><div class="skill-top"><span>Academic Projects</span><span class="skill-pct">97%</span></div><div class="bar-bg"><div class="bar-fg" style="--w:97%"></div></div></div>
     </div>
-  </section>
+  </div>
+</section>
 
+<hr class="divider">
 
-  <section class="section-padding bg-light">
-    <div class="container text-center">
-      <div class="row g-4">
-        <div class="col-md-3">
-          <h3>300+</h3>
-          <p>Projects Delivered</p>
-        </div>
-        <div class="col-md-3">
-          <h3>8+</h3>
-          <p>Academic Domains</p>
-        </div>
-        <div class="col-md-3">
-          <h3>100%</h3>
-          <p>Viva & Report Support</p>
-        </div>
-        <div class="col-md-3">
-          <h3>5+ Years</h3>
-          <p>Technical Experience</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="services">
+  <div class="stag">What We Do</div>
+  <h2 class="sh">Our Core <span>Services</span></h2>
+  <p class="sp">End-to-end digital solutions tailored precisely to your business needs, budget, and growth ambitions.</p>
+  <div class="g3">
+    <article class="card"><div class="ico ico-sky">🛒</div><h3>E-Commerce Development</h3><p>Feature-rich online stores with seamless payment gateway integration, product management, order tracking, and admin dashboards. Optimised for speed, mobile responsiveness, and maximum conversion rates with Razorpay, Stripe, and UPI support built-in.</p><div class="tags"><span class="tag">WooCommerce</span><span class="tag">Custom PHP</span><span class="tag">MERN Stack</span><span class="tag">Payment APIs</span></div></article>
+    <article class="card"><div class="ico ico-vio">📱</div><h3>Mobile App Development</h3><p>From Android-native to cross-platform Flutter apps with smooth performance, clean UI, and scalable backend systems. Every app includes user authentication, push notifications, and admin panels — delivered with full source code and post-launch support.</p><div class="tags"><span class="tag">Flutter</span><span class="tag">Android</span><span class="tag">Firebase</span><span class="tag">REST API</span></div></article>
+    <article class="card"><div class="ico ico-grn">🤖</div><h3>AI & Automation Integration</h3><p>We integrate AI into existing systems or build AI-powered products from scratch — chatbots, recommendation engines, image recognition, NLP, sentiment analysis, and automated workflows that save time and significantly reduce operational costs for businesses.</p><div class="tags"><span class="tag">OpenAI API</span><span class="tag">Python ML</span><span class="tag">Chatbots</span><span class="tag">Automation</span></div></article>
+    <article class="card"><div class="ico ico-amb">🎨</div><h3>UI/UX Design</h3><p>Great products start with great design. We craft intuitive, visually compelling interfaces that guide users naturally and keep them engaged — prioritising accessibility, usability, and brand consistency from wireframes and prototypes to pixel-perfect final handoffs.</p><div class="tags"><span class="tag">Figma</span><span class="tag">Prototyping</span><span class="tag">Responsive</span><span class="tag">Branding</span></div></article>
+    <article class="card"><div class="ico ico-sky">🌐</div><h3>Website Development</h3><p>Fast, secure, and SEO-optimised websites built for impact. Business landing pages, corporate websites, portfolios, or blog platforms — clean code, fast load times, full mobile responsiveness, and Google Core Web Vitals compliance as our baseline standard on every project.</p><div class="tags"><span class="tag">HTML/CSS</span><span class="tag">React</span><span class="tag">WordPress</span><span class="tag">SEO</span></div></article>
+    <article class="card"><div class="ico ico-vio">📊</div><h3>Digital Marketing & SEO</h3><p>A great website deserves to be found. We offer on-page and technical SEO, Google Analytics setup, Search Console integration, keyword research, and content strategy to grow your organic traffic and improve search engine rankings across India and globally.</p><div class="tags"><span class="tag">On-page SEO</span><span class="tag">Analytics</span><span class="tag">Search Console</span><span class="tag">Keywords</span></div></article>
+  </div>
+</section>
 
+<hr class="divider">
 
-  <section class="section-padding bg-white">
-    <div class="container text-center">
-      <h2 class="section-title">Our Project Process</h2>
-      <div class="row g-4 mt-4">
-        <div class="col-md-3">📌 Requirement Analysis</div>
-        <div class="col-md-3">🧠 Topic Finalization</div>
-        <div class="col-md-3">💻 Development & Review</div>
-        <div class="col-md-3">🎓 Viva & Documentation Support</div>
-      </div>
-    </div>
-  </section>
+<section id="portfolio">
+  <div class="stag">Our Work</div>
+  <h2 class="sh">Projects We've <span>Built</span></h2>
+  <p class="sp">Real-world applications designed, developed, and deployed for clients across industries throughout India.</p>
+  <div class="g3">
+    <article class="card"><span class="pbadge p-app">Mobile App</span><h3>Matrimony App</h3><p>A full-featured matrimonial platform with profile matching, photo upload, privacy controls, subscription plans, and an admin dashboard. Built with Flutter and Firebase for real-time data sync across Android devices with secure user verification and chat functionality.</p></article>
+    <article class="card"><span class="pbadge p-app">Mobile App</span><h3>Network Marketing App</h3><p>A multi-level marketing platform with downline tracking, commission calculation, withdrawal management, and live income reports. Features role-based dashboards for admins, distributors, and team leaders with automated payout processing and real-time notifications.</p></article>
+    <article class="card"><span class="pbadge p-ai">AI Powered</span><h3>AI Jewellery Shop</h3><p>An e-commerce jewellery platform with AI-powered virtual try-on using image recognition. Customers preview jewellery in real-time on their own photos before purchasing — reducing returns significantly and dramatically boosting conversions and overall customer satisfaction.</p></article>
+    <article class="card"><span class="pbadge p-web">Web App</span><h3>Referral System</h3><p>A custom referral and reward management system for businesses to grow via word-of-mouth marketing. Includes unique referral link generation, real-time commission tracking, leaderboards, and automated payout processing with comprehensive admin controls and analytics.</p></article>
+    <article class="card"><span class="pbadge p-web">Web App</span><h3>Chit Fund Website</h3><p>A secure chit fund management platform with member registration, auction tracking, monthly contribution recording, and automated ledger generation — helping chit fund operators digitise and run their business transparently with full audit trail and reporting capabilities.</p></article>
+    <article class="card"><span class="pbadge p-ai">Creative</span><h3>Green Screen Ad Platform</h3><p>A creative video production tool enabling businesses to create professional-grade green screen advertisements with background replacement, overlay text, and branded watermarking — without requiring a physical studio or expensive video production equipment or expertise.</p></article>
+  </div>
+</section>
 
-  <!-- =========================
-    ACADEMIC PROJECTS (80%)
-========================= -->
-  <section id="academic" class="section-padding bg-white">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">Academic Project Domains</h2>
-        <p class="section-subtitle">
-          Final year, mini & IEEE projects strictly aligned with college and university requirements
-        </p>
-      </div>
+<hr class="divider">
 
-      <div class="row g-4 mt-4">
-        <div class="col-md-4">
-          <div class="glass-card h-100">
-            <h5 class="fw-bold"><i class="bi bi-robot me-2 text-primary"></i>AI & Machine Learning</h5>
-            <p class="text-muted mt-2">
-              Prediction systems, medical diagnosis, sentiment analysis, recommendation engines.
-            </p>
-            <ul class="small text-muted">
-              <li>IEEE papers support</li>
-              <li>Python + ML models</li>
-              <li>Complete documentation</li>
-            </ul>
-          </div>
-        </div>
+<section id="academic">
+  <div class="stag">Academic Projects</div>
+  <h2 class="sh">Final Year & <span>IEEE Projects</span></h2>
+  <p class="sp">Academic projects strictly aligned with college and university requirements — complete documentation, source code, and viva preparation support for engineering students across Tamil Nadu and all of India.</p>
+  <div class="g3">
+    <article class="card"><div class="ico ico-vio">🧠</div><h3>AI & Machine Learning</h3><p>Prediction systems, medical diagnosis tools, sentiment analysis, and recommendation engines mapped to IEEE papers with full Python and ML model implementation, documentation, and presentation support.</p><ul class="cklist"><li>IEEE papers support included</li><li>Python + ML model implementation</li><li>Complete project documentation</li><li>Synopsis and PPT provided</li></ul></article>
+    <article class="card"><div class="ico ico-sky">💻</div><h3>Web Application Development</h3><p>College-level and IEEE-based web applications — e-learning, hospital management, library systems — with full admin and user role modules, database design, and detailed project report.</p><ul class="cklist"><li>PHP / Python / MERN stack</li><li>Admin + User role modules</li><li>Report and PPT included</li><li>Source code explanation session</li></ul></article>
+    <article class="card"><div class="ico ico-grn">📱</div><h3>Mobile App Development</h3><p>Android and Flutter academic projects with logical, viva-ready flow for mini and final-year submissions. Includes full source code with comments, proper documentation, and guided explanation session.</p><ul class="cklist"><li>Android / Flutter platform</li><li>Mini & final year projects</li><li>Source code with explanation</li><li>Viva Q&A preparation guide</li></ul></article>
+    <article class="card"><div class="ico ico-amb">🔐</div><h3>Blockchain & Cyber Security</h3><p>Secure systems for decentralised authentication, electronic voting, and data integrity using blockchain technology — all mapped to current IEEE research topics, standards, and paper requirements.</p><ul class="cklist"><li>Blockchain concept implementation</li><li>IEEE-mapped project topics</li><li>Architecture flow and diagrams</li><li>Security documentation included</li></ul></article>
+    <article class="card"><div class="ico ico-sky">🌐</div><h3>Networking Projects</h3><p>Client-server models, real-time chat applications, network monitoring tools, and socket programming projects already proven and approved by engineering colleges across Tamil Nadu and South India.</p><ul class="cklist"><li>Python networking with sockets</li><li>TCP/IP programming</li><li>College-approved project flows</li><li>Detailed network diagrams</li></ul></article>
+    <article class="card"><div class="ico ico-grn">⚙️</div><h3>Hardware & IoT Projects</h3><p>Arduino, Raspberry Pi, and IoT sensor-based academic projects with complete circuit diagrams, hardware setup guides, and viva-ready explanation notes designed specifically for engineering students.</p><ul class="cklist"><li>Arduino / IoT implementation</li><li>Mini and final year suitable</li><li>Circuit diagrams included</li><li>Viva-ready notes provided</li></ul></article>
+  </div>
+</section>
 
-        <div class="col-md-4">
-          <div class="glass-card h-100">
-            <h5 class="fw-bold"><i class="bi bi-browser-chrome me-2 text-primary"></i>Web Application Development</h5>
-            <p class="text-muted mt-2">
-              College-level and IEEE-based web applications with real-world use cases.
-            </p>
-            <ul class="small text-muted">
-              <li>PHP / Python / MERN</li>
-              <li>Admin + User modules</li>
-              <li>Report & PPT included</li>
-            </ul>
-          </div>
-        </div>
+<hr class="divider">
 
-        <div class="col-md-4">
-          <div class="glass-card h-100">
-            <h5 class="fw-bold"><i class="bi bi-phone me-2 text-primary"></i>Mobile Application Development</h5>
-            <p class="text-muted mt-2">
-              Android & Flutter apps designed as academic projects with viva-ready flow.
-            </p>
-            <ul class="small text-muted">
-              <li>Android / Flutter</li>
-              <li>Mini & Final year</li>
-              <li>Source code explanation</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="glass-card h-100">
-            <h5 class="fw-bold"><i class="bi bi-shield-lock me-2 text-primary"></i>Blockchain & Cyber Security</h5>
-            <p class="text-muted mt-2">
-              Secure systems focusing on authentication, voting and data integrity.
-            </p>
-            <ul class="small text-muted">
-              <li>Blockchain concepts</li>
-              <li>IEEE mapped topics</li>
-              <li>Flow + diagrams</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="glass-card h-100">
-            <h5 class="fw-bold"><i class="bi bi-hdd-network me-2 text-primary"></i>Networking Projects</h5>
-            <p class="text-muted mt-2">
-              Client-server models, chat applications and monitoring systems.
-            </p>
-            <ul class="small text-muted">
-              <li>Python networking</li>
-              <li>Socket programming</li>
-              <li>College-approved flow</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="glass-card h-100">
-            <h5 class="fw-bold"><i class="bi bi-cpu me-2 text-primary"></i>Hardware & IoT</h5>
-            <p class="text-muted mt-2">
-              Arduino, IoT and sensor-based academic projects with circuit explanation.
-            </p>
-            <ul class="small text-muted">
-              <li>Mini & Final year</li>
-              <li>Hardware diagrams</li>
-              <li>Viva-ready notes</li>
-            </ul>
-          </div>
-        </div>
+<section>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;" id="proc-tech">
+    <div>
+      <div class="stag">How We Work</div>
+      <h2 class="sh" style="margin-bottom:12px;">Our <span>Process</span></h2>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:36px;">A transparent workflow that keeps you informed at every stage — no surprises, just consistent, quality results.</p>
+      <div class="process-list">
+        <div class="step"><div class="step-n">01</div><div><h3>Discovery & Requirements</h3><p>We discuss your goals, audience, tech requirements, and budget — shaping the entire project plan upfront so there are zero surprises later in the process.</p></div></div>
+        <div class="step"><div class="step-n">02</div><div><h3>Design & Prototyping</h3><p>Wireframes and interactive prototypes for your approval before development begins. You see exactly what you're getting before a single line of code is written.</p></div></div>
+        <div class="step"><div class="step-n">03</div><div><h3>Development & Testing</h3><p>We build using the agreed tech stack, following best practices for performance, security, and maintainability. Rigorous testing on all devices and browsers throughout.</p></div></div>
+        <div class="step" style="padding-bottom:0;"><div class="step-n">04</div><div><h3>Launch & Ongoing Support</h3><p>We handle deployment, domain, hosting setup, and provide post-launch maintenance. Your project doesn't end at delivery — we are here for the long run always.</p></div></div>
       </div>
     </div>
-  </section>
-
-  <!-- =========================
-    PRACTICE PROJECTS (20%)
-========================= -->
-  <section id="practice" class="section-padding bg-light">
-    <div class="container">
-      <div class="text-center">
-        <h2 class="section-title">Practice & Demo Projects</h2>
-        <p class="section-subtitle">
-          Skill-building projects for learning and implementation (non-commercial)
-        </p>
-      </div>
-
-      <div class="row g-4 mt-4">
-        <div class="col-md-4">
-          <div class="glass-card h-100">
-            <h6 class="fw-bold">Salon Booking System</h6>
-            <p class="small text-muted">
-              Appointment booking web application to understand CRUD and admin flow.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="glass-card h-100">
-            <h6 class="fw-bold">Student Attendance System</h6>
-            <p class="small text-muted">
-              Simple web-based attendance system for practice and learning.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="glass-card h-100">
-            <h6 class="fw-bold">Android Learning App</h6>
-            <p class="small text-muted">
-              Educational mobile app focusing on UI flow and local storage.
-            </p>
-          </div>
-        </div>
-      </div>
+    <div>
+      <div class="stag">Technology</div>
+      <h2 class="sh" style="margin-bottom:12px;">Technologies <span>We Use</span></h2>
+      <p style="color:var(--muted);font-size:0.9rem;">Current tools and frameworks ensuring modern, maintainable, and performant products delivered with confidence.</p>
+      <div class="tech-wrap"><span class="tech">React.js</span><span class="tech">Node.js</span><span class="tech">Flutter</span><span class="tech">Python</span><span class="tech">PHP</span><span class="tech">MySQL</span><span class="tech">MongoDB</span><span class="tech">Firebase</span><span class="tech">WordPress</span><span class="tech">TensorFlow</span><span class="tech">OpenAI API</span><span class="tech">Razorpay</span><span class="tech">Stripe</span><span class="tech">AWS</span><span class="tech">Docker</span><span class="tech">REST API</span><span class="tech">GraphQL</span><span class="tech">Git / GitHub</span><span class="tech">Figma</span><span class="tech">Arduino</span><span class="tech">Raspberry Pi</span><span class="tech">Blockchain</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- =========================
-    WHY CHOOSE US (STUDENT)
-========================= -->
-  <section class="section-padding bg-white">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4">
-          <h2 class="section-title">Why Students Choose This Guidance</h2>
-          <ul class="mt-4 text-muted">
-            <li>✔ College & IEEE-aligned project topics</li>
-            <li>✔ Step-by-step explanation support</li>
-            <li>✔ Report, PPT & viva preparation</li>
-            <li>✔ Ethical academic guidance only</li>
-            <li>✔ WhatsApp-based communication</li>
-          </ul>
-        </div>
-        <div class="col-lg-6">
-          <div class="glass-card">
-            <h6 class="fw-bold mb-2">Academic Integrity Focus</h6>
-            <p class="text-muted small">
-              This platform is designed strictly for educational guidance.
-              Students are encouraged to understand, modify and present projects
-              in accordance with their university rules.
-            </p>
-          </div>
-        </div>
-      </div>
+<hr class="divider">
+
+<section>
+  <div class="tc">
+    <div class="stag">Why Choose Us</div>
+    <h2 class="sh">What Sets DevTechSoft <span>Apart</span></h2>
+    <p class="sp" style="margin:0 auto 50px;">Choosing the right development partner matters. Here's why clients across India consistently choose and trust us for their most important digital projects.</p>
+  </div>
+  <div class="why-grid">
+    <div class="card" style="text-align:center;"><div style="font-size:1.8rem;margin-bottom:12px;">🏆</div><h4 style="font-size:0.92rem;font-weight:700;margin-bottom:8px;">5+ Years of Experience</h4><p>100+ projects delivered across retail, finance, education, and healthcare industries across India with proven results and satisfied clients.</p></div>
+    <div class="card" style="text-align:center;"><div style="font-size:1.8rem;margin-bottom:12px;">💡</div><h4 style="font-size:0.92rem;font-weight:700;margin-bottom:8px;">Custom Solutions</h4><p>Every project is built from the ground up to match your exact requirements — no cookie-cutter templates or generic solutions ever delivered.</p></div>
+    <div class="card" style="text-align:center;"><div style="font-size:1.8rem;margin-bottom:12px;">📞</div><h4 style="font-size:0.92rem;font-weight:700;margin-bottom:8px;">Direct Communication</h4><p>You speak directly with the developers building your project — no middlemen, no miscommunication, no delays, no project manager in between.</p></div>
+    <div class="card" style="text-align:center;"><div style="font-size:1.8rem;margin-bottom:12px;">💰</div><h4 style="font-size:0.92rem;font-weight:700;margin-bottom:8px;">Affordable Pricing</h4><p>Premium quality at prices designed for the Indian market — great technology should be accessible to every business, startup, and student in India.</p></div>
+    <div class="card" style="text-align:center;"><div style="font-size:1.8rem;margin-bottom:12px;">🔒</div><h4 style="font-size:0.92rem;font-weight:700;margin-bottom:8px;">Full Code Ownership</h4><p>You receive complete source code, database files, and documentation. Your project belongs entirely to you — always and unconditionally.</p></div>
+    <div class="card" style="text-align:center;"><div style="font-size:1.8rem;margin-bottom:12px;">🚀</div><h4 style="font-size:0.92rem;font-weight:700;margin-bottom:8px;">On-Time Delivery</h4><p>We commit to realistic timelines and honour them. Milestone-based delivery keeps you informed and confident throughout the entire project journey.</p></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="pricing">
+  <div class="tc">
+    <div class="stag">Pricing</div>
+    <h2 class="sh">Transparent, <span>Honest Pricing</span></h2>
+    <p class="sp" style="margin:0 auto 52px;">No hidden charges. No surprise invoices. Just clear, honest pricing that scales with your project's needs and long-term ambitions.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pcard"><h3>Landing Page</h3><p class="pdesc">Perfect for brands and startups wanting an impactful first impression online.</p><div class="price-n">₹5,000+</div><ul><li>Modern responsive UI design</li><li>SEO-ready structure and meta tags</li><li>Contact form integration</li><li>Google Analytics setup</li><li>Fast load speed optimisation</li><li>Mobile-first development</li></ul></div>
+    <div class="pcard featured"><div class="ftag">⭐ Most Popular</div><h3>E-Commerce Store</h3><p class="pdesc">Complete online store for businesses ready to sell products and services digitally.</p><div class="price-n">₹15,000+</div><ul><li>Full product & inventory management</li><li>Razorpay / UPI payment integration</li><li>Order tracking and management</li><li>Admin dashboard included</li><li>Customer accounts and wishlist</li><li>SEO and performance optimised</li></ul></div>
+    <div class="pcard"><h3>Mobile App</h3><p class="pdesc">Android or cross-platform Flutter apps with a robust backend and full documentation.</p><div class="price-n">₹15,000+</div><ul><li>Android / Flutter development</li><li>Firebase or custom backend</li><li>User login and authentication</li><li>Push notification integration</li><li>Admin panel included</li><li>Full source code delivery</li></ul></div>
+  </div>
+  <div class="tc" style="margin-top:70px;">
+    <div class="stag">Add-Ons</div>
+    <h3 class="sh" style="font-size:1.7rem;margin-bottom:8px;">Enhance Your <span>Project</span></h3>
+  </div>
+  <div class="addon-grid">
+    <div class="addon"><span>Search Engine Optimisation</span><span class="addon-p">₹3,000+</span></div>
+    <div class="addon"><span>AI Feature Integration</span><span class="addon-p">₹5,000+</span></div>
+    <div class="addon"><span>Monthly Maintenance</span><span class="addon-p">₹2,000/mo</span></div>
+    <div class="addon"><span>Additional Web Pages</span><span class="addon-p">₹500/page</span></div>
+    <div class="addon"><span>Logo & Brand Design</span><span class="addon-p">₹2,500+</span></div>
+    <div class="addon"><span>Domain & Hosting Setup</span><span class="addon-p">₹1,500+</span></div>
+    <div class="addon"><span>Content Writing (per page)</span><span class="addon-p">₹800+</span></div>
+    <div class="addon"><span>Google Ads Campaign Setup</span><span class="addon-p">₹3,500+</span></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="contact">
+  <div class="stag">Get In Touch</div>
+  <h2 class="sh">Let's Build Something <span>Great Together</span></h2>
+  <p class="sp">Ready to start your project or need a quick quote? Reach out via WhatsApp, email, or fill the form — we respond within 24 hours, guaranteed, every single time.</p>
+  <div class="contact-wrap">
+    <div class="cinfo">
+      <a href="tel:+919788974742" class="citem"><div class="cico">📞</div><div><strong>Phone / WhatsApp</strong><span>+91 97889 74742</span></div></a>
+      <a href="mailto:devtechsoft5@gmail.com" class="citem"><div class="cico">✉️</div><div><strong>Email</strong><span>devtechsoft5@gmail.com</span></div></a>
+      <div class="citem"><div class="cico">🕐</div><div><strong>Working Hours</strong><span>Mon – Sat, 9 AM – 8 PM IST</span></div></div>
+      <div class="citem"><div class="cico">📍</div><div><strong>Service Area</strong><span>Pan India · Remote Worldwide</span></div></div>
+      <a href="https://wa.me/919788974742?text=Hi%20DevTechSoft%2C%20I%20want%20to%20discuss%20a%20project" class="btn-glow" style="display:block;text-align:center;margin-top:8px;">💬 Chat on WhatsApp Now</a>
     </div>
-  </section>
-
-
-
-  <!-- =========================
-    CONSULTATION (WHATSAPP)
-========================= -->
-  <section id="consultation" class="section-padding bg-light">
-    <div class="container">
-      <div class="row align-items-center">
-
-        <div class="col-lg-5 mb-4">
-          <h2 class="section-title">Project Consultation</h2>
-          <p class="text-muted mt-3">
-            Share your academic requirement.
-            You will be redirected to WhatsApp for direct guidance.
-          </p>
-          <ul class="text-muted mt-4">
-            <li>✔ Final year / Mini / IEEE</li>
-            <li>✔ Any department</li>
-            <li>✔ WhatsApp response</li>
-          </ul>
-        </div>
-
-        <div class="col-lg-7">
-          <div class="consult-card shadow-lg p-4">
-            <form id="consultForm">
-
-              <!-- Student Details -->
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <input type="text" id="name" class="form-control" placeholder="Student Name" required>
-                </div>
-                <div class="col-md-6">
-                  <input type="tel" id="phone" class="form-control" placeholder="Mobile Number" required>
-                </div>
-              </div>
-
-              <!-- Degree & Project Type -->
-              <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                  <select id="degree" class="form-select" required>
-                    <option value="">Degree</option>
-                    <option>B.E / B.Tech</option>
-                    <option>M.E / M.Tech</option>
-                    <option>BCA</option>
-                    <option>MCA</option>
-                    <option>M.Sc</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <select id="type" class="form-select" required>
-                    <option value="">Project Type</option>
-                    <option>Mini Project</option>
-                    <option>Final Year Project</option>
-                    <option>IEEE Project</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- Project Selection -->
-              <div class="mt-3">
-                <select id="projectSelect" class="form-select" required>
-                  <option value="">Select Project</option>
-
-                  <!-- ⭐ CUSTOM PROJECT FIRST -->
-                  <option value="custom">Custom Project (Your Own Idea)</option>
-
-                  <option value="1">Automated Amazon Product Scraper & Sentiment Analyzer</option>
-                  <option value="2">Smart Supermarket Management System</option>
-                  <option value="3">AI-Powered Traffic Time Saver System</option>
-                  <option value="4">Smart Supermarket Billing & Inventory System</option>
-                  <option value="5">Secure Blockchain-Based Voting System</option>
-                  <option value="6">Smart Crime Detection & Face Recognition System</option>
-                  <option value="7">Smart Calories Burnt Prediction System</option>
-                  <option value="8">Smart Mobile Banking & Loan Calculator App</option>
-                  <option value="9">AI-Based Scholarship Recommendation System</option>
-                  <option value="10">Lung Disease Prediction Using X-Ray Images</option>
-                  <option value="11">GPay Replication Android App (Flutter)</option>
-                  <option value="12">Calories Prediction Using ML Web App</option>
-                  <option value="13">Rainfall Prediction Using Machine Learning</option>
-                  <option value="14">Sensor Tap Power Generation System</option>
-                  <option value="15">Simple Chat Application (Python & Streamlit)</option>
-                  <option value="16">Network Speed Test Dashboard</option>
-                  <option value="17">File Transfer Application (Local Network)</option>
-                  <option value="18">API Data Fetch & Visualizer</option>
-                  <option value="19">Live IP & Network Information Checker</option>
-                  <option value="20">Simple Load Balancing System Using Python</option>
-                  <option value="21">Client–Server Group Chat Application</option>
-                  <option value="22">Piezoelectric Energy Measurement System</option>
-                </select>
-              </div>
-
-              <!-- Custom Project Title (Hidden by default) -->
-              <div class="mt-3" id="customProjectBox" style="display:none;">
-                <input type="text" id="customTitle" class="form-control"
-                  placeholder="Enter Custom Project Title (eg: AI Attendance System)">
-              </div>
-
-              <!-- Project Description -->
-              <div class="mt-3">
-                <div id="projectDescription" class="form-control" style="min-height:120px; background:#f8f9fa;">
-                  Select a project to view description.
-                </div>
-              </div>
-
-              <!-- Submit -->
-              <button type="submit" class="btn btn-primary w-100 mt-4 attention-btn">
-                Send via WhatsApp
-              </button>
-
-            </form>
-
-            <script>
-              const descriptions = {
-                custom: "Describe your own project idea. Our team will analyze feasibility, tools, and academic scope.",
-                1: "Collects Amazon product details and reviews, performs sentiment analysis, and generates reports.",
-                2: "Online supermarket platform with admin control for products and orders.",
-                3: "Traffic image analysis system that dynamically adjusts signal timings.",
-                4: "Billing and inventory system with invoices and sales tracking.",
-                5: "Blockchain-based secure voting system preventing fraud.",
-                6: "Face recognition surveillance system with real-time alerts.",
-                7: "ML-based system predicting calories burned.",
-                8: "Mobile banking demo app with secure transactions and EMI calculator.",
-                9: "Scholarship recommendation system using machine learning.",
-                10: "Detects lung disease from X-ray images using ML.",
-                11: "Flutter-based digital payment application.",
-                12: "Web application predicting calorie consumption using ML.",
-                13: "Rainfall prediction system using weather datasets.",
-                14: "Hardware project generating power using sensors.",
-                15: "Python socket-based chat application with Streamlit UI.",
-                16: "Dashboard showing internet speed and network metrics.",
-                17: "Local network file transfer system using Python.",
-                18: "Fetches and visualizes public API data.",
-                19: "Live IP address and network information checker.",
-                20: "Python-based load balancing system.",
-                21: "Multi-user client-server chat system.",
-                22: "Piezoelectric sensor-based energy measurement system."
-              };
-
-              const projectSelect = document.getElementById("projectSelect");
-              const descBox = document.getElementById("projectDescription");
-              const customBox = document.getElementById("customProjectBox");
-              const customTitle = document.getElementById("customTitle");
-
-              projectSelect.addEventListener("change", function () {
-                const value = this.value;
-                descBox.innerText = descriptions[value] || "Select a project to view description.";
-
-                if (value === "custom") {
-                  customBox.style.display = "block";
-                  customTitle.required = true;
-                } else {
-                  customBox.style.display = "none";
-                  customTitle.required = false;
-                  customTitle.value = "";
-                }
-              });
-
-              document.getElementById("consultForm").addEventListener("submit", function (e) {
-                e.preventDefault();
-
-                const name = document.getElementById("name").value;
-                const phone = document.getElementById("phone").value;
-                const degree = document.getElementById("degree").value;
-                const type = document.getElementById("type").value;
-                const project = projectSelect.options[projectSelect.selectedIndex].text;
-                const custom = customTitle.value;
-
-                let message =
-                  `Hello DevTechSoft 👋
-I am interested in an academic project.
-
-👤 Name: ${name}
-📞 Mobile: ${phone}
-🎓 Degree: ${degree}
-📘 Project Type: ${type}
-📌 Project: ${project}`;
-
-                if (projectSelect.value === "custom") {
-                  message += `✏️ Custom Title: ${custom}`;
-                }
-
-                message += `Please guide me with project details.`;
-
-                // 🔴 CHANGE TO YOUR WHATSAPP NUMBER (no +)
-                const whatsappURL = `https://wa.me/919788974742?text=${encodeURIComponent(message)}`;
-                window.open(whatsappURL, "_blank");
-              });
-            </script>
-          </div>
-        </div>
-
-      </div>
+    <div class="cform">
+      <h3>Send Us a Message</h3>
+      <div class="fg"><label>Your Full Name</label><input type="text" id="nm" placeholder="Eg. Ravi Kumar" autocomplete="name"></div>
+      <div class="fg"><label>Phone Number</label><input type="tel" id="ph" placeholder="+91 9876543210" autocomplete="tel"></div>
+      <div class="fg"><label>Service Interested In</label><select id="sv"><option value="">Select a service…</option><option>Website Development</option><option>Mobile App Development</option><option>E-Commerce Development</option><option>AI Integration</option><option>Academic / Final Year Project</option><option>SEO / Digital Marketing</option><option>UI/UX Design</option><option>Other</option></select></div>
+      <div class="fg"><label>Your Message</label><textarea id="msg" placeholder="Describe your project or requirements briefly…"></textarea></div>
+      <button class="btn-submit" onclick="sendWA()">Send via WhatsApp →</button>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- =========================
-    FOOTER
-========================= -->
-  <footer class="bg-dark text-light pt-4 pb-3">
-    <div class="container text-center">
-      <h5 class="fw-bold">DevTechSoft</h5>
-      <p class="small opacity-75">
-        Academic Project Guidance for Students
-      </p>
-
-      <div class="d-flex justify-content-center gap-3 mt-2">
-        <a href="#academic" class="text-light text-decoration-none">Academic</a>
-        <a href="#practice" class="text-light text-decoration-none">Practice</a>
-        <a href="#consultation" class="text-light text-decoration-none">Consultation</a>
-      </div>
-
-      <p class="small mt-3 opacity-75">
-        © 2026 DevTechSoft • For educational guidance only
-      </p>
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <div class="logo" style="font-size:1.4rem;">DevTechSoft</div>
+      <p>Passionate technology freelancers delivering custom digital solutions — websites, mobile apps, AI integrations, and academic projects — with 5+ years of proven expertise across India.</p>
     </div>
-  </footer>
+    <div class="ft-col">
+      <h4>Services</h4>
+      <a href="#services">Website Development</a>
+      <a href="#services">Mobile App Development</a>
+      <a href="#services">E-Commerce Solutions</a>
+      <a href="#services">AI Integration</a>
+      <a href="#services">UI/UX Design</a>
+      <a href="#services">SEO &amp; Marketing</a>
+    </div>
+    <div class="ft-col">
+      <h4>Company</h4>
+      <a href="#about">About Us</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#academic">Academic Projects</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/919788974742">WhatsApp Us</a>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p>© 2026 DevTechSoft. All rights reserved. Made with ❤️ in India.</p>
+    <p><a href="mailto:devtechsoft5@gmail.com">devtechsoft5@gmail.com</a> · <a href="tel:+919788974742">+91 9788974742</a></p>
+  </div>
+</footer>
 
-  <!-- =========================
-    WHATSAPP SCRIPT
-========================= -->
-  <script>
-    document.getElementById("consultForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+<a href="https://wa.me/919788974742?text=Hi%20DevTechSoft%2C%20I%20want%20to%20discuss%20a%20project" class="wa" aria-label="Chat on WhatsApp">💬</a>
 
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const degree = document.getElementById("degree").value;
-      const type = document.getElementById("type").value;
-      const topic = document.getElementById("topic").value.trim();
+<script>
+/* CANVAS PARTICLES */
+const cv=document.getElementById('bg-canvas'),ctx=cv.getContext('2d');
+let W,H,pts=[];
+function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;}
+resize();addEventListener('resize',resize);
+function mkPts(){pts=[];for(let i=0;i<90;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.5+.4,o:Math.random()*.5+.1});}
+mkPts();
+let mx=-999,my=-999;
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+function draw(){
+ctx.clearRect(0,0,W,H);
+pts.forEach(p=>{
+p.x+=p.vx;p.y+=p.vy;
+if(p.x<0||p.x>W)p.vx*=-1;
+if(p.y<0||p.y>H)p.vy*=-1;
+let dx=p.x-mx,dy=p.y-my,d=Math.sqrt(dx*dx+dy*dy);
+if(d<180){p.x-=dx*.008;p.y-=dy*.008;}
+ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle=`rgba(0,212,255,${p.o})`;ctx.fill();
+});
+pts.forEach((a,i)=>pts.slice(i+1).forEach(b=>{
+let dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+if(d<130){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(0,212,255,${.15*(1-d/130)})`;ctx.lineWidth=.5;ctx.stroke();}
+}));
+requestAnimationFrame(draw);}
+draw();
 
-      let message =
-        `Hello DevTechSoft 👋
+/* CURSOR */
+const cur=document.getElementById('cur'),ring=document.getElementById('ring');
+addEventListener('mousemove',e=>{
+cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);
+});
+document.querySelectorAll('a,button,.card,.tech,.addon,.citem,.val,.pcard').forEach(el=>{
+el.addEventListener('mouseenter',()=>{ring.style.transform='translate(-50%,-50%) scale(1.9)';ring.style.borderColor='rgba(0,212,255,0.7)';});
+el.addEventListener('mouseleave',()=>{ring.style.transform='translate(-50%,-50%) scale(1)';ring.style.borderColor='rgba(0,212,255,0.5)';});
+});
 
-I need academic project guidance.
+/* CARD GLOW */
+document.querySelectorAll('.card').forEach(c=>{
+c.addEventListener('mousemove',e=>{
+const r=c.getBoundingClientRect();
+c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+c.style.setProperty('--my',(e.clientY-r.top)+'px');
+});});
 
-👤 Name: ${name}
-📞 Mobile: ${phone}
-🎓 Degree: ${degree}
-📌 Project Type: ${type}`;
+/* NAV SCROLL */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{
+if(scrollY>60)nav.classList.add('scrolled');
+else nav.classList.remove('scrolled');
+},{passive:true});
 
-      if (topic !== "") {
-        message += `📘 Topic: ${topic}`;
-      }
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(entries=>{
+entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('show'),i*80);obs.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.card').forEach(c=>obs.observe(c));
 
-      message += `Please guide me.`;
+/* SKILL BARS */
+const bObs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.bar-fg').forEach(b=>b.style.width=b.style.getPropertyValue('--w'));bObs.unobserve(e.target);}});
+},{threshold:.3});
+document.querySelectorAll('.skills-panel').forEach(p=>bObs.observe(p));
 
-      const whatsappNumber = "919788974742"; // ← change if needed
-      const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+/* COUNTERS */
+function animCount(el,target,sfx=''){
+let s=0,inc=target/60;
+let t=setInterval(()=>{s+=inc;if(s>=target){s=target;clearInterval(t);}el.textContent=Math.floor(s)+sfx;},33);}
+const cObs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-target]').forEach(el=>animCount(el,+el.dataset.target,'+'));cObs.unobserve(e.target);}});
+},{threshold:.5});
+document.querySelectorAll('.hero-stats').forEach(s=>cObs.observe(s));
 
-      window.open(url, "_blank");
-    });
-  </script>
+/* MOBILE MENU */
+const mob=document.getElementById('mob');
+function openMob(){mob.classList.add('open');document.body.style.overflow='hidden';}
+function closeMob(){mob.classList.remove('open');document.body.style.overflow='';}
 
-  <!-- =========================
-    SEO SCHEMA
-========================= -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "DevTechSoft",
-  "description": "Academic project guidance for final year, mini and IEEE projects",
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "student"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "WhatsApp Consultation"
-  }
-}
+/* WHATSAPP FORM */
+function sendWA(){
+const n=document.getElementById('nm').value.trim();
+const p=document.getElementById('ph').value.trim();
+const s=document.getElementById('sv').value;
+const m=document.getElementById('msg').value.trim();
+if(!n){alert('Please enter your name.');return;}
+const txt=`Hi DevTechSoft! 👋\n\nName: ${n}\nPhone: ${p||'Not provided'}\nService: ${s||'Not selected'}\n\nMessage: ${m||'I would like to discuss a project.'}`;
+open(`https://wa.me/919788974742?text=${encodeURIComponent(txt)}`,'_blank');}
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+a.addEventListener('click',e=>{
+const id=a.getAttribute('href');if(id==='#')return;
+const el=document.querySelector(id);
+if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+});});
+
+/* RESPONSIVE PROC TECH */
+if(innerWidth<768){
+const el=document.getElementById('proc-tech');
+if(el)el.style.gridTemplateColumns='1fr';}
 </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-    .dark-mode {
-      --dark-bg: #121212;
-      --dark-text: #e0e0e0;
-      background: var(--dark-bg) !important;
-      color: var(--dark-text) !important;
-
-    }
-
-    .dark-mode .navbar,
-    .dark-mode .footer {
-      background: #1e1e1e !important;
-
-    }
-
-    .dark-mode .section-padding {
-      background: #1a1a1a !important;
-
-    }
-
-    .dark-mode .card,
-    .dark-mode .glass-card {
-      background: rgba(255, 255, 255, 0.1) !important;
-      color: var(--dark-text) !important;
-
-    }
-  </style>
 </body>
-
 </html>
